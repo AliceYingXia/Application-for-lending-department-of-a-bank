@@ -1,0 +1,86 @@
+================================================================================
+S&P 500 FORECAST EVALUATION - YEAR 2024
+================================================================================
+
+Start Time: 2025-11-20 14:12:26
+End Time: 2025-11-20 14:23:43
+Duration: 0:11:17.068721
+
+PROCESSING SUMMARY
+--------------------------------------------------------------------------------
+Total stocks attempted: 500
+Forecasts completed: 494 (98.8%)
+Evaluations completed: 494 (98.8%)
+Failed: 6 (1.2%)
+
+FORECAST ACCURACY METRICS
+--------------------------------------------------------------------------------
+Number of evaluated stocks: 494
+
+Overall Average sMAPE: 31.62%
+Overall Median sMAPE: 30.77%
+Income Statement Avg sMAPE: 33.77%
+Balance Sheet Avg sMAPE: 29.73%
+
+sMAPE DISTRIBUTION
+--------------------------------------------------------------------------------
+Minimum: 4.24% (V)
+25th percentile: 21.02%
+Median: 30.77%
+75th percentile: 40.61%
+Maximum: 88.94% (SW)
+
+TOP 20 MOST ACCURATE FORECASTS
+--------------------------------------------------------------------------------
+ 1. V      - Overall:   4.24%, IS:   3.13%, BS:   4.98%
+ 2. TRV    - Overall:   4.53%, IS:   1.94%, BS:   5.83%
+ 3. PNC    - Overall:   5.42%, IS:   3.34%, BS:   6.47%
+ 4. AMP    - Overall:   6.69%, IS:   5.27%, BS:   7.54%
+ 5. PG     - Overall:   6.92%, IS:   8.50%, BS:   5.82%
+ 6. AMZN   - Overall:   7.06%, IS:   4.54%, BS:   8.50%
+ 7. SYF    - Overall:   8.14%, IS:   8.68%, BS:   7.78%
+ 8. PGR    - Overall:   8.16%, IS:   9.37%, BS:   7.68%
+ 9. REGN   - Overall:   8.33%, IS:   2.99%, BS:  11.39%
+10. PEP    - Overall:   8.41%, IS:   8.34%, BS:   8.46%
+11. MTCH   - Overall:   8.44%, IS:   7.20%, BS:   9.26%
+12. CHTR   - Overall:   9.19%, IS:  12.74%, BS:   6.09%
+13. ITW    - Overall:   9.39%, IS:   7.98%, BS:  10.38%
+14. NOC    - Overall:   9.42%, IS:   5.77%, BS:  11.51%
+15. CTSH   - Overall:   9.49%, IS:  11.25%, BS:   7.95%
+16. CPT    - Overall:   9.51%, IS:   6.68%, BS:  11.21%
+17. EQIX   - Overall:   9.73%, IS:   6.19%, BS:  12.82%
+18. MKC    - Overall:   9.89%, IS:  11.84%, BS:   8.53%
+19. KMB    - Overall:   9.90%, IS:  12.61%, BS:   8.00%
+20. HIG    - Overall:  10.07%, IS:  15.01%, BS:   6.55%
+
+BOTTOM 20 LEAST ACCURATE FORECASTS
+--------------------------------------------------------------------------------
+ 1. SW     - Overall:  88.94%, IS:  68.08%, BS: 103.55%
+ 2. MS     - Overall:  85.61%, IS: 104.14%, BS:  71.71%
+ 3. TTWO   - Overall:  84.27%, IS: 111.63%, BS:  60.33%
+ 4. MU     - Overall:  82.94%, IS:  99.37%, BS:  71.45%
+ 5. EQT    - Overall:  80.43%, IS: 103.17%, BS:  60.54%
+ 6. AVGO   - Overall:  75.53%, IS:  79.43%, BS:  72.80%
+ 7. BK     - Overall:  71.76%, IS:  92.69%, BS:  56.06%
+ 8. MMM    - Overall:  70.13%, IS:  85.99%, BS:  59.03%
+ 9. MRNA   - Overall:  69.18%, IS: 100.16%, BS:  47.49%
+10. LYV    - Overall:  67.95%, IS:  82.45%, BS:  57.79%
+11. NCLH   - Overall:  66.48%, IS:  71.69%, BS:  62.84%
+12. SCHW   - Overall:  66.21%, IS:  80.81%, BS:  55.26%
+13. GS     - Overall:  63.43%, IS:  78.35%, BS:  52.24%
+14. NVDA   - Overall:  62.75%, IS:  74.21%, BS:  54.73%
+15. SMCI   - Overall:  62.59%, IS:  48.04%, BS:  72.78%
+16. AMTM   - Overall:  61.78%, IS:  69.48%, BS:  55.03%
+17. PFE    - Overall:  61.56%, IS:  68.56%, BS:  56.65%
+18. WYNN   - Overall:  61.38%, IS:  56.32%, BS:  64.92%
+19. PEG    - Overall:  60.10%, IS:  55.57%, BS:  64.63%
+20. ALB    - Overall:  60.00%, IS:  72.12%, BS:  51.52%
+
+FAILED STOCKS
+--------------------------------------------------------------------------------
+DFS: Missing financial statements from Yahoo Finance.
+WBA: Missing financial statements from Yahoo Finance.
+PARA: Missing financial statements from Yahoo Finance.
+ANSS: Missing financial statements from Yahoo Finance.
+HES: Missing financial statements from Yahoo Finance.
+JNPR: Missing financial statements from Yahoo Finance.
