@@ -1,0 +1,34 @@
+{
+  "ticker": "DOW",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue experienced a significant decline of -21.58% from 2022 ($56,902,000,000) to 2023 ($44,622,000,000). Profitability metrics, including Gross Profit (-42.99%) and Net Income (-87.14%), plummeted, indicating severe margin compression (Gross Margin fell from 15.05% in 2022 to 10.94% in 2023). Operating expenses were relatively stable, decreasing by -2.86%. On the balance sheet, Total Assets decreased by -4.35%, Current Assets by -13.98%, and Cash by -23.13%. Total Liabilities decreased modestly by -1.26%, and Current Liabilities by -12.13%. Equity declined by -10.20%. Cash flow generation also deteriorated, with Operating Cash Flow down -30.49% and Free Cash Flow down -49.81%. Capital expenditures (Capex) increased in absolute terms (became more negative) by 20.36%. Overall, the period from 2022 to 2023 shows a significant downturn across all key financial metrics for DOW.",
+      "growth_assumptions": "For 2024, a conservative approach is taken, assuming a stabilization and modest recovery from the sharp 2023 downturn. Revenue is estimated to grow by +3%, reflecting a bottoming out. Gross margin is projected to improve from 10.94% (2023) to 11.8% in 2024, indicating slight operational efficiency gains. Operating expenses are assumed to increase modestly by +1%, reflecting cost control efforts while supporting modest revenue growth. Net income is forecasted by assuming a slight recovery in the Net Income to Operating Income ratio from 28.05% (2023) to 35%, indicating some normalization of non-operating items or tax rates. Total Assets are assumed to continue a slight decline at a slower rate of -1%, reflecting ongoing asset optimization. Cash and Current Assets are also projected to decrease at slower rates of -5% and -3% respectively, as the company manages working capital amidst recovery. Total Liabilities and Current Liabilities are assumed to decrease by -1% and -5% respectively, consistent with overall balance sheet deleveraging. Operating Cash Flow is expected to recover significantly from the 2023 low, estimated at $6,000,000,000, reflecting improved operating income. Capex is assumed to increase slightly in absolute terms by +5%, indicating continued investment in the business.",
+      "key_insights": "The forecast is heavily influenced by the sharp decline observed from 2022 to 2023. The absence of 2021 data limits the robustness of multi-year trend analysis, making the forecast more reliant on the single 2022-2023 change and conservative assumptions. Profitability margins are expected to improve from 2023 lows but remain below 2022 levels. Balance sheet items are generally expected to stabilize or continue a slight downward trend, with equity increasing due to positive net income. Cash flow generation is expected to improve significantly from 2023, supporting future operations and investments."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 45951000000,
+        "cogs": 40529000000,
+        "gross_profit": 5422000000,
+        "operating_expense": 2808000000,
+        "operating_income": 2614000000,
+        "net_income": 915000000
+      },
+      "balance_sheet": {
+        "total_assets": 57387000000,
+        "current_assets": 17086000000,
+        "cash": 2838000000,
+        "total_liabilities": 3847000000,
+        "current_liabilities": 9459000000,
+        "equity": 18917000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 6000000000,
+        "capex": -2601000000,
+        "free_cash_flow": 3399000000
+      }
+    }
+  }
+}

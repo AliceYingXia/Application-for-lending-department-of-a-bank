@@ -1,0 +1,34 @@
+{
+  "ticker": "CBOE",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue showed volatility with a dip in 2023, while Net Income recovered strongly. Assets grew consistently, and Equity rebounded significantly in 2023.",
+      "growth_assumptions": "Forecast assumes modest revenue growth (2%), a strong but slightly normalized net income margin (19%), and continued asset growth (5%).",
+      "key_insights": "CBOE's profitability is highly variable, but 2023 demonstrated strong earnings recovery, which is expected to moderate slightly in 2024 while maintaining robust levels."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 3849000000,
+        "cogs": 0,
+        "gross_profit": 3849000000,
+        "operating_expense": 2912000000,
+        "operating_income": 937000000,
+        "net_income": 731000000
+      },
+      "balance_sheet": {
+        "total_assets": 7862000000,
+        "current_assets": 2752000000,
+        "cash": 495000000,
+        "total_liabilities": 3538000000,
+        "current_liabilities": 1592000000,
+        "equity": 4324000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 950000000,
+        "capex": 154000000,
+        "free_cash_flow": 796000000
+      }
+    }
+  }
+}

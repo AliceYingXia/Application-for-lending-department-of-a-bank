@@ -1,0 +1,29 @@
+{
+  "ticker": "HRL",
+  "status": "success",
+  "forecast": {
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 11761214000,
+        "cogs": 0,
+        "gross_profit": 0,
+        "operating_expense": 0,
+        "operating_income": 0,
+        "net_income": 587157000
+      },
+      "balance_sheet": {
+        "total_assets": 13590625000,
+        "current_assets": 0,
+        "cash": 0,
+        "total_liabilities": 5656139000,
+        "current_liabilities": 0,
+        "equity": 7934486000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 0,
+        "capex": 0,
+        "free_cash_flow": 0
+      }
+    }
+  }
+}

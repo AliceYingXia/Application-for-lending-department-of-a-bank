@@ -1,0 +1,34 @@
+{
+  "ticker": "PGR",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue and Assets showed strong growth, particularly in 2023. Net Income was volatile but recovered significantly in 2023.",
+      "growth_assumptions": "Revenue growth assumed at 15%, Net Income margin at 6.3%, Assets growth at 12%, and Liabilities growth at 14% for 2024.",
+      "key_insights": "PGR's strong 2023 recovery suggests continued robust performance in 2024, with growth rates moderated slightly from peak levels for sustainability."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 71395450000,
+        "cogs": 0,
+        "gross_profit": 0,
+        "operating_expense": 0,
+        "operating_income": 0,
+        "net_income": 4500913350
+      },
+      "balance_sheet": {
+        "total_assets": 99333920000,
+        "current_assets": 0,
+        "cash": 0,
+        "total_liabilities": 77991960000,
+        "current_liabilities": 0,
+        "equity": 21341960000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 0,
+        "capex": 0,
+        "free_cash_flow": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ticker": "EQT",
+  "status": "success",
+  "forecast": {
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 5800000000,
+        "cogs": 2610000000,
+        "gross_profit": 3190000000,
+        "operating_expense": 1290000000,
+        "operating_income": 1900000000,
+        "net_income": 1700000000
+      },
+      "balance_sheet": {
+        "total_assets": null,
+        "current_assets": null,
+        "cash": null,
+        "total_liabilities": null,
+        "current_liabilities": null,
+        "equity": null
+      },
+      "cash_flow": {
+        "operating_cash_flow": null,
+        "capex": null,
+        "free_cash_flow": null
+      }
+    }
+  }
+}

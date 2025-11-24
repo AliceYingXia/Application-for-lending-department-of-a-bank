@@ -1,0 +1,34 @@
+{
+  "ticker": "HIG",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue showed strong growth in 2023 (11.33%) after a slow 2022 (0.95%). Operating Income and Net Income were highly volatile, with significant drops in 2022 followed by strong recoveries in 2023. Operating margin recovered to 13.51% and Net Income margin to 10.29% in 2023. Total Assets declined in 2022 but recovered in 2023 (5.17%), returning to 2021 levels. Cash balance was extremely volatile, dropping significantly in 2023 (-44.98%). Total Liabilities showed consistent, moderate growth (1.02% in 2022, 3.58% in 2023). Equity was volatile, recovering in 2023 (12.07%) after a sharp decline. Operating Cash Flow was relatively stable, with a slight dip in 2022 and a solid increase in 2023 (5.29%). Capex consistently increased year-over-year (31.58% in 2022, 22.86% in 2023). Free Cash Flow followed the OCF trend, recovering in 2023. Historical COGS, Gross Profit, Operating Expense (split), Current Assets, and Current Liabilities were not provided, requiring assumptions for these specific line items.",
+      "growth_assumptions": "Revenue is forecasted to grow by 7.5%, balancing the strong 2023 performance with the slower 2022. Operating Income is projected based on an operating margin of 13.7%, a slight improvement over 2023's 13.51%. Net Income is projected based on a net income margin of 10.5%, a slight improvement over 2023's 10.29%. Total Operating Expenses (including COGS) are derived as 86.27% of revenue to achieve the target operating income. Due to the lack of historical breakdown for an insurance company, COGS is estimated at 70% and Operating Expense at 30% of total operating expenses. Total Assets are forecasted to grow by 4%, a moderate increase following the 2023 recovery. Total Liabilities are forecasted to grow by 3.5%, consistent with the historical trend. Equity is derived from Total Assets minus Total Liabilities. Cash is estimated at $150,000,000, acknowledging its historical volatility. Current Assets and Current Liabilities are estimated as 10% of Total Assets and 20% of Total Liabilities, respectively, due to the absence of historical data. Operating Cash Flow is forecasted to grow by 4%, a slightly more conservative rate than 2023's growth. Capex is forecasted to increase by 12%, continuing the historical trend of rising capital expenditures. Free Cash Flow is calculated as Operating Cash Flow plus Capex.",
+      "key_insights": "HIG demonstrated a strong recovery in 2023 across key financial metrics after a challenging 2022. Profitability margins are expected to slightly improve, reflecting continued operational efficiency. The cash balance remains highly unpredictable and represents a small portion of total assets. The forecast for COGS, Gross Profit, Operating Expense, Current Assets, and Current Liabilities relies on significant assumptions due to the absence of specific historical data for these line items. The arbitrary split of total operating expenses into COGS and Operating Expense is particularly speculative."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 26150000000,
+        "cogs": 15793000000,
+        "gross_profit": 10357000000,
+        "operating_expense": 6768000000,
+        "operating_income": 3589000000,
+        "net_income": 2746000000
+      },
+      "balance_sheet": {
+        "total_assets": 79851000000,
+        "current_assets": 7985000000,
+        "cash": 150000000,
+        "total_liabilities": 63594000000,
+        "current_liabilities": 12719000000,
+        "equity": 16257000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 4389000000,
+        "capex": -241000000,
+        "free_cash_flow": 4148000000
+      }
+    }
+  }
+}

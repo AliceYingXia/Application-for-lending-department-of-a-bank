@@ -1,0 +1,85 @@
+test_bounded_0_to_200 (__main__.TestSMAPE)
+sMAPE is always in [0, 200]. ... ok
+test_known_value (__main__.TestSMAPE)
+smape(150, 100) = |50| / (0.5*(150+100)) * 100 = 50/125*100 = 40%. ... ok
+test_large_values_amzn_revenue (__main__.TestSMAPE)
+AMZN revenue: forecast ~637.80 B vs actual 637.96 B → < 0.03%. ... ok
+test_mean_smape_gemini_vs_traditional (__main__.TestSMAPE)
+Mean sMAPE for Gemini (43.46%) > Traditional (36.53%) on 50 companies. ... ok
+test_mean_smape_raises_on_empty (__main__.TestSMAPE) ... ok
+test_mean_smape_raises_on_mismatch (__main__.TestSMAPE) ... ok
+test_perfect_forecast (__main__.TestSMAPE)
+A forecast equal to actual gives sMAPE = 0. ... ok
+test_symmetry (__main__.TestSMAPE)
+sMAPE must be symmetric: smape(f, a) == smape(a, f). ... ok
+test_zero_actual_zero_forecast (__main__.TestSMAPE)
+Both zero → sMAPE = 0 (no division by zero). ... ok
+test_config_a_nothink_t0_cv_zero (__main__.TestCoefficientOfVariation)
+Config A (NoThink, T=0.0): all 10 runs byte-identical → CV = 0%. ... ok
+test_config_b_nothink_t07_nonzero_cv (__main__.TestCoefficientOfVariation)
+Config B (NoThink, T=0.7): non-zero CV across runs. ... ok
+test_identical_values_cv_zero (__main__.TestCoefficientOfVariation)
+If all runs return the same value, CV must be 0%. ... ok
+test_known_cv (__main__.TestCoefficientOfVariation)
+CV of [100, 110, 90] = stdev/mean*100 ≈ 10%. ... ok
+test_single_value_returns_zero (__main__.TestCoefficientOfVariation)
+Single sample → CV = 0 (no stdev defined, treat as zero). ... ok
+test_thinking_mode_cv_higher_than_nothink_at_t0 (__main__.TestCoefficientOfVariation)
+Thinking T=0.0 should have higher CV than NoThink T=0.0 for MET. ... ok
+test_ensemble_improves_over_worst_model (__main__.TestEnsembleMethods)
+Ensemble sMAPE should be lower than the worse of the two models. ... ok
+test_ensemble_smape_reported_value (__main__.TestEnsembleMethods)
+Simple Average reported mean sMAPE = 24.14%, which should be ... ok
+test_simple_average_midpoint (__main__.TestEnsembleMethods)
+Simple average of 100 and 200 is 150. ... ok
+test_simple_average_same_inputs (__main__.TestEnsembleMethods)
+If both models agree, ensemble equals that value. ... ok
+test_weighted_30_70 (__main__.TestEnsembleMethods)
+30% LLM + 70% Traditional on known values. ... ok
+test_weighted_equal_weight_is_simple_average (__main__.TestEnsembleMethods)
+weighted_ensemble with 0.5/0.5 equals simple_average_ensemble. ... ok
+test_weights_sum_to_one (__main__.TestEnsembleMethods)
+Ensemble weights must sum to 1.0. ... ok
+test_all_values_numeric (__main__.TestForecastSchema) ... ok
+test_assets_equals_liabilities_plus_equity (__main__.TestForecastSchema)
+Accounting identity: Assets = Liabilities + Equity (approximate). ... ok
+test_income_statement_keys_present (__main__.TestForecastSchema) ... ok
+test_missing_top_key_detected (__main__.TestForecastSchema) ... ok
+test_total_assets_gte_equity (__main__.TestForecastSchema)
+Assets >= equity is always true for a solvent company. ... ok
+test_valid_forecast_passes (__main__.TestForecastSchema) ... ok
+test_head_to_head_near_parity (__main__.TestStatisticalTests)
+Gemini wins 26/50 (52%), Traditional wins 24/50 (48%). ... ok
+test_p_value_not_significant (__main__.TestStatisticalTests)
+Reported p=0.2604 from paired t-test (Gemini vs Traditional, n=50). ... ok
+test_sample_size_is_50 (__main__.TestStatisticalTests)
+Experiment must use exactly 50 S&P 500 companies. ... ok
+test_config_a_achieves_zero_cv_all_stocks (__main__.TestThinkingModeExperiment)
+Config A (NoThink T=0.0) has CV=0% on all three stocks. ... ok
+test_config_a_amzn_revenue_smape (__main__.TestThinkingModeExperiment)
+Config A (NoThink T=0.0): AMZN revenue sMAPE reported as 0.24%. ... ok
+test_config_b_best_accuracy (__main__.TestThinkingModeExperiment)
+Config B (NoThink T=0.7) has lowest average sMAPE (9.10%) ... ok
+test_revenue_cv_always_low (__main__.TestThinkingModeExperiment)
+Revenue CV is < 0.5% across ALL stocks and ALL configs. ... ok
+test_thinking_cv_exceeds_nothink_cv (__main__.TestThinkingModeExperiment)
+Config C (Think T=0.0) CV > Config A (NoThink T=0.0) CV. ... ok
+test_thinking_latency_10x_higher (__main__.TestThinkingModeExperiment)
+Thinking mode increases latency from ~2s to ~20.6s (≈10×). ... ok
+test_thinking_worsens_amzn_net_income (__main__.TestThinkingModeExperiment)
+Config C (Think T=0.0) net-income sMAPE (24.95%) > ... ok
+test_token_limit_impact_on_success_rate (__main__.TestThinkingModeExperiment)
+4096 tokens → 60% success; 8192 tokens → 88.3% success. ... ok
+test_total_forecast_count (__main__.TestThinkingModeExperiment)
+4 configs × 3 stocks × 10 runs = 120 total forecasts. ... ok
+test_all_expected_csv_files_exist (__main__.TestResultFileIntegrity) ... ok
+test_csv_files_non_empty (__main__.TestResultFileIntegrity) ... ok
+test_gemini_evaluation_has_ticker_column (__main__.TestResultFileIntegrity) ... ok
+test_model_comparison_has_smape_columns (__main__.TestResultFileIntegrity) ... ok
+test_results_directory_exists (__main__.TestResultFileIntegrity) ... ok
+test_thinking_summary_has_four_configs (__main__.TestResultFileIntegrity) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 0.002s
+
+OK

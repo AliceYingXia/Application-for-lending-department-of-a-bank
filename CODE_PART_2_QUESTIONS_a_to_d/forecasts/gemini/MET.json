@@ -1,0 +1,29 @@
+{
+  "ticker": "MET",
+  "status": "success",
+  "forecast": {
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 69880500000,
+        "cogs": 0,
+        "gross_profit": 0,
+        "operating_expense": 0,
+        "operating_income": 0,
+        "net_income": -1060500000
+      },
+      "balance_sheet": {
+        "total_assets": 0,
+        "current_assets": 0,
+        "cash": 0,
+        "total_liabilities": 0,
+        "current_liabilities": 0,
+        "equity": 0
+      },
+      "cash_flow": {
+        "operating_cash_flow": 0,
+        "capex": 0,
+        "free_cash_flow": 0
+      }
+    }
+  }
+}

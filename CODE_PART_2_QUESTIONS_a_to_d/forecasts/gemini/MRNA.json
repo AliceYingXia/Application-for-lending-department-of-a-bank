@@ -1,0 +1,34 @@
+{
+  "ticker": "MRNA",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "MRNA's financials peaked in 2021-2022 due to COVID-19 vaccine sales, followed by a sharp decline and significant net loss in 2023 as demand normalized.",
+      "growth_assumptions": "For 2024, we assume a stabilization of revenue from the 2023 low, with continued efforts to reduce operating expenses, leading to a reduced but still negative net income.",
+      "key_insights": "The company is navigating a post-pandemic transition, focusing on cost management and pipeline development to establish a new, sustainable revenue base."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 7500000000,
+        "cogs": 2625000000,
+        "gross_profit": 4875000000,
+        "operating_expense": 7375000000,
+        "operating_income": -2500000000,
+        "net_income": -2500000000
+      },
+      "balance_sheet": {
+        "total_assets": 17500000000,
+        "current_assets": 10500000000,
+        "cash": 5250000000,
+        "total_liabilities": 6000000000,
+        "current_liabilities": 3000000000,
+        "equity": 11500000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": -1500000000,
+        "capex": -500000000,
+        "free_cash_flow": -2000000000
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "ticker": "MS",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue stabilized in 2023 after a 2022 dip, while Net Income and its margin consistently declined. Assets remained stable, and Equity saw a steady decline.",
+      "growth_assumptions": "Revenue growth of 1%, Net Income margin decline of 4.36 percentage points, Assets growth of 0.5%, and Equity decline of 3.07%.",
+      "key_insights": "MS faces ongoing profitability challenges despite revenue stabilization, suggesting operational pressures."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 51174000000,
+        "cogs": 0,
+        "gross_profit": 0,
+        "operating_expense": 0,
+        "operating_income": 0,
+        "net_income": 6943000000
+      },
+      "balance_sheet": {
+        "total_assets": 1199661000000,
+        "current_assets": 0,
+        "cash": 0,
+        "total_liabilities": 0,
+        "current_liabilities": 0,
+        "equity": 96001000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 0,
+        "capex": 0,
+        "free_cash_flow": 0
+      }
+    }
+  }
+}

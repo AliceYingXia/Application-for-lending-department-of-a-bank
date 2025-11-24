@@ -1,0 +1,29 @@
+
+ENSEMBLE MODEL EXPERIMENT REPORT
+======================================================================
+
+Research Question:
+  Can combining Traditional Policy-Based Model + Gemini LLM create an
+  ensemble that outperforms individual models for balance sheet forecasts?
+
+Dataset: 50 S&P 500 companies with complete data
+Target: Balance Sheet Forecasts for 2024
+
+RESULTS:
+  Best Ensemble Method: Simple Average (50/50)
+  Best Ensemble Mean sMAPE: 24.14%
+
+  Gemini Individual:      nan%
+  Traditional Individual: nan%
+
+  Improvement vs Gemini:      +nan%
+  Improvement vs Traditional: +nan%
+
+CONCLUSION:
+  Individual models are sufficient; ensemble does not improve performance.
+
+RECOMMENDATION:
+  Use the Gemini model for balance sheet forecasts.
+
+======================================================================
+Generated: 2026-02-16 13:58:00

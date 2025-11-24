@@ -1,0 +1,34 @@
+{
+  "ticker": "CNC",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue growth decelerated from 14.74% in 2022 to 6.54% in 2023. COGS consistently represented around 88.7% of revenue, leading to a stable Gross Profit Margin of 11.2-11.5%. Operating Expense as a percentage of revenue was stable around 9%. Operating Income growth was volatile, with a decline in 2023. Net Income showed significant volatility, with a large increase in 2023 after a decline in 2022, suggesting potential non-operating factors. Operating Cash Flow demonstrated strong and consistent growth (28-49% annually). Capex fluctuated but remained negative, indicating ongoing investments. Free Cash Flow mirrored OCF's strong growth. On the balance sheet, Current Assets and Cash showed substantial growth in 2023, while Total Assets and Liabilities also grew, albeit at a slower pace. Equity fluctuated but rebounded in 2023.",
+      "growth_assumptions": "For 2024, Revenue is assumed to grow by a conservative 5%, reflecting the recent deceleration. COGS is maintained at 88.66% of revenue (historical average). Operating Expense is maintained at 8.90% of revenue (historical average). Net Income is forecasted at 1.5% of revenue, a conservative estimate given its historical volatility and the high 2023 margin, aiming for a moderate improvement over 2022. Total Assets are assumed to grow by 7%, a moderate increase after the 2023 rebound. Current Assets are assumed to grow by 10%, moderating from the high 2023 growth but still reflecting operational expansion. Cash is assumed to grow by 15%, moderating from the high 2023 growth but reflecting continued strong cash generation. Total Liabilities are assumed to grow by 8%, slightly lower than 2023 but consistent with asset growth. Current Liabilities are assumed to grow by 12%, moderating from 2023 but reflecting operational needs. Operating Cash Flow is assumed to grow by 20%, reflecting continued strong performance but a deceleration from prior years. Capex is estimated at -950,000,000, a slight increase in investment compared to 2023. Equity is calculated as Total Assets minus Total Liabilities to ensure balance sheet reconciliation.",
+      "key_insights": "The company demonstrates strong operational cash flow generation, which is a positive trend. Revenue growth is decelerating, suggesting a maturing market or increased competition. Profitability (Net Income Margin) is volatile, indicating potential non-recurring items or significant changes in interest/tax expenses; the forecast assumes a more normalized, albeit improved, margin. Working capital management (Current Assets, Current Liabilities, Cash) saw significant changes in 2023, which are moderated in the 2024 forecast to reflect sustainable trends. The forecast maintains historical relationships for COGS and Operating Expense as a percentage of revenue, ensuring consistency. Balance sheet items are forecasted with moderate growth rates, and the accounting equation (Assets = Liabilities + Equity) is maintained."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 161699000000,
+        "cogs": 143399000000,
+        "gross_profit": 18300000000,
+        "operating_expense": 14389000000,
+        "operating_income": 3911000000,
+        "net_income": 2425000000
+      },
+      "balance_sheet": {
+        "total_assets": 90566000000,
+        "current_assets": 44832000000,
+        "cash": 19772000000,
+        "total_liabilities": 63380000000,
+        "current_liabilities": 41122000000,
+        "equity": 27186000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 9664000000,
+        "capex": -950000000,
+        "free_cash_flow": 8714000000
+      }
+    }
+  }
+}

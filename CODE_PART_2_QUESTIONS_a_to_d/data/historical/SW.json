@@ -1,0 +1,71 @@
+{
+  "2021": {
+    "income_statement": {
+      "revenue": 11443354996.490116,
+      "cogs": 7942528475.351555,
+      "gross_profit": 3500826521.138561,
+      "operating_expense": 2285953669.527411,
+      "operating_income": 1214872851.61115,
+      "net_income": 768777880.935667
+    },
+    "balance_sheet": {
+      "total_assets": 13254908176.898169,
+      "current_assets": 4623989492.991554,
+      "cash": 983899821.109123,
+      "total_liabilities": 8282194696.678064,
+      "current_liabilities": 3200788025.633478,
+      "equity": 4957994610.629288
+    },
+    "cash_flow": {
+      "operating_cash_flow": 1116369647.426462,
+      "capex": -696315753.719345,
+      "free_cash_flow": 420053893.707117
+    }
+  },
+  "2022": {
+    "income_statement": {
+      "revenue": 13509000000.0,
+      "cogs": 10237000000.0,
+      "gross_profit": 3272000000.0,
+      "operating_expense": 1543000000.0,
+      "operating_income": 1729000000.0,
+      "net_income": 1034000000.0
+    },
+    "balance_sheet": {
+      "total_assets": 13385666334.223423,
+      "current_assets": 4835440594.537207,
+      "cash": 833252903.516392,
+      "total_liabilities": 7982927430.857167,
+      "current_liabilities": 3246147411.768491,
+      "equity": 5388797735.096355
+    },
+    "cash_flow": {
+      "operating_cash_flow": 1433000000.0,
+      "capex": -930000000.0,
+      "free_cash_flow": 503000000.0
+    }
+  },
+  "2023": {
+    "income_statement": {
+      "revenue": 12093000000.0,
+      "cogs": 9039000000.0,
+      "gross_profit": 3054000000.0,
+      "operating_expense": 1604000000.0,
+      "operating_income": 1450000000.0,
+      "net_income": 825000000.0
+    },
+    "balance_sheet": {
+      "total_assets": 14051000000.0,
+      "current_assets": 4570000000.0,
+      "cash": 1000000000.0,
+      "total_liabilities": 7877000000.0,
+      "current_liabilities": 3006000000.0,
+      "equity": 6158000000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": 1559000000.0,
+      "capex": -929000000.0,
+      "free_cash_flow": 630000000.0
+    }
+  }
+}

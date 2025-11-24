@@ -1,0 +1,34 @@
+{
+  "ticker": "AMTM",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue showed slow but positive growth (2.46% in 2023). Gross Profit Margin slightly declined from 10.04% in 2022 to 9.94% in 2023. Operating Expenses remained stable as a percentage of revenue (around 7.57%). Operating Income slightly declined (-2.09% growth). Net Income significantly deteriorated, with the net loss increasing by 273.8% from 2022 to 2023. Total Assets and Total Liabilities experienced massive, unsustainable growth (52% and 552% respectively) in 2023, while Equity plummeted by 88.5%. This indicates a significant shift in capital structure, likely heavy debt financing to cover losses or fund asset expansion. Operating Cash Flow and Free Cash Flow both declined significantly (46.8% and 49.1% respectively). Capex became less negative, indicating reduced capital expenditure.",
+      "growth_assumptions": "For 2024, Revenue is assumed to grow at a conservative 2.0%, slightly below the historical 2.46% due to overall declining profitability. Gross Margin is forecasted to slightly decline to 9.8% from 9.94%, continuing the historical trend. Operating Expense is maintained at 7.57% of revenue, consistent with historical stability. Net Income Margin is assumed to further slightly deteriorate to -4.2% from -3.99%, reflecting the negative trend but not the extreme 2023 jump. Operating Cash Flow is forecasted to be 0.8% of revenue, a slight decline from 0.85% in 2023, reflecting the downward trend. Capex is assumed to be -15,000,000, a moderate increase in spending compared to 2023 but still below 2022. Total Liabilities are assumed to grow at a moderate 10%, recognizing the unsustainability of the 2023 surge but acknowledging continued reliance on debt. Cash is assumed to grow by 10%, a more conservative rate than 2023's 47% but still positive. Current Assets are assumed to be 30% of Total Assets, a slight continuation of the 2023 trend. Current Liabilities are assumed to be 23% of Total Liabilities, consistent with the 2023 ratio. Equity is calculated as 2023 Equity plus 2024 Net Income. Total Assets are calculated as the sum of Total Liabilities and Equity to ensure the balance sheet balances.",
+      "key_insights": "AMTM is experiencing slow revenue growth coupled with declining profitability and cash flow. The company underwent a significant capital structure change in 2023, with massive increases in liabilities and a sharp decline in equity, likely due to substantial losses and debt financing. The forecast assumes a continuation of these trends, with slow revenue growth, persistent net losses, and declining cash generation. Balance sheet forecasting is challenging due to the extreme shifts in 2023; conservative, ratio-based assumptions were used, with Total Assets as the balancing item to maintain accounting relationships."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 8022000000,
+        "cogs": 7236000000,
+        "gross_profit": 786000000,
+        "operating_expense": 607000000,
+        "operating_income": 179000000,
+        "net_income": -337000000
+      },
+      "balance_sheet": {
+        "total_assets": 6635000000,
+        "current_assets": 1991000000,
+        "cash": 336000000,
+        "total_liabilities": 6597000000,
+        "current_liabilities": 1517000000,
+        "equity": 38000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 64000000,
+        "capex": -15000000,
+        "free_cash_flow": 49000000
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "2021": {
+    "income_statement": {
+      "revenue": 287597000000.0,
+      "cogs": 217945000000.0,
+      "gross_profit": 69652000000.0,
+      "operating_expense": 45682000000.0,
+      "operating_income": 23970000000.0,
+      "net_income": 17285000000.0
+    },
+    "balance_sheet": {
+      "total_assets": 212206000000.0,
+      "current_assets": 61758000000.0,
+      "cash": 21375000000.0,
+      "total_liabilities": 135727000000.0,
+      "current_liabilities": 78292000000.0,
+      "equity": 71760000000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": 22343000000.0,
+      "capex": -2454000000.0,
+      "free_cash_flow": 19889000000.0
+    }
+  },
+  "2022": {
+    "income_statement": {
+      "revenue": 324162000000.0,
+      "cogs": 244545000000.0,
+      "gross_profit": 79617000000.0,
+      "operating_expense": 51182000000.0,
+      "operating_income": 28435000000.0,
+      "net_income": 20120000000.0
+    },
+    "balance_sheet": {
+      "total_assets": 245705000000.0,
+      "current_assets": 69069000000.0,
+      "cash": 23365000000.0,
+      "total_liabilities": 159358000000.0,
+      "current_liabilities": 89237000000.0,
+      "equity": 77772000000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": 26206000000.0,
+      "capex": -2802000000.0,
+      "free_cash_flow": 23404000000.0
+    }
+  },
+  "2023": {
+    "income_statement": {
+      "revenue": 371622000000.0,
+      "cogs": 280664000000.0,
+      "gross_profit": 90958000000.0,
+      "operating_expense": 58600000000.0,
+      "operating_income": 32358000000.0,
+      "net_income": 22381000000.0
+    },
+    "balance_sheet": {
+      "total_assets": 273720000000.0,
+      "current_assets": 78437000000.0,
+      "cash": 25427000000.0,
+      "total_liabilities": 174801000000.0,
+      "current_liabilities": 99054000000.0,
+      "equity": 88756000000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": 29068000000.0,
+      "capex": -3386000000.0,
+      "free_cash_flow": 25682000000.0
+    }
+  }
+}

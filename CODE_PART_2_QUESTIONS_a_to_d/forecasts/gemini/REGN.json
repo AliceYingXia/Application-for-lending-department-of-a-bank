@@ -1,0 +1,34 @@
+{
+  "ticker": "REGN",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Historical data from 2022 to 2023 shows the following trends:\n- Revenue grew by 7.76%.\n- COGS grew significantly faster at 16.37%, leading to a decrease in Gross Margin from 87.18% to 86.16%.\n- Operating Expense grew even faster at 23.50%, causing Operating Expense as a % of Revenue to jump from 48.25% to 55.30%.\n- Consequently, Operating Income declined by 14.60%, and Operating Margin dropped from 38.93% to 30.85%.\n- Net Income also decreased by 8.87%, with Net Income Margin falling from 35.64% to 30.14%.\n- Total Assets increased by 13.26%, and Current Assets by 22.63%.\n- Cash, however, decreased by 12.10%.\n- Total Liabilities grew by 8.50%, and Current Liabilities by 8.98%.\n- Equity increased by 14.69%.\n- Operating Cash Flow decreased by 8.39%.\n- Capex significantly reduced from -$1,616.9M to -$926.4M (a 42.60% decrease in spending).\n- Free Cash Flow increased by 7.93% due to the substantial reduction in Capex, despite the decline in Operating Cash Flow.",
+      "growth_assumptions": "Based on the observed trends, the following growth rates and ratios are estimated for 2024:\n- Revenue: A slightly conservative growth rate of 7.0% (vs. 7.76% in 2023) is assumed, reflecting continued momentum but acknowledging margin pressures.\n- COGS: Projected as 14.0% of Revenue (up from 13.84% in 2023), continuing the trend of increasing COGS as a percentage of revenue.\n- Operating Expense: Projected as 56.0% of Revenue (up from 55.30% in 2023), reflecting the continued upward pressure on operating costs.\n- Net Income: Assumed to be 97.0% of Operating Income, consistent with the 2023 ratio (97.69%).\n- Total Assets: A moderated growth rate of 10.0% (vs. 13.26% in 2023) is used.\n- Current Assets: A growth rate of 12.0% (vs. 22.63% in 2023) is assumed, moderating the high growth from the previous year.\n- Cash: A continued decline of -5.0% (vs. -12.10% in 2023) is projected, but at a slower rate.\n- Total Liabilities: A growth rate of 8.0% (vs. 8.50% in 2023) is assumed.\n- Current Liabilities: A growth rate of 8.5% (vs. 8.98% in 2023) is assumed.\n- Equity: Derived from the accounting equation (Assets - Liabilities).\n- Operating Cash Flow: A continued decline of -5.0% (vs. -8.39% in 2023) is projected, but at a slower rate.\n- Capex: Assumed to be -$1,000,000,000, representing a slight increase in spending from 2023's significantly reduced level, but still lower than 2022.",
+      "key_insights": "The primary insight is the significant pressure on profitability margins (Gross, Operating, Net) due to COGS and Operating Expenses growing faster than Revenue. While revenue continues to grow, this growth is being eroded by rising costs. Cash is declining despite overall asset growth. Free Cash Flow improved in 2023 primarily due to a sharp reduction in Capex, which is not expected to continue at the same rate of reduction. The forecast maintains these trends conservatively, ensuring accounting relationships hold."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 14035404000,
+        "cogs": 1964957000,
+        "gross_profit": 12070447000,
+        "operating_expense": 7859826000,
+        "operating_income": 4210621000,
+        "net_income": 4084203000
+      },
+      "balance_sheet": {
+        "total_assets": 36388220000,
+        "current_assets": 21816704000,
+        "cash": 2593500000,
+        "total_liabilities": 7675668000,
+        "current_liabilities": 3714759000,
+        "equity": 28712552000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 4364300000,
+        "capex": -1000000000,
+        "free_cash_flow": 3364300000
+      }
+    }
+  }
+}

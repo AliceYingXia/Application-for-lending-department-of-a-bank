@@ -1,0 +1,34 @@
+{
+  "ticker": "AMP",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue has shown consistent positive growth, accelerating from 6.58% in 2022 to 8.95% in 2023. Operating Income and Net Income, however, have experienced significant declines year-over-year, with operating income falling by -5.70% in 2022 and -13.83% in 2023, and net income declining by -7.79% and -18.83% respectively. This indicates a clear trend of shrinking profitability margins. Total Assets and Total Liabilities exhibited volatility, decreasing in 2022 before recovering in 2023 to levels similar to 2021. Equity also showed high volatility, with a substantial drop in 2022 followed by a strong rebound in 2023. Operating Cash Flow and Free Cash Flow demonstrated robust growth from 2021 to 2022 (32.56% and 31.82% respectively), which then moderated to 6.31% and 6.53% in 2023. Capital expenditures (Capex) increased significantly from 2021 to 2022 and then stabilized in 2023.",
+      "growth_assumptions": "For 2024, Revenue growth is conservatively estimated at 7.5%, a slight moderation from 2023's 8.95% but still reflecting positive momentum. Operating Income and Net Income are projected based on a continued decline in profitability margins. The operating margin, which fell from 32.71% (2021) to 22.90% (2023), is assumed to further decline to 18% in 2024. Similarly, the net income margin, which dropped from 25.54% (2021) to 16.45% (2023), is assumed to reach 12.5% in 2024. Since historical COGS and Gross Profit data were not provided, a Gross Profit Margin of 80% is assumed, which is typical for a financial services company where direct costs of services are a smaller proportion of revenue. Operating Expense is then derived from Gross Profit minus Operating Income. Total Assets are projected with a modest 3% growth, reflecting stabilization after recent volatility. Cash is assumed to grow by 4%, aligning with recent trends. Equity is forecast to grow by a conservative 5%, acknowledging its historical volatility but projecting a continued recovery. Total Liabilities are derived to ensure the balance sheet equation (Assets = Liabilities + Equity) holds. Current Assets and Current Liabilities are estimated as 10% of their respective total categories, given no historical breakdown. Operating Cash Flow is assumed to grow by 6%, continuing the moderating positive trend from 2023. Capex is projected to slightly increase to $-190,000,000, reflecting the recent stabilization at higher spending levels. Free Cash Flow is calculated as Operating Cash Flow plus Capex.",
+      "key_insights": "AMP demonstrates strong top-line growth, but this is overshadowed by a persistent and accelerating decline in profitability margins (operating and net income). The balance sheet has shown significant volatility, suggesting potential rebalancing or market-driven fluctuations, but cash generation remains robust. The forecast assumes a continuation of these key trends: sustained revenue growth, further margin compression, and healthy cash flow generation. The absence of detailed historical income statement components (COGS, Gross Profit, Operating Expense) and balance sheet breakdowns (Current Assets/Liabilities) necessitated reasonable assumptions based on industry norms and overall financial health to complete the forecast."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 16696000000,
+        "cogs": 3339000000,
+        "gross_profit": 13357000000,
+        "operating_expense": 10352000000,
+        "operating_income": 3005000000,
+        "net_income": 2087000000
+      },
+      "balance_sheet": {
+        "total_assets": 180447000000,
+        "current_assets": 18045000000,
+        "cash": 7867000000,
+        "total_liabilities": 175482000000,
+        "current_liabilities": 17548000000,
+        "equity": 4965000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 4966000000,
+        "capex": -190000000,
+        "free_cash_flow": 4776000000
+      }
+    }
+  }
+}

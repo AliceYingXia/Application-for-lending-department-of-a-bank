@@ -1,0 +1,34 @@
+{
+  "ticker": "TTWO",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue and assets grew significantly in 2023, largely due to the Zynga acquisition, while net income turned negative due to associated costs. Equity also saw substantial growth.",
+      "growth_assumptions": "For 2024, revenue growth is projected at a more normalized 10%, assets at 5%, and equity at 4%. Net income is assumed to rebound to a 5% margin as acquisition impacts subside.",
+      "key_insights": "TTWO is expected to stabilize post-acquisition, returning to profitability and modest growth after a period of significant expansion and associated losses."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 5885000000,
+        "cogs": 2354000000,
+        "gross_profit": 3531000000,
+        "operating_expense": 3145000000,
+        "operating_income": 386000000,
+        "net_income": 294000000
+      },
+      "balance_sheet": {
+        "total_assets": 16655000000,
+        "current_assets": 4997000000,
+        "cash": 999000000,
+        "total_liabilities": 7251000000,
+        "current_liabilities": 2900000000,
+        "equity": 9404000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 441000000,
+        "capex": 294000000,
+        "free_cash_flow": 147000000
+      }
+    }
+  }
+}

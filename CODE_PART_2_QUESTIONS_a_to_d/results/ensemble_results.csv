@@ -1,0 +1,301 @@
+ticker,method,bs_avg_smape
+AAPL,Simple Average (50/50),27.04381834653207
+ALB,Simple Average (50/50),1.9221660594898455
+AMP,Simple Average (50/50),35.60728876207769
+AMTM,Simple Average (50/50),100.0
+AMZN,Simple Average (50/50),39.14122369541418
+AVGO,Simple Average (50/50),42.7944413322772
+BK,Simple Average (50/50),5.065833156978552
+BRO,Simple Average (50/50),0.9649771289361542
+BXP,Simple Average (50/50),29.4890227196262
+CAH,Simple Average (50/50),0.38822872280128984
+CBOE,Simple Average (50/50),2.0822786099946407
+CNC,Simple Average (50/50),0.5331127991857282
+DOV,Simple Average (50/50),12.422020501669511
+DOW,Simple Average (50/50),1.1185395248340628
+DTE,Simple Average (50/50),0.9783768566778287
+ECL,Simple Average (50/50),3.014176227212192
+EQT,Simple Average (50/50),53.53685823580244
+ETR,Simple Average (50/50),3.6042962545699204
+FTNT,Simple Average (50/50),100.0
+GL,Simple Average (50/50),3.1249450332872475
+HBAN,Simple Average (50/50),0.5180508551403983
+HIG,Simple Average (50/50),2.5227472440271237
+HRL,Simple Average (50/50),0.9486522707277881
+LYV,Simple Average (50/50),88.40744560948643
+MET,Simple Average (50/50),10.465391262971078
+MMM,Simple Average (50/50),100.0
+MRNA,Simple Average (50/50),6.372849362002423
+MS,Simple Average (50/50),10.999603507107057
+MTCH,Simple Average (50/50),100.0
+MU,Simple Average (50/50),5.2877309832431045
+NSC,Simple Average (50/50),4.4315069203629065
+PANW,Simple Average (50/50),22.536337741950565
+PEG,Simple Average (50/50),2.6765378688046177
+PEP,Simple Average (50/50),2.9853328346897863
+PG,Simple Average (50/50),2.2857638611416102
+PGR,Simple Average (50/50),41.145078123147165
+PM,Simple Average (50/50),1.0929797478073984
+PNC,Simple Average (50/50),33.82264350434601
+PSX,Simple Average (50/50),6.469519524169207
+REGN,Simple Average (50/50),34.31106507829032
+RVTY,Simple Average (50/50),4.944032643763863
+SMCI,Simple Average (50/50),28.422949327528034
+SW,Simple Average (50/50),44.68013473165909
+SYF,Simple Average (50/50),37.982689747003995
+TPR,Simple Average (50/50),8.771464765418804
+TRV,Simple Average (50/50),31.260599208592424
+TTWO,Simple Average (50/50),24.103644274414087
+UNH,Simple Average (50/50),28.366432046364142
+V,Simple Average (50/50),30.059983716331853
+VLTO,Simple Average (50/50),28.43205880688721
+AAPL,"Weighted (30% Gemini, 70% Traditional)",31.87894902560849
+ALB,"Weighted (30% Gemini, 70% Traditional)",3.548687757596763
+AMP,"Weighted (30% Gemini, 70% Traditional)",55.65314477112021
+AMTM,"Weighted (30% Gemini, 70% Traditional)",100.0
+AMZN,"Weighted (30% Gemini, 70% Traditional)",58.42423369471882
+AVGO,"Weighted (30% Gemini, 70% Traditional)",42.087648777210035
+BK,"Weighted (30% Gemini, 70% Traditional)",7.350298619210029
+BRO,"Weighted (30% Gemini, 70% Traditional)",1.8740896883425842
+BXP,"Weighted (30% Gemini, 70% Traditional)",50.74776754440782
+CAH,"Weighted (30% Gemini, 70% Traditional)",5.151052202447479
+CBOE,"Weighted (30% Gemini, 70% Traditional)",2.6950430139887493
+CNC,"Weighted (30% Gemini, 70% Traditional)",0.1624376941399847
+DOV,"Weighted (30% Gemini, 70% Traditional)",12.406618822975771
+DOW,"Weighted (30% Gemini, 70% Traditional)",0.21685757288613863
+DTE,"Weighted (30% Gemini, 70% Traditional)",2.3041549510747057
+ECL,"Weighted (30% Gemini, 70% Traditional)",4.1002345985390445
+EQT,"Weighted (30% Gemini, 70% Traditional)",40.48235507716511
+ETR,"Weighted (30% Gemini, 70% Traditional)",7.102272472370336
+FTNT,"Weighted (30% Gemini, 70% Traditional)",100.0
+GL,"Weighted (30% Gemini, 70% Traditional)",3.7131114788310997
+HBAN,"Weighted (30% Gemini, 70% Traditional)",1.8598487143797455
+HIG,"Weighted (30% Gemini, 70% Traditional)",3.7112540514387238
+HRL,"Weighted (30% Gemini, 70% Traditional)",1.1819837717253452
+LYV,"Weighted (30% Gemini, 70% Traditional)",91.58016486860481
+MET,"Weighted (30% Gemini, 70% Traditional)",6.311360159479723
+MMM,"Weighted (30% Gemini, 70% Traditional)",100.0
+MRNA,"Weighted (30% Gemini, 70% Traditional)",7.774850960240648
+MS,"Weighted (30% Gemini, 70% Traditional)",13.95347367326022
+MTCH,"Weighted (30% Gemini, 70% Traditional)",100.0
+MU,"Weighted (30% Gemini, 70% Traditional)",8.742529900786712
+NSC,"Weighted (30% Gemini, 70% Traditional)",3.6178363927529578
+PANW,"Weighted (30% Gemini, 70% Traditional)",17.316775703011675
+PEG,"Weighted (30% Gemini, 70% Traditional)",0.7817423404920766
+PEP,"Weighted (30% Gemini, 70% Traditional)",1.9554566583209687
+PG,"Weighted (30% Gemini, 70% Traditional)",1.8599717847279487
+PGR,"Weighted (30% Gemini, 70% Traditional)",59.975805151957324
+PM,"Weighted (30% Gemini, 70% Traditional)",3.0110009492269856
+PNC,"Weighted (30% Gemini, 70% Traditional)",54.236582054995225
+PSX,"Weighted (30% Gemini, 70% Traditional)",6.680103452018024
+REGN,"Weighted (30% Gemini, 70% Traditional)",54.62542389298667
+RVTY,"Weighted (30% Gemini, 70% Traditional)",5.408529500215215
+SMCI,"Weighted (30% Gemini, 70% Traditional)",27.410806036444175
+SW,"Weighted (30% Gemini, 70% Traditional)",45.008934732634586
+SYF,"Weighted (30% Gemini, 70% Traditional)",57.52071140837577
+TPR,"Weighted (30% Gemini, 70% Traditional)",14.935719731260848
+TRV,"Weighted (30% Gemini, 70% Traditional)",52.18246165945733
+TTWO,"Weighted (30% Gemini, 70% Traditional)",23.826191363998223
+UNH,"Weighted (30% Gemini, 70% Traditional)",12.280375440102521
+V,"Weighted (30% Gemini, 70% Traditional)",51.211445659775215
+VLTO,"Weighted (30% Gemini, 70% Traditional)",18.573600187124047
+AAPL,"Weighted (20% Gemini, 80% Traditional)",34.0638887201136
+ALB,"Weighted (20% Gemini, 80% Traditional)",4.381572789324128
+AMP,"Weighted (20% Gemini, 80% Traditional)",68.0758720462948
+AMTM,"Weighted (20% Gemini, 80% Traditional)",100.0
+AMZN,"Weighted (20% Gemini, 80% Traditional)",70.21922488556616
+AVGO,"Weighted (20% Gemini, 80% Traditional)",41.73686984125268
+BK,"Weighted (20% Gemini, 80% Traditional)",8.5301944684246
+BRO,"Weighted (20% Gemini, 80% Traditional)",2.334813131898219
+BXP,"Weighted (20% Gemini, 80% Traditional)",64.22882825276572
+CAH,"Weighted (20% Gemini, 80% Traditional)",7.706057638581081
+CBOE,"Weighted (20% Gemini, 80% Traditional)",2.9985581991253554
+CNC,"Weighted (20% Gemini, 80% Traditional)",0.023937815843158794
+DOV,"Weighted (20% Gemini, 80% Traditional)",12.398919566028786
+DOW,"Weighted (20% Gemini, 80% Traditional)",0.8981740102194781
+DTE,"Weighted (20% Gemini, 80% Traditional)",2.9801851960629504
+ECL,"Weighted (20% Gemini, 80% Traditional)",4.651896868880319
+EQT,"Weighted (20% Gemini, 80% Traditional)",34.7536275372878
+ETR,"Weighted (20% Gemini, 80% Traditional)",8.941357782705524
+FTNT,"Weighted (20% Gemini, 80% Traditional)",100.0
+GL,"Weighted (20% Gemini, 80% Traditional)",4.004524565481804
+HBAN,"Weighted (20% Gemini, 80% Traditional)",2.5442714761293703
+HIG,"Weighted (20% Gemini, 80% Traditional)",4.294705017566754
+HRL,"Weighted (20% Gemini, 80% Traditional)",1.2990544799506072
+LYV,"Weighted (20% Gemini, 80% Traditional)",92.5936692074028
+MET,"Weighted (20% Gemini, 80% Traditional)",12.923649621256612
+MMM,"Weighted (20% Gemini, 80% Traditional)",100.0
+MRNA,"Weighted (20% Gemini, 80% Traditional)",8.460223271589822
+MS,"Weighted (20% Gemini, 80% Traditional)",15.490159051075146
+MTCH,"Weighted (20% Gemini, 80% Traditional)",100.0
+MU,"Weighted (20% Gemini, 80% Traditional)",10.556369085452785
+NSC,"Weighted (20% Gemini, 80% Traditional)",3.215737418985387
+PANW,"Weighted (20% Gemini, 80% Traditional)",14.87026679386394
+PEG,"Weighted (20% Gemini, 80% Traditional)",0.19359480454957023
+PEP,"Weighted (20% Gemini, 80% Traditional)",1.43227519254789
+PG,"Weighted (20% Gemini, 80% Traditional)",1.6484023411262139
+PGR,"Weighted (20% Gemini, 80% Traditional)",71.41005416319261
+PM,"Weighted (20% Gemini, 80% Traditional)",3.997565675877479
+PNC,"Weighted (20% Gemini, 80% Traditional)",66.97192540028777
+PSX,"Weighted (20% Gemini, 80% Traditional)",6.785040218434751
+REGN,"Weighted (20% Gemini, 80% Traditional)",67.27551666238205
+RVTY,"Weighted (20% Gemini, 80% Traditional)",5.639079733171867
+SMCI,"Weighted (20% Gemini, 80% Traditional)",26.91069368172338
+SW,"Weighted (20% Gemini, 80% Traditional)",45.17389579369219
+SYF,"Weighted (20% Gemini, 80% Traditional)",69.52271890720216
+TPR,"Weighted (20% Gemini, 80% Traditional)",17.715670040978292
+TRV,"Weighted (20% Gemini, 80% Traditional)",65.36105967810853
+TTWO,"Weighted (20% Gemini, 80% Traditional)",23.686702806165382
+UNH,"Weighted (20% Gemini, 80% Traditional)",5.660055740595383
+V,"Weighted (20% Gemini, 80% Traditional)",64.59539820924648
+VLTO,"Weighted (20% Gemini, 80% Traditional)",14.190945567675595
+AAPL,Median,27.04381834653207
+ALB,Median,1.9221660594898455
+AMP,Median,35.60728876207769
+AMTM,Median,100.0
+AMZN,Median,39.14122369541418
+AVGO,Median,42.7944413322772
+BK,Median,5.065833156978552
+BRO,Median,0.9649771289361542
+BXP,Median,29.4890227196262
+CAH,Median,0.38822872280128984
+CBOE,Median,2.0822786099946407
+CNC,Median,0.5331127991857282
+DOV,Median,12.422020501669511
+DOW,Median,1.1185395248340628
+DTE,Median,0.9783768566778287
+ECL,Median,3.014176227212192
+EQT,Median,53.53685823580244
+ETR,Median,3.6042962545699204
+FTNT,Median,100.0
+GL,Median,3.1249450332872475
+HBAN,Median,0.5180508551403983
+HIG,Median,2.5227472440271237
+HRL,Median,0.9486522707277881
+LYV,Median,88.40744560948643
+MET,Median,10.465391262971078
+MMM,Median,100.0
+MRNA,Median,6.372849362002423
+MS,Median,10.999603507107057
+MTCH,Median,100.0
+MU,Median,5.2877309832431045
+NSC,Median,4.4315069203629065
+PANW,Median,22.536337741950565
+PEG,Median,2.6765378688046177
+PEP,Median,2.9853328346897863
+PG,Median,2.2857638611416102
+PGR,Median,41.145078123147165
+PM,Median,1.0929797478073984
+PNC,Median,33.82264350434601
+PSX,Median,6.469519524169207
+REGN,Median,34.31106507829032
+RVTY,Median,4.944032643763863
+SMCI,Median,28.422949327528034
+SW,Median,44.68013473165909
+SYF,Median,37.982689747003995
+TPR,Median,8.771464765418804
+TRV,Median,31.260599208592424
+TTWO,Median,24.103644274414087
+UNH,Median,28.366432046364142
+V,Median,30.059983716331853
+VLTO,Median,28.43205880688721
+AAPL,"Hybrid: Traditional for BS, Average for IS",38.03863221187225
+ALB,"Hybrid: Traditional for BS, Average for IS",6.088195479997
+AMP,"Hybrid: Traditional for BS, Average for IS",100.0
+AMTM,"Hybrid: Traditional for BS, Average for IS",100.0
+AMZN,"Hybrid: Traditional for BS, Average for IS",100.0
+AVGO,"Hybrid: Traditional for BS, Average for IS",41.04048235433272
+BK,"Hybrid: Traditional for BS, Average for IS",10.969545029220882
+BRO,"Hybrid: Traditional for BS, Average for IS",3.2688758011555596
+BXP,"Hybrid: Traditional for BS, Average for IS",100.0
+CAH,"Hybrid: Traditional for BS, Average for IS",13.207590991534582
+CBOE,"Hybrid: Traditional for BS, Average for IS",3.5999434096936405
+CNC,"Hybrid: Traditional for BS, Average for IS",0.39878419980436913
+DOV,"Hybrid: Traditional for BS, Average for IS",12.383524215850931
+DOW,"Hybrid: Traditional for BS, Average for IS",2.288981224780946
+DTE,"Hybrid: Traditional for BS, Average for IS",4.359408087844708
+ECL,"Hybrid: Traditional for BS, Average for IS",5.7729499760032
+EQT,"Hybrid: Traditional for BS, Average for IS",24.59214561396616
+ETR,"Hybrid: Traditional for BS, Average for IS",12.815743872582905
+FTNT,"Hybrid: Traditional for BS, Average for IS",100.0
+GL,"Hybrid: Traditional for BS, Average for IS",4.582090792224727
+HBAN,"Hybrid: Traditional for BS, Average for IS",3.941085743213218
+HIG,"Hybrid: Traditional for BS, Average for IS",5.440648798872423
+HRL,"Hybrid: Traditional for BS, Average for IS",1.5340105082088542
+LYV,"Hybrid: Traditional for BS, Average for IS",94.03072494023763
+MET,"Hybrid: Traditional for BS, Average for IS",23.694516697102866
+MMM,"Hybrid: Traditional for BS, Average for IS",100.0
+MRNA,"Hybrid: Traditional for BS, Average for IS",9.800855342116268
+MS,"Hybrid: Traditional for BS, Average for IS",18.691311178921705
+MTCH,"Hybrid: Traditional for BS, Average for IS",100.0
+MU,"Hybrid: Traditional for BS, Average for IS",14.371842759058136
+NSC,"Hybrid: Traditional for BS, Average for IS",2.4208296707301167
+PANW,"Hybrid: Traditional for BS, Average for IS",10.271107871983144
+PEG,"Hybrid: Traditional for BS, Average for IS",2.20294943890862
+PEP,"Hybrid: Traditional for BS, Average for IS",0.3689808807445907
+PG,"Hybrid: Traditional for BS, Average for IS",1.2278892029347976
+PGR,"Hybrid: Traditional for BS, Average for IS",100.0
+PM,"Hybrid: Traditional for BS, Average for IS",6.028493850319006
+PNC,"Hybrid: Traditional for BS, Average for IS",100.0
+PSX,"Hybrid: Traditional for BS, Average for IS",6.994207341430777
+REGN,"Hybrid: Traditional for BS, Average for IS",100.0
+RVTY,"Hybrid: Traditional for BS, Average for IS",6.096824998313008
+SMCI,"Hybrid: Traditional for BS, Average for IS",25.922155462105547
+SW,"Hybrid: Traditional for BS, Average for IS",45.504946434084154
+SYF,"Hybrid: Traditional for BS, Average for IS",100.0
+TPR,"Hybrid: Traditional for BS, Average for IS",22.76391094782272
+TRV,"Hybrid: Traditional for BS, Average for IS",100.0
+TTWO,"Hybrid: Traditional for BS, Average for IS",23.40618747842045
+UNH,"Hybrid: Traditional for BS, Average for IS",5.485541661832484
+V,"Hybrid: Traditional for BS, Average for IS",100.0
+VLTO,"Hybrid: Traditional for BS, Average for IS",6.3306697517890544
+AAPL,"Hybrid: Gemini for IS, Traditional for BS",38.03863221187225
+ALB,"Hybrid: Gemini for IS, Traditional for BS",6.088195479997
+AMP,"Hybrid: Gemini for IS, Traditional for BS",100.0
+AMTM,"Hybrid: Gemini for IS, Traditional for BS",100.0
+AMZN,"Hybrid: Gemini for IS, Traditional for BS",100.0
+AVGO,"Hybrid: Gemini for IS, Traditional for BS",41.04048235433272
+BK,"Hybrid: Gemini for IS, Traditional for BS",10.969545029220882
+BRO,"Hybrid: Gemini for IS, Traditional for BS",3.2688758011555596
+BXP,"Hybrid: Gemini for IS, Traditional for BS",100.0
+CAH,"Hybrid: Gemini for IS, Traditional for BS",13.207590991534582
+CBOE,"Hybrid: Gemini for IS, Traditional for BS",3.5999434096936405
+CNC,"Hybrid: Gemini for IS, Traditional for BS",0.39878419980436913
+DOV,"Hybrid: Gemini for IS, Traditional for BS",12.383524215850931
+DOW,"Hybrid: Gemini for IS, Traditional for BS",2.288981224780946
+DTE,"Hybrid: Gemini for IS, Traditional for BS",4.359408087844708
+ECL,"Hybrid: Gemini for IS, Traditional for BS",5.7729499760032
+EQT,"Hybrid: Gemini for IS, Traditional for BS",24.59214561396616
+ETR,"Hybrid: Gemini for IS, Traditional for BS",12.815743872582905
+FTNT,"Hybrid: Gemini for IS, Traditional for BS",100.0
+GL,"Hybrid: Gemini for IS, Traditional for BS",4.582090792224727
+HBAN,"Hybrid: Gemini for IS, Traditional for BS",3.941085743213218
+HIG,"Hybrid: Gemini for IS, Traditional for BS",5.440648798872423
+HRL,"Hybrid: Gemini for IS, Traditional for BS",1.5340105082088542
+LYV,"Hybrid: Gemini for IS, Traditional for BS",94.03072494023763
+MET,"Hybrid: Gemini for IS, Traditional for BS",23.694516697102866
+MMM,"Hybrid: Gemini for IS, Traditional for BS",100.0
+MRNA,"Hybrid: Gemini for IS, Traditional for BS",9.800855342116268
+MS,"Hybrid: Gemini for IS, Traditional for BS",18.691311178921705
+MTCH,"Hybrid: Gemini for IS, Traditional for BS",100.0
+MU,"Hybrid: Gemini for IS, Traditional for BS",14.371842759058136
+NSC,"Hybrid: Gemini for IS, Traditional for BS",2.4208296707301167
+PANW,"Hybrid: Gemini for IS, Traditional for BS",10.271107871983144
+PEG,"Hybrid: Gemini for IS, Traditional for BS",2.20294943890862
+PEP,"Hybrid: Gemini for IS, Traditional for BS",0.3689808807445907
+PG,"Hybrid: Gemini for IS, Traditional for BS",1.2278892029347976
+PGR,"Hybrid: Gemini for IS, Traditional for BS",100.0
+PM,"Hybrid: Gemini for IS, Traditional for BS",6.028493850319006
+PNC,"Hybrid: Gemini for IS, Traditional for BS",100.0
+PSX,"Hybrid: Gemini for IS, Traditional for BS",6.994207341430777
+REGN,"Hybrid: Gemini for IS, Traditional for BS",100.0
+RVTY,"Hybrid: Gemini for IS, Traditional for BS",6.096824998313008
+SMCI,"Hybrid: Gemini for IS, Traditional for BS",25.922155462105547
+SW,"Hybrid: Gemini for IS, Traditional for BS",45.504946434084154
+SYF,"Hybrid: Gemini for IS, Traditional for BS",100.0
+TPR,"Hybrid: Gemini for IS, Traditional for BS",22.76391094782272
+TRV,"Hybrid: Gemini for IS, Traditional for BS",100.0
+TTWO,"Hybrid: Gemini for IS, Traditional for BS",23.40618747842045
+UNH,"Hybrid: Gemini for IS, Traditional for BS",5.485541661832484
+V,"Hybrid: Gemini for IS, Traditional for BS",100.0
+VLTO,"Hybrid: Gemini for IS, Traditional for BS",6.3306697517890544

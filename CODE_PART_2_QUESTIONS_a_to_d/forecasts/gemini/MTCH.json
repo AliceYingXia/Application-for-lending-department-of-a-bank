@@ -1,0 +1,34 @@
+{
+  "ticker": "MTCH",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue has shown consistent positive growth, from 6.89% in 2022 to 5.51% in 2023, indicating a slight deceleration but continued expansion. COGS as a percentage of revenue fluctuated (28.13%, 30.11%, 28.35%), with 2023 returning closer to 2021 levels. Gross Profit margin remained relatively stable around 70-72%. Operating Expense as a percentage of revenue also remained stable, hovering around 42-43%. Operating Income growth was flat in 2022 but rebounded strongly in 2023 (9.46%). Net Income demonstrated significant growth (30.39% in 2022, 79.99% in 2023), with the net income margin improving substantially from 9.31% to 19.37%.\n\nOn the Balance Sheet, Total Assets were volatile, decreasing significantly in 2022 before recovering in 2023. Current Assets and Cash followed a similar volatile pattern, though Cash as a percentage of Current Assets remained relatively stable (around 65-68%). Total Liabilities decreased in both 2022 and 2023. Equity, while historically negative, showed a strong trend towards improvement, becoming significantly less negative in 2023. Current Liabilities saw a sharp decrease in 2022, followed by a smaller decrease in 2023.\n\nCash Flow from Operations and Free Cash Flow were highly volatile, experiencing a sharp decline in 2022 and a robust recovery in 2023. Capex, while fluctuating, remained a relatively small and consistent percentage of revenue.",
+      "growth_assumptions": "For 2024, Revenue growth is conservatively estimated at 5.0%, reflecting the recent trend. COGS is projected to be 28.5% of Revenue, stabilizing near 2023 levels. Operating Expense is assumed to be 43.0% of Revenue, maintaining its historical stability. Net Income is estimated at 70% of Operating Income, reflecting a continued improvement in profitability beyond operating income, albeit at a more moderate pace than the dramatic jump seen in 2023.\n\nFor the Balance Sheet, Total Assets are projected using an Asset Turnover (Revenue/Total Assets) ratio of 0.75, consistent with 2022-2023 performance. Current Assets are assumed to be 28% of Total Assets, aligning with the 2023 level. Cash is estimated at 67% of Current Assets, maintaining its historical stability. Total Liabilities are projected at 99.5% of Total Assets, reflecting a continued trend towards positive equity. Current Liabilities are assumed to be 11.5% of Total Liabilities, continuing the recent downward trend.\n\nFor Cash Flow, Operating Cash Flow is estimated at 27% of Revenue, reflecting the strong recovery observed in 2023. Capex is projected at -2.0% of Revenue, consistent with recent levels.",
+      "key_insights": "MTCH demonstrates consistent revenue growth, indicating a stable market presence. The significant improvement in Net Income margin in 2023 suggests enhanced operational efficiency or favorable non-operating factors. The company's balance sheet is showing a positive trajectory towards financial health, with equity becoming less negative and potentially turning positive in 2024. Cash flow generation, while volatile, exhibited a strong rebound in 2023, indicating robust underlying business operations."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 3532729000,
+        "cogs": 1006838000,
+        "gross_profit": 2525891000,
+        "operating_expense": 1519073000,
+        "operating_income": 1006818000,
+        "net_income": 704773000
+      },
+      "balance_sheet": {
+        "total_assets": 4710305000,
+        "current_assets": 1318885000,
+        "cash": 883653000,
+        "total_liabilities": 4686753000,
+        "current_liabilities": 541685000,
+        "equity": 23552000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 953837000,
+        "capex": -70655000,
+        "free_cash_flow": 883182000
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "ticker": "SW",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue and Net Income experienced strong growth in 2022 but a significant decline in 2023, indicating market volatility. Assets and Equity showed consistent, moderate growth over the period.",
+      "growth_assumptions": "For 2024, a conservative recovery is assumed with 4% revenue growth and a 7.0% net income margin. Assets are projected to grow by 3.5% and Equity by 10%. Other line items are estimated using historical ratios.",
+      "key_insights": "The forecast anticipates a modest rebound in profitability and continued balance sheet strength, despite the recent downturn in top-line performance."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 12576720000,
+        "cogs": 7294497600,
+        "gross_profit": 5282222400,
+        "operating_expense": 3898783200,
+        "operating_income": 1383439200,
+        "net_income": 880370400
+      },
+      "balance_sheet": {
+        "total_assets": 14542385000,
+        "current_assets": 5816954000,
+        "cash": 465356320,
+        "total_liabilities": 7768585000,
+        "current_liabilities": 3884292500,
+        "equity": 6773800000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 1056444480,
+        "capex": 377301600,
+        "free_cash_flow": 679142880
+      }
+    }
+  }
+}

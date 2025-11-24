@@ -1,0 +1,29 @@
+{
+  "ticker": "FTNT",
+  "status": "success",
+  "forecast": {
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 6269664000,
+        "cogs": 1379326080,
+        "gross_profit": 4890337920,
+        "operating_expense": 3323068080,
+        "operating_income": 1567269840,
+        "net_income": 1379326080
+      },
+      "balance_sheet": {
+        "total_assets": null,
+        "current_assets": null,
+        "cash": null,
+        "total_liabilities": null,
+        "current_liabilities": null,
+        "equity": null
+      },
+      "cash_flow": {
+        "operating_cash_flow": null,
+        "capex": null,
+        "free_cash_flow": null
+      }
+    }
+  }
+}

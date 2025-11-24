@@ -1,0 +1,34 @@
+{
+  "ticker": "UNH",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Revenue and Equity show strong, accelerating growth, while Net Income and Assets maintain solid positive growth.",
+      "growth_assumptions": "Based on these trends, 2024 forecasts project continued robust top-line expansion and profitability, with other financial items estimated using typical ratios.",
+      "key_insights": "UNH is expected to sustain robust top-line expansion and profitability, further strengthening its asset base and shareholder equity in 2024."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 425500,
+        "cogs": 331890,
+        "gross_profit": 93610,
+        "operating_expense": 63662,
+        "operating_income": 29948,
+        "net_income": 24957
+      },
+      "balance_sheet": {
+        "total_assets": 305258,
+        "current_assets": 106840,
+        "cash": 16026,
+        "total_liabilities": 204964,
+        "current_liabilities": 112730,
+        "equity": 100294
+      },
+      "cash_flow": {
+        "operating_cash_flow": 29948,
+        "capex": -10638,
+        "free_cash_flow": 19310
+      }
+    }
+  }
+}

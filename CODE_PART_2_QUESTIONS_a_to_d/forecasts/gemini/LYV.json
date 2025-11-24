@@ -1,0 +1,29 @@
+{
+  "ticker": "LYV",
+  "status": "success",
+  "forecast": {
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 24517877000,
+        "cogs": 18388408000,
+        "gross_profit": 6129469000,
+        "operating_expense": 5413000000,
+        "operating_income": 716469000,
+        "net_income": 615550000
+      },
+      "balance_sheet": {
+        "total_assets": null,
+        "current_assets": null,
+        "cash": null,
+        "total_liabilities": null,
+        "current_liabilities": null,
+        "equity": null
+      },
+      "cash_flow": {
+        "operating_cash_flow": null,
+        "capex": null,
+        "free_cash_flow": null
+      }
+    }
+  }
+}

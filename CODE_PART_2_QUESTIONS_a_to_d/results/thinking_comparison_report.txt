@@ -1,0 +1,81 @@
+
+THINKING MODE COMPARISON REPORT
+================================================================================
+Generated: 2026-02-17 13:11:37
+Model:     gemini-2.5-flash
+
+CONFIGURATIONS
+  No Thinking:   thinking_budget=0,    max_output_tokens=8192
+  With Thinking: thinking_budget=8192, max_output_tokens=16384
+
+STOCKS TESTED:
+  REGN (Best  - sMAPE: 4.05%)
+  AMZN (Mid   - sMAPE: 14.01%)
+  MET  (Poor  - sMAPE: 166.68%)
+
+─────────────────────────────────────────────────────
+OVERALL RESULTS (averaged across stocks and temps)
+─────────────────────────────────────────────────────
+Metric                 No Thinking    With Thinking   Delta
+Success Rate              100.0%       100.0%        +0.0%
+Avg CV (consistency)       2.85%        9.71%       +6.86%
+Avg Latency                 2.1s        20.6s       +18.6s
+Avg Thinking Tokens           0         4918
+
+─────────────────────────────────────────────────────
+PER-STOCK / PER-CONFIG BREAKDOWN
+─────────────────────────────────────────────────────
+Ticker Mode            Temp  Success%   AvgCV%     Latency
+------------------------------------------------------------
+REGN   NoThink         0.0   100        0.00           2.3
+REGN   NoThink         0.7   100        2.31           2.1
+REGN   Thinking        0.0   100        0.54          17.7
+REGN   Thinking        0.7   100        1.58          18.3
+AMZN   NoThink         0.0   100        0.00           2.1
+AMZN   NoThink         0.7   100        3.67           2.5
+AMZN   Thinking        0.0   100        4.10          24.9
+AMZN   Thinking        0.7   100        2.57          22.1
+MET    NoThink         0.0   100        0.00           1.6
+MET    NoThink         0.7   100        11.12          1.7
+MET    Thinking        0.0   100        23.36         19.1
+MET    Thinking        0.7   100        26.13         21.5
+
+─────────────────────────────────────────────────────
+KEY FINDINGS
+─────────────────────────────────────────────────────
+
+1. Consistency (lower CV = better):
+   ✅ No Thinking is more consistent
+   No Thinking CV=2.85%  vs  With Thinking CV=9.71%
+   Delta: 6.86 percentage points
+
+2. Success Rate (token usage):
+   ✅ No Thinking has fewer failures
+   No Thinking=100%  vs  With Thinking=100%
+   (With Thinking uses 2× token limit, reducing truncation)
+
+3. Latency:
+   ✅ No Thinking is faster
+   No Thinking=2.1s  vs  With Thinking=20.6s
+   Overhead: 18.6s per forecast
+
+4. Thinking Token Usage:
+   No Thinking thinking tokens:   0 (should be 0)
+   With Thinking thinking tokens: 4918
+
+─────────────────────────────────────────────────────
+PRODUCTION RECOMMENDATION
+─────────────────────────────────────────────────────
+
+For banking lending systems:
+
+  Accuracy-focused:  Use No Thinking (equal or better success)
+  Speed-focused:     Use No Thinking (faster, lower latency)
+  Consistency:       Use No Thinking (lower CV)
+  Cost-sensitive:    Use No Thinking (fewer thinking tokens consumed)
+
+Suggested production config:
+  temperature=0.0 + no_thinking + max_tokens=8192  → highest consistency
+  temperature=0.0 + with_thinking + max_tokens=16384 → higher success on large companies
+
+================================================================================

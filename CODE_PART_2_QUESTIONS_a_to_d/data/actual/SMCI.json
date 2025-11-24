@@ -1,0 +1,25 @@
+{
+  "2024": {
+    "income_statement": {
+      "revenue": 14989251000.0,
+      "cogs": 12927841000.0,
+      "gross_profit": 2061410000.0,
+      "operating_expense": 850636000.0,
+      "operating_income": 1210774000.0,
+      "net_income": 1152666000.0
+    },
+    "balance_sheet": {
+      "total_assets": 9826092000.0,
+      "current_assets": 8931960000.0,
+      "cash": 1669766000.0,
+      "total_liabilities": 4408722000.0,
+      "current_liabilities": 2345721000.0,
+      "equity": 5417206000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": -2485972000.0,
+      "capex": -124279000.0,
+      "free_cash_flow": -2610251000.0
+    }
+  }
+}

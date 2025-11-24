@@ -1,0 +1,71 @@
+{
+  "2021": {
+    "income_statement": {
+      "revenue": 7907081000.0,
+      "cogs": 4937295000.0,
+      "gross_profit": 2969786000.0,
+      "operating_expense": 1688278000.0,
+      "operating_income": 1281508000.0,
+      "net_income": 1123818000.0
+    },
+    "balance_sheet": {
+      "total_assets": 10403627000.0,
+      "current_assets": 3061709000.0,
+      "cash": 385504000.0,
+      "total_liabilities": 6214099000.0,
+      "current_liabilities": 2250341000.0,
+      "equity": 4189528000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": 1115865000.0,
+      "capex": -171465000.0,
+      "free_cash_flow": 944400000.0
+    }
+  },
+  "2022": {
+    "income_statement": {
+      "revenue": 7844174000.0,
+      "cogs": 4939221000.0,
+      "gross_profit": 2904953000.0,
+      "operating_expense": 1625312000.0,
+      "operating_income": 1279641000.0,
+      "net_income": 1065376000.0
+    },
+    "balance_sheet": {
+      "total_assets": 10896519000.0,
+      "current_assets": 3423465000.0,
+      "cash": 380868000.0,
+      "total_liabilities": 6610153000.0,
+      "current_liabilities": 2773274000.0,
+      "equity": 4286366000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": 805725000.0,
+      "capex": -211082000.0,
+      "free_cash_flow": 594643000.0
+    }
+  },
+  "2023": {
+    "income_statement": {
+      "revenue": 7684476000.0,
+      "cogs": 4816932000.0,
+      "gross_profit": 2867544000.0,
+      "operating_expense": 1648204000.0,
+      "operating_income": 1219340000.0,
+      "net_income": 1056828000.0
+    },
+    "balance_sheet": {
+      "total_assets": 11348513000.0,
+      "current_assets": 3390235000.0,
+      "cash": 398561000.0,
+      "total_liabilities": 6241908000.0,
+      "current_liabilities": 2413770000.0,
+      "equity": 5106605000.0
+    },
+    "cash_flow": {
+      "operating_cash_flow": 1336345000.0,
+      "capex": -183406000.0,
+      "free_cash_flow": 1152939000.0
+    }
+  }
+}

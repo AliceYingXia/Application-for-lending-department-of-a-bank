@@ -1,0 +1,40 @@
+
+GEMINI VS TRADITIONAL MODEL COMPARISON REPORT
+======================================================================
+
+Dataset: 50 S&P 500 companies with both forecasts
+Forecast Year: 2024
+Gemini Model: gemini-2.5-flash
+Traditional Model: Policy-based (Vélez-Pareja)
+
+OVERALL RESULTS:
+  Gemini 2.5 Flash Mean sMAPE:    43.46%
+  Traditional Model Mean sMAPE:   36.53%
+  Difference:                     +6.93%
+
+  Gemini 2.5 Flash Median sMAPE:  29.93%
+  Traditional Model Median sMAPE: 30.80%
+  Difference:                     -0.87%
+
+HEAD-TO-HEAD:
+  Gemini Wins:      26 (52.0%)
+  Traditional Wins: 24 (48.0%)
+
+STATISTICAL SIGNIFICANCE:
+  Paired t-test p-value: 0.2604
+  Result: No statistically significant difference (α=0.05)
+
+INTERPRETATION:
+  The traditional policy-based model outperforms Gemini 2.5 Flash on average.
+  However, the difference is NOT statistically significant.
+
+INCOME STATEMENT:
+  Gemini Mean sMAPE:      44.70%
+  Traditional Mean sMAPE: 40.75%
+
+BALANCE SHEET:
+  Gemini Mean sMAPE:      41.90%
+  Traditional Mean sMAPE: 33.18%
+
+======================================================================
+Generated: 2026-02-16 13:49:01

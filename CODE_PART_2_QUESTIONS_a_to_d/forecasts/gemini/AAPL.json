@@ -1,0 +1,34 @@
+{
+  "ticker": "AAPL",
+  "status": "success",
+  "forecast": {
+    "reasoning": {
+      "trend_analysis": "Historical data from 2022 to 2023 shows a revenue decline of 2.80%. Despite this, COGS decreased at a faster rate (4.21%), leading to a slight improvement in Gross Profit Margin (from 43.31% to 44.13%). However, Operating Expenses grew significantly by 6.82%, which pressured Operating Income, causing it to decline by 4.30%. Net Income also declined by 2.81%, maintaining a stable Net Income Margin of approximately 25.31%. On the balance sheet, Total Assets remained relatively flat (-0.05%), while Current Assets increased by 6.03% and Cash saw a substantial increase of 26.72%. Total Liabilities and Current Liabilities both decreased by 3.85% and 5.63% respectively, contributing to a strong 22.64% growth in Equity. Cash flow from operations declined by 9.50%, and Capex increased in absolute terms by 2.34%, resulting in a 10.64% decrease in Free Cash Flow. (Note: Analysis is based on 2022-2023 data due to missing 2021 figures in the provided prompt.)",
+      "growth_assumptions": "For 2024, we assume a conservative recovery in revenue with a modest growth rate of 0.5% after the 2023 decline. COGS is projected to grow slower than revenue, maintaining a slightly improved gross margin (COGS as % of Revenue ~55.7%). Operating Expenses are expected to continue growing, but at a moderated rate of 2.0%, still outpacing revenue growth, reflecting ongoing investments. Net Income margin is forecasted to be around 25.25% of revenue, slightly lower than 2023 due to operating expense pressure. On the balance sheet, Cash growth is moderated to 10% after a strong 2023, and Current Assets growth is set at 3%. Total Liabilities are assumed to continue a slight decline at -1%, and Current Liabilities at -2%. Equity is projected to grow by 15%, driven by retained earnings. Total Assets will be adjusted to ensure the balance sheet equation holds. Operating Cash Flow decline is expected to moderate to -2%, and Capex is assumed to increase in absolute terms by 2%.",
+      "key_insights": "The 2023 performance highlighted revenue contraction but effective cost management at the COGS level, leading to improved gross margins. However, the growth in operating expenses is a critical factor impacting profitability. The company demonstrated strong cash generation and equity growth despite the revenue downturn. The 2024 forecast assumes a period of stabilization and slight recovery in revenue, with continued emphasis on managing margins and capital efficiency. The balance sheet is expected to remain robust with continued liability reduction and equity growth. The forecast relies primarily on the trends observed between 2022 and 2023 due to the absence of 2021 financial data."
+    },
+    "forecast_2024": {
+      "income_statement": {
+        "revenue": 385201000000,
+        "cogs": 214588000000,
+        "gross_profit": 170613000000,
+        "operating_expense": 55944000000,
+        "operating_income": 114669000000,
+        "net_income": 97213000000
+      },
+      "balance_sheet": {
+        "total_assets": 359001000000,
+        "current_assets": 147873000000,
+        "cash": 32962000000,
+        "total_liabilities": 287533000000,
+        "current_liabilities": 142302000000,
+        "equity": 71468000000
+      },
+      "cash_flow": {
+        "operating_cash_flow": 108332000000,
+        "capex": -11178000000,
+        "free_cash_flow": 97154000000
+      }
+    }
+  }
+}
