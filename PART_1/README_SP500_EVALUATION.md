@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `evaluate_sp500.py` script evaluates the financial forecast model on S&P 500 stocks for a specified year (default: 2025).
+The `evaluate_sp500.py` script evaluates the financial forecast model on S&P 500 stocks for a specified year (default: 2024).
 
 ## Features
 
