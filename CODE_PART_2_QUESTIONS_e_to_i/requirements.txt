@@ -1,0 +1,18 @@
+# Gemini API (New package - replaces deprecated google-generativeai)
+google-genai>=0.3.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# PDF Processing
+pdfplumber>=0.10.0      # PDF text and table extraction
+
+# Fuzzy String Matching
+rapidfuzz>=3.0.0        # Fast fuzzy string matching for keyword detection
+
+# OCR and Deep Learning (for PaddleOCR method)
+paddlepaddle>=2.5.0     # PaddlePaddle deep learning framework
+paddleocr>=2.7.0        # PaddleOCR for text recognition
+paddlex[ocr]>=3.4.0     # PaddleX with OCR support for PPStructureV3
+opencv-python>=4.8.0    # OpenCV for image processing
+numpy>=1.24.0           # Array operations for image conversion
