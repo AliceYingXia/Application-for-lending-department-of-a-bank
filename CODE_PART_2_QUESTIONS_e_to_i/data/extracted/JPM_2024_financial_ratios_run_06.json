@@ -1,0 +1,101 @@
+{
+  "net_income": {
+    "value": 58471,
+    "unit": "millions USD",
+    "formula": "Net income",
+    "inputs": {
+      "Net income": 58471
+    },
+    "reason": "JPM's net income for 2024 was $58,471 million, representing the company's total profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.517,
+    "unit": "ratio",
+    "formula": "Total Noninterest Expense / Total Net Revenue",
+    "inputs": {
+      "Total noninterest expense": 91797,
+      "Total net revenue": 177556
+    },
+    "reason": "The cost-to-income ratio of 0.517 indicates that JPM spent approximately 51.7 cents to generate every dollar of revenue."
+  },
+  "quick_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Cash and Due from Banks + Deposits with Banks + Federal Funds Sold and Securities Purchased under Resale Agreements + Securities Borrowed + Trading Assets) / Current Liabilities",
+    "inputs": {
+      "Cash and due from banks": 23372,
+      "Deposits with banks": 445945,
+      "Federal funds sold and securities purchased under resale agreements": 295001,
+      "Securities borrowed": 219546,
+      "Trading assets": 637784,
+      "Current Liabilities": null
+    },
+    "reason": "The quick ratio cannot be accurately calculated as 'Current Liabilities' is not explicitly provided as a distinct line item on the balance sheet."
+  },
+  "debt_to_equity_ratio": {
+    "value": 9.16,
+    "unit": "ratio",
+    "formula": "(Long-term Debt + Short-term Borrowings + Deposits + Federal Funds Purchased and Securities Loaned or Sold under Repurchase Agreements) / Total Stockholders' Equity",
+    "inputs": {
+      "Long-term debt": 401418,
+      "Short-term borrowings": 52893,
+      "Deposits": 2406032,
+      "Federal funds purchased and securities loaned or sold under repurchase agreements": 296835,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-equity ratio of 9.16 suggests that JPM relies heavily on debt financing compared to equity, which is common for banks."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.7887,
+    "unit": "ratio",
+    "formula": "(Long-term Debt + Short-term Borrowings + Deposits + Federal Funds Purchased and Securities Loaned or Sold under Repurchase Agreements) / Total Assets",
+    "inputs": {
+      "Long-term debt": 401418,
+      "Short-term borrowings": 52893,
+      "Deposits": 2406032,
+      "Federal funds purchased and securities loaned or sold under repurchase agreements": 296835,
+      "Total assets": 4002814
+    },
+    "reason": "The debt-to-assets ratio of 0.7887 indicates that 78.87% of JPM's assets are financed through debt, reflecting a high level of leverage typical for financial institutions."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.9015,
+    "unit": "ratio",
+    "formula": "(Long-term Debt + Short-term Borrowings + Deposits + Federal Funds Purchased and Securities Loaned or Sold under Repurchase Agreements) / (Long-term Debt + Short-term Borrowings + Deposits + Federal Funds Purchased and Securities Loaned or Sold under Repurchase Agreements + Total Stockholders' Equity)",
+    "inputs": {
+      "Long-term debt": 401418,
+      "Short-term borrowings": 52893,
+      "Deposits": 2406032,
+      "Federal funds purchased and securities loaned or sold under repurchase agreements": 296835,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-capital ratio of 0.9015 shows that debt constitutes over 90% of JPM's total capital structure, which is common for banks given their funding model."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Long-term Debt + Short-term Borrowings + Deposits + Federal Funds Purchased and Securities Loaned or Sold under Repurchase Agreements) / (Net Income + Income Tax Expense + Interest Expense + Depreciation & Amortization)",
+    "inputs": {
+      "Long-term debt": 401418,
+      "Short-term borrowings": 52893,
+      "Deposits": 2406032,
+      "Federal funds purchased and securities loaned or sold under repurchase agreements": 296835,
+      "Net income": 58471,
+      "Income tax expense": 16610,
+      "Interest expense": 101350,
+      "Depreciation & Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be accurately calculated as 'Depreciation and Amortization' is not explicitly provided on the income statement."
+  },
+  "interest_coverage_ratio": {
+    "value": 1.85,
+    "unit": "ratio",
+    "formula": "(Income before Income Tax Expense + Interest Expense + Provision for Credit Losses) / Interest Expense",
+    "inputs": {
+      "Income before income tax expense": 75081,
+      "Interest expense": 101350,
+      "Provision for credit losses": 10678
+    },
+    "reason": "An interest coverage ratio of 1.85 indicates that JPM's earnings are 1.85 times its interest expenses, suggesting a moderate ability to cover its interest obligations."
+  }
+}

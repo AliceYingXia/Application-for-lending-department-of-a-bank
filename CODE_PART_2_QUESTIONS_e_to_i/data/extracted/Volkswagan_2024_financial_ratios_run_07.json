@@ -1,0 +1,88 @@
+{
+  "net_income": {
+    "value": 12394,
+    "unit": "\u20ac million",
+    "formula": "Earnings after tax",
+    "inputs": {
+      "Earnings after tax": 12394
+    },
+    "reason": "Volkswagen's net income for 2024 was 12,394 \u20ac million, representing the company's profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.817,
+    "unit": "ratio",
+    "formula": "(Absolute value of Cost of sales) / Sales revenue",
+    "inputs": {
+      "Cost of sales": 265184,
+      "Sales revenue": 324656
+    },
+    "reason": "For every euro of revenue, Volkswagen spent approximately 0.817 euros on costs of sales, indicating the efficiency of its operations."
+  },
+  "quick_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Marketable securities and time deposits + Trade receivables + Financial services receivables (Current) + Other financial assets (Current) + Other receivables (Current)) / Total Current Liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 40296,
+      "Marketable securities and time deposits": 27326,
+      "Trade receivables": 21130,
+      "Financial services receivables (Current)": 68855,
+      "Other financial assets (Current)": 18649,
+      "Other receivables (Current)": 10217,
+      "Total Current Liabilities": null
+    },
+    "reason": "The quick ratio cannot be calculated due to the absence of 'Total Current Liabilities' in the provided financial data, making it impossible to assess Volkswagen's short-term liquidity without inventory."
+  },
+  "debt_to_equity_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / Total Equity",
+    "inputs": {
+      "Total Debt": null,
+      "Total Equity": null
+    },
+    "reason": "The debt-to-equity ratio cannot be calculated as both 'Total Debt' and 'Total Equity' are missing from the provided financial statements, preventing an assessment of the company's leverage relative to shareholder equity."
+  },
+  "debt_to_assets_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / Total assets",
+    "inputs": {
+      "Total Debt": null,
+      "Total assets": 632905
+    },
+    "reason": "The debt-to-assets ratio cannot be determined because 'Total Debt' is not available in the provided data, thus hindering an evaluation of the proportion of assets financed by debt."
+  },
+  "debt_to_capital_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / (Total Debt + Total Equity)",
+    "inputs": {
+      "Total Debt": null,
+      "Total Equity": null
+    },
+    "reason": "The debt-to-capital ratio cannot be computed due to the absence of both 'Total Debt' and 'Total Equity', making it impossible to gauge the company's capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / (Earnings before tax + Interest expenses + Depreciation and Amortization)",
+    "inputs": {
+      "Total Debt": null,
+      "Earnings before tax": 16806,
+      "Interest expenses": 3446,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The debt-to-EBITDA ratio cannot be calculated because 'Total Debt' and 'Depreciation and Amortization' are not provided, which are essential for assessing the company's ability to cover its debt with operating earnings."
+  },
+  "interest_coverage_ratio": {
+    "value": 5.88,
+    "unit": "x",
+    "formula": "(Earnings before tax + Absolute value of Interest expenses) / Absolute value of Interest expenses",
+    "inputs": {
+      "Earnings before tax": 16806,
+      "Interest expenses": 3446
+    },
+    "reason": "Volkswagen's interest coverage ratio of 5.88x indicates that the company can comfortably meet its interest obligations with its earnings before interest and taxes."
+  }
+}

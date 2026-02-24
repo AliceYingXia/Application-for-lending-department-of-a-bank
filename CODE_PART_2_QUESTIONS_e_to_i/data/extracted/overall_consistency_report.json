@@ -1,0 +1,633 @@
+{
+  "n_companies": 9,
+  "n_runs_each": 10,
+  "temperature": 0.7,
+  "companies": [
+    "Alibaba_2024",
+    "EM_2024",
+    "GM_2023",
+    "Google_2024",
+    "JPM_2024",
+    "LVMH_2024",
+    "Meta_2024",
+    "Tencent_2024",
+    "Volkswagan_2024"
+  ],
+  "grid": {
+    "Alibaba_2024": {
+      "net_income": {
+        "mean": 71332.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 17.9407,
+        "cv": 1.904798,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 1.6562,
+        "cv": 0.122783,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_equity_ratio": {
+        "mean": 0.1673,
+        "cv": 0.048534,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_assets_ratio": {
+        "mean": 0.0972,
+        "cv": 0.009716,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_capital_ratio": {
+        "mean": 0.1439,
+        "cv": 0.044537,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": 1.206,
+        "cv": 0.037525,
+        "null_count": 7,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": 14.5647,
+        "cv": 0.058636,
+        "null_count": 1,
+        "consistent": false
+      }
+    },
+    "EM_2024": {
+      "net_income": {
+        "mean": 36010.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 9.2302,
+        "cv": 2.724761,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 1.0653,
+        "cv": 8.4e-05,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_equity_ratio": {
+        "mean": 0.1964,
+        "cv": 0.011253,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_assets_ratio": {
+        "mean": 0.1106,
+        "cv": 0.001357,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_capital_ratio": {
+        "mean": 0.1641,
+        "cv": 0.009268,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": 0.5639,
+        "cv": 0.008835,
+        "null_count": 0,
+        "consistent": true
+      },
+      "interest_coverage_ratio": {
+        "mean": 65.2431,
+        "cv": 0.113928,
+        "null_count": 0,
+        "consistent": false
+      }
+    },
+    "GM_2023": {
+      "net_income": {
+        "mean": 10040.9,
+        "cv": 0.013098,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 38.4036,
+        "cv": 1.194578,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 0.7257,
+        "cv": 0.228682,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_equity_ratio": {
+        "mean": 1.8927,
+        "cv": 0.000925,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_assets_ratio": {
+        "mean": 9.2731,
+        "cv": 1.903727,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_capital_ratio": {
+        "mean": 13.611,
+        "cv": 1.903938,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": 13.0922,
+        "cv": 0.0,
+        "null_count": 9,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": 6.7702,
+        "cv": 0.731719,
+        "null_count": 0,
+        "consistent": false
+      }
+    },
+    "Google_2024": {
+      "net_income": {
+        "mean": 100118.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 7.4,
+        "cv": 2.724771,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 1.6604,
+        "cv": 0.00017,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_equity_ratio": {
+        "mean": 0.0331,
+        "cv": 0.031674,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_assets_ratio": {
+        "mean": 0.0238,
+        "cv": 0.052986,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_capital_ratio": {
+        "mean": 0.0322,
+        "cv": 0.022388,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      }
+    },
+    "JPM_2024": {
+      "net_income": {
+        "mean": 58471.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 20.9882,
+        "cv": 1.194578,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 1.8687,
+        "cv": 0.876935,
+        "null_count": 1,
+        "consistent": false
+      },
+      "debt_to_equity_ratio": {
+        "mean": 2.1431,
+        "cv": 1.09458,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_assets_ratio": {
+        "mean": 2.3004,
+        "cv": 1.830013,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_capital_ratio": {
+        "mean": 11.5618,
+        "cv": 1.893517,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": 2.355,
+        "cv": 0.031847,
+        "null_count": 8,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": 1.4315,
+        "cv": 0.342699,
+        "null_count": 1,
+        "consistent": false
+      }
+    },
+    "LVMH_2024": {
+      "net_income": {
+        "mean": 12550.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 28.0935,
+        "cv": 1.232217,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 0.6363,
+        "cv": 0.154713,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_equity_ratio": {
+        "mean": 0.4338,
+        "cv": 0.291075,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_assets_ratio": {
+        "mean": 0.2008,
+        "cv": 0.294715,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_capital_ratio": {
+        "mean": 0.2977,
+        "cv": 0.199673,
+        "null_count": 0,
+        "consistent": false
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": 20.261,
+        "cv": 0.059375,
+        "null_count": 0,
+        "consistent": false
+      }
+    },
+    "Meta_2024": {
+      "net_income": {
+        "mean": 62360.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 6.3024,
+        "cv": 2.724771,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 2.8215,
+        "cv": 0.000355,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_equity_ratio": {
+        "mean": 0.158,
+        "cv": 0.004177,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_assets_ratio": {
+        "mean": 0.104,
+        "cv": 0.012697,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_capital_ratio": {
+        "mean": 0.1367,
+        "cv": 0.008122,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": 0.4155,
+        "cv": 0.0,
+        "null_count": 9,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": 54.7443,
+        "cv": 0.008627,
+        "null_count": 7,
+        "consistent": false
+      }
+    },
+    "Tencent_2024": {
+      "net_income": {
+        "mean": 196467.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 5.2346,
+        "cv": 2.666222,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": 3.793,
+        "cv": 0.0,
+        "null_count": 9,
+        "consistent": false
+      },
+      "debt_to_equity_ratio": {
+        "mean": 0.2833,
+        "cv": 0.033386,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_assets_ratio": {
+        "mean": 0.1606,
+        "cv": 0.038033,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_capital_ratio": {
+        "mean": 0.2209,
+        "cv": 0.025934,
+        "null_count": 0,
+        "consistent": true
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": 17.6358,
+        "cv": 0.030241,
+        "null_count": 0,
+        "consistent": true
+      }
+    },
+    "Volkswagan_2024": {
+      "net_income": {
+        "mean": 12394.0,
+        "cv": 0.0,
+        "null_count": 0,
+        "consistent": true
+      },
+      "cost_to_income_ratio": {
+        "mean": 49.3612,
+        "cv": 0.801934,
+        "null_count": 0,
+        "consistent": false
+      },
+      "quick_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      },
+      "debt_to_equity_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      },
+      "debt_to_assets_ratio": {
+        "mean": 0.317,
+        "cv": 0.0,
+        "null_count": 9,
+        "consistent": false
+      },
+      "debt_to_capital_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      },
+      "debt_to_ebitda_ratio": {
+        "mean": null,
+        "cv": null,
+        "null_count": 10,
+        "consistent": false
+      },
+      "interest_coverage_ratio": {
+        "mean": 5.8437,
+        "cv": 0.068309,
+        "null_count": 0,
+        "consistent": false
+      }
+    }
+  },
+  "metric_summary": {
+    "net_income": {
+      "consistent_count": 9,
+      "consistent_pct": 100.0,
+      "all_null_count": 0,
+      "median_cv": 0.0
+    },
+    "cost_to_income_ratio": {
+      "consistent_count": 0,
+      "consistent_pct": 0.0,
+      "all_null_count": 0,
+      "median_cv": 1.904798
+    },
+    "quick_ratio": {
+      "consistent_count": 3,
+      "consistent_pct": 33.3,
+      "all_null_count": 1,
+      "median_cv": 0.122783
+    },
+    "debt_to_equity_ratio": {
+      "consistent_count": 6,
+      "consistent_pct": 66.7,
+      "all_null_count": 1,
+      "median_cv": 0.033386
+    },
+    "debt_to_assets_ratio": {
+      "consistent_count": 4,
+      "consistent_pct": 44.4,
+      "all_null_count": 0,
+      "median_cv": 0.038033
+    },
+    "debt_to_capital_ratio": {
+      "consistent_count": 5,
+      "consistent_pct": 55.6,
+      "all_null_count": 1,
+      "median_cv": 0.044537
+    },
+    "debt_to_ebitda_ratio": {
+      "consistent_count": 1,
+      "consistent_pct": 11.1,
+      "all_null_count": 4,
+      "median_cv": 0.008835
+    },
+    "interest_coverage_ratio": {
+      "consistent_count": 1,
+      "consistent_pct": 11.1,
+      "all_null_count": 1,
+      "median_cv": 0.068309
+    }
+  },
+  "company_summary": {
+    "Alibaba_2024": {
+      "consistent_count": 4,
+      "consistent_pct": 50.0,
+      "all_null_count": 0,
+      "consistent_metrics": [
+        "net_income",
+        "debt_to_equity_ratio",
+        "debt_to_assets_ratio",
+        "debt_to_capital_ratio"
+      ],
+      "all_null_metrics": []
+    },
+    "EM_2024": {
+      "consistent_count": 6,
+      "consistent_pct": 75.0,
+      "all_null_count": 0,
+      "consistent_metrics": [
+        "net_income",
+        "quick_ratio",
+        "debt_to_equity_ratio",
+        "debt_to_assets_ratio",
+        "debt_to_capital_ratio",
+        "debt_to_ebitda_ratio"
+      ],
+      "all_null_metrics": []
+    },
+    "GM_2023": {
+      "consistent_count": 2,
+      "consistent_pct": 25.0,
+      "all_null_count": 0,
+      "consistent_metrics": [
+        "net_income",
+        "debt_to_equity_ratio"
+      ],
+      "all_null_metrics": []
+    },
+    "Google_2024": {
+      "consistent_count": 4,
+      "consistent_pct": 50.0,
+      "all_null_count": 2,
+      "consistent_metrics": [
+        "net_income",
+        "quick_ratio",
+        "debt_to_equity_ratio",
+        "debt_to_capital_ratio"
+      ],
+      "all_null_metrics": [
+        "debt_to_ebitda_ratio",
+        "interest_coverage_ratio"
+      ]
+    },
+    "JPM_2024": {
+      "consistent_count": 1,
+      "consistent_pct": 12.5,
+      "all_null_count": 0,
+      "consistent_metrics": [
+        "net_income"
+      ],
+      "all_null_metrics": []
+    },
+    "LVMH_2024": {
+      "consistent_count": 1,
+      "consistent_pct": 12.5,
+      "all_null_count": 1,
+      "consistent_metrics": [
+        "net_income"
+      ],
+      "all_null_metrics": [
+        "debt_to_ebitda_ratio"
+      ]
+    },
+    "Meta_2024": {
+      "consistent_count": 5,
+      "consistent_pct": 62.5,
+      "all_null_count": 0,
+      "consistent_metrics": [
+        "net_income",
+        "quick_ratio",
+        "debt_to_equity_ratio",
+        "debt_to_assets_ratio",
+        "debt_to_capital_ratio"
+      ],
+      "all_null_metrics": []
+    },
+    "Tencent_2024": {
+      "consistent_count": 5,
+      "consistent_pct": 62.5,
+      "all_null_count": 1,
+      "consistent_metrics": [
+        "net_income",
+        "debt_to_equity_ratio",
+        "debt_to_assets_ratio",
+        "debt_to_capital_ratio",
+        "interest_coverage_ratio"
+      ],
+      "all_null_metrics": [
+        "debt_to_ebitda_ratio"
+      ]
+    },
+    "Volkswagan_2024": {
+      "consistent_count": 1,
+      "consistent_pct": 12.5,
+      "all_null_count": 4,
+      "consistent_metrics": [
+        "net_income"
+      ],
+      "all_null_metrics": [
+        "quick_ratio",
+        "debt_to_equity_ratio",
+        "debt_to_capital_ratio",
+        "debt_to_ebitda_ratio"
+      ]
+    }
+  }
+}

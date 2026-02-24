@@ -1,0 +1,87 @@
+{
+  "net_income": {
+    "value": 10127,
+    "unit": "millions USD",
+    "formula": "Net income (loss) attributable to stockholders",
+    "inputs": {
+      "Net income (loss) attributable to stockholders": 10127
+    },
+    "reason": "GM's net income for 2023 was $10,127 million, indicating its overall profitability."
+  },
+  "cost_to_income_ratio": {
+    "value": 94.59,
+    "unit": "%",
+    "formula": "Total costs and expenses / Total net sales and revenue",
+    "inputs": {
+      "Total costs and expenses": 162544,
+      "Total net sales and revenue": 171842
+    },
+    "reason": "With a cost-to-income ratio of 94.59%, GM spends a high proportion of its revenue on costs and expenses, leaving a relatively small margin for profit."
+  },
+  "quick_ratio": {
+    "value": 0.41,
+    "unit": "x",
+    "formula": "(Cash and cash equivalents + Marketable debt securities + Accounts and notes receivable) / Total current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 18853,
+      "Marketable debt securities": 7613,
+      "Accounts and notes receivable, net of allowance": 12378,
+      "Total current liabilities": 94445
+    },
+    "reason": "A quick ratio of 0.41x suggests GM has limited liquid assets to cover its short-term liabilities, indicating potential liquidity challenges."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.89,
+    "unit": "x",
+    "formula": "Total Debt / Total stockholders' equity",
+    "inputs": {
+      "Short-term debt and current portion of long-term debt (Automotive)": 428,
+      "Short-term debt and current portion of long-term debt (GM Financial)": 38540,
+      "Long-term debt (Automotive)": 15985,
+      "Long-term debt (GM Financial)": 66788,
+      "Total stockholders' equity": 64286
+    },
+    "reason": "A debt-to-equity ratio of 1.89x indicates that GM relies more on debt financing than equity to fund its assets."
+  },
+  "debt_to_assets_ratio": {
+    "value": 44.58,
+    "unit": "%",
+    "formula": "Total Debt / Total Assets",
+    "inputs": {
+      "Total Debt": 121741,
+      "Total Assets": 273064
+    },
+    "reason": "With 44.58% of its assets financed by debt, GM has a moderate level of financial leverage."
+  },
+  "debt_to_capital_ratio": {
+    "value": 65.44,
+    "unit": "%",
+    "formula": "Total Debt / (Total Debt + Total stockholders' equity)",
+    "inputs": {
+      "Total Debt": 121741,
+      "Total stockholders' equity": 64286
+    },
+    "reason": "A debt-to-capital ratio of 65.44% signifies that a significant portion of GM's capital structure is composed of debt."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "x",
+    "formula": "Total Debt / EBITDA",
+    "inputs": {
+      "Total Debt": 121741,
+      "Operating income (loss)": 9298,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be calculated due to the unavailability of depreciation and amortization data in the provided information."
+  },
+  "interest_coverage_ratio": {
+    "value": 10.21,
+    "unit": "x",
+    "formula": "Operating income / Automotive interest expense",
+    "inputs": {
+      "Operating income (loss)": 9298,
+      "Automotive interest expense": 911
+    },
+    "reason": "An interest coverage ratio of 10.21x indicates that GM's operating income is strong enough to comfortably cover its automotive interest expenses."
+  }
+}

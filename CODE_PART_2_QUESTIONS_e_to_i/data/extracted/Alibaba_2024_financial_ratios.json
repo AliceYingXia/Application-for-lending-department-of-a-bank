@@ -1,0 +1,111 @@
+{
+  "net_income": {
+    "value": 71332,
+    "unit": "RMB millions",
+    "formula": "Net income",
+    "inputs": {
+      "Net income": 71332
+    },
+    "reason": "Alibaba's net income for 2024 was 71,332 RMB millions, representing the company's total profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.8454,
+    "unit": "ratio",
+    "formula": "(Cost of revenue + Product development expenses + Sales and marketing expenses + General and administrative expenses) / Revenue",
+    "inputs": {
+      "Cost of revenue": 586323,
+      "Product development expenses": 52256,
+      "Sales and marketing expenses": 115141,
+      "General and administrative expenses": 41985,
+      "Revenue": 941168
+    },
+    "reason": "Alibaba's cost-to-income ratio of 0.8454 indicates that 84.54% of its revenue is consumed by operating costs, suggesting a relatively high cost structure."
+  },
+  "quick_ratio": {
+    "value": 1.79,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Short-term investments + Restricted cash and escrow receivables + Equity securities and other investments (current) + Prepayments, receivables and other assets (current)) / (Current bank borrowings + Current unsecured senior notes + Income tax payable + Accrued expenses, accounts payable and other liabilities + Merchant deposits + Deferred revenue and customer advances (current))",
+    "inputs": {
+      "Cash and cash equivalents": 248125,
+      "Short-term investments": 262955,
+      "Restricted cash and escrow receivables": 38299,
+      "Equity securities and other investments (current)": 59949,
+      "Prepayments, receivables and other assets (current)": 143536,
+      "Current bank borrowings": 12749,
+      "Current unsecured senior notes": 16252,
+      "Income tax payable": 9068,
+      "Accrued expenses, accounts payable and other liabilities": 297883,
+      "Merchant deposits": 12737,
+      "Deferred revenue and customer advances (current)": 72818
+    },
+    "reason": "With a quick ratio of 1.79, Alibaba has sufficient liquid assets to cover its short-term liabilities, indicating strong short-term liquidity."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.17,
+    "unit": "ratio",
+    "formula": "(Current bank borrowings + Current unsecured senior notes + Non-current bank borrowings + Non-current unsecured senior notes) / Total shareholders' equity",
+    "inputs": {
+      "Current bank borrowings": 12749,
+      "Current unsecured senior notes": 16252,
+      "Non-current bank borrowings": 55686,
+      "Non-current unsecured senior notes": 86089,
+      "Total shareholders' equity": 986544
+    },
+    "reason": "Alibaba's debt-to-equity ratio of 0.17 suggests that the company relies more on equity financing than debt, indicating a conservative financial structure."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1,
+    "unit": "ratio",
+    "formula": "(Current bank borrowings + Current unsecured senior notes + Non-current bank borrowings + Non-current unsecured senior notes) / Total assets",
+    "inputs": {
+      "Current bank borrowings": 12749,
+      "Current unsecured senior notes": 16252,
+      "Non-current bank borrowings": 55686,
+      "Non-current unsecured senior notes": 86089,
+      "Total assets": 1764829
+    },
+    "reason": "A debt-to-assets ratio of 0.10 indicates that only 10% of Alibaba's assets are financed by debt, reflecting a low level of financial leverage."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.15,
+    "unit": "ratio",
+    "formula": "(Current bank borrowings + Current unsecured senior notes + Non-current bank borrowings + Non-current unsecured senior notes) / (Current bank borrowings + Current unsecured senior notes + Non-current bank borrowings + Non-current unsecured senior notes + Total shareholders' equity)",
+    "inputs": {
+      "Current bank borrowings": 12749,
+      "Current unsecured senior notes": 16252,
+      "Non-current bank borrowings": 55686,
+      "Non-current unsecured senior notes": 86089,
+      "Total shareholders' equity": 986544
+    },
+    "reason": "Alibaba's debt-to-capital ratio of 0.15 shows that debt constitutes 15% of its total capital structure, indicating a healthy balance between debt and equity."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Current bank borrowings + Current unsecured senior notes + Non-current bank borrowings + Non-current unsecured senior notes) / (Income from operations - Amortization and impairment of intangible assets - Impairment of goodwill - Depreciation)",
+    "inputs": {
+      "Current bank borrowings": 12749,
+      "Current unsecured senior notes": 16252,
+      "Non-current bank borrowings": 55686,
+      "Non-current unsecured senior notes": 86089,
+      "Income from operations": 113350,
+      "Amortization and impairment of intangible assets": -21592,
+      "Impairment of goodwill": -10521,
+      "Depreciation": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be fully calculated due to the absence of depreciation data, which is crucial for determining the company's ability to service its debt from operating earnings."
+  },
+  "interest_coverage_ratio": {
+    "value": null,
+    "unit": "x",
+    "formula": "(Income from operations - Amortization and impairment of intangible assets - Impairment of goodwill - Depreciation) / (-Interest expense)",
+    "inputs": {
+      "Income from operations": 113350,
+      "Amortization and impairment of intangible assets": -21592,
+      "Impairment of goodwill": -10521,
+      "Depreciation": null,
+      "Interest expense": -7947
+    },
+    "reason": "The Interest Coverage Ratio cannot be fully calculated as depreciation data is missing, which is necessary to determine the company's ability to meet its interest obligations from its earnings."
+  }
+}

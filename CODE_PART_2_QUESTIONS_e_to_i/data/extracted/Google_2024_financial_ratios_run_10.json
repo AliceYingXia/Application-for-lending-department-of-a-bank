@@ -1,0 +1,91 @@
+{
+  "net_income": {
+    "value": 100118,
+    "unit": "millions USD",
+    "formula": "Net Income = Net income",
+    "inputs": {
+      "Net income": 100118
+    },
+    "reason": "Alphabet Inc. reported a net income of $100,118 million in 2024, representing the company's total profit for the year."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.6789,
+    "unit": "ratio",
+    "formula": "Cost-to-Income Ratio = Total costs and expenses / Revenues",
+    "inputs": {
+      "Total costs and expenses": 237628,
+      "Revenues": 350018
+    },
+    "reason": "Alphabet Inc.'s cost-to-income ratio of 0.6789 indicates that for every dollar of revenue, the company incurs approximately $0.68 in costs and expenses."
+  },
+  "quick_ratio": {
+    "value": 1.66,
+    "unit": "ratio",
+    "formula": "Quick Ratio = (Cash and cash equivalents + Marketable securities + Accounts receivable, net) / Total current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 23466,
+      "Marketable securities": 72191,
+      "Accounts receivable, net": 52340,
+      "Total current liabilities": 89122
+    },
+    "reason": "A quick ratio of 1.66 suggests that Alphabet Inc. has $1.66 in highly liquid assets for every dollar of current liabilities, indicating strong short-term liquidity."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.0335,
+    "unit": "ratio",
+    "formula": "Debt-to-Equity Ratio = Long-term debt / Total stockholders' equity",
+    "inputs": {
+      "Long-term debt": 10883,
+      "Total stockholders' equity": 325084
+    },
+    "reason": "Alphabet Inc.'s debt-to-equity ratio of 0.0335 shows that the company uses very little debt relative to equity to finance its assets, indicating a low reliance on debt."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.0242,
+    "unit": "ratio",
+    "formula": "Debt-to-Assets Ratio = Long-term debt / Total assets",
+    "inputs": {
+      "Long-term debt": 10883,
+      "Total assets": 450256
+    },
+    "reason": "With a debt-to-assets ratio of 0.0242, only a small portion of Alphabet Inc.'s assets are financed by long-term debt, suggesting a conservative financial structure."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.0324,
+    "unit": "ratio",
+    "formula": "Debt-to-Capital Ratio = Long-term debt / (Long-term debt + Total stockholders' equity)",
+    "inputs": {
+      "Long-term debt": 10883,
+      "Total stockholders' equity": 325084
+    },
+    "reason": "Alphabet Inc.'s debt-to-capital ratio of 0.0324 indicates that long-term debt constitutes a small percentage of the company's total capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Debt-to-EBITDA Ratio = Long-term debt / EBITDA",
+    "inputs": {
+      "Long-term debt": 10883,
+      "Revenues": 350018,
+      "Cost of revenues": 146306,
+      "Research and development": 49326,
+      "Sales and marketing": 27808,
+      "General and administrative": 14188,
+      "Provision for income taxes": 19697,
+      "Interest expense": null,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be calculated due to the absence of 'Interest expense' and 'Depreciation and Amortization' data in the provided financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Interest Coverage Ratio = Income Before Interest and Taxes (EBIT) / Interest Expense",
+    "inputs": {
+      "Income before income taxes": 119815,
+      "Provision for income taxes": 19697,
+      "Interest expense": null
+    },
+    "reason": "The Interest Coverage Ratio cannot be calculated as 'Interest expense' is not provided in the financial statements."
+  }
+}

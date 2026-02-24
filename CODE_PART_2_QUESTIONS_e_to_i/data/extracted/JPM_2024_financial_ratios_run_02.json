@@ -1,0 +1,94 @@
+{
+  "net_income": {
+    "value": 58471,
+    "unit": "millions USD",
+    "formula": "Net income",
+    "inputs": {
+      "Net income": 58471
+    },
+    "reason": "JPMorgan Chase's net income for 2024 was $58,471 million, representing the company's total profit after all expenses, taxes, and interest."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.5169,
+    "unit": "ratio",
+    "formula": "Total noninterest expense / Total net revenue",
+    "inputs": {
+      "Total noninterest expense": 91797,
+      "Total net revenue": 177556
+    },
+    "reason": "The cost-to-income ratio of 0.5169 indicates that for every dollar of revenue, JPMorgan Chase incurs approximately 51.69 cents in noninterest expenses."
+  },
+  "quick_ratio": {
+    "value": 3.08,
+    "unit": "ratio",
+    "formula": "(Cash and due from banks + Deposits with banks + Federal funds sold and securities purchased under resale agreements + Securities borrowed + Trading assets) / (Short-term borrowings + Trading liabilities + Accounts payable and other liabilities)",
+    "inputs": {
+      "Cash and due from banks": 23372,
+      "Deposits with banks": 445945,
+      "Federal funds sold and securities purchased under resale agreements": 295001,
+      "Securities borrowed": 219546,
+      "Trading assets": 637784,
+      "Short-term borrowings": 52893,
+      "Trading liabilities": 192883,
+      "Accounts payable and other liabilities": 280672
+    },
+    "reason": "With a quick ratio of 3.08, JPMorgan Chase demonstrates strong liquidity, indicating its ability to cover its short-term liabilities with highly liquid assets without relying on inventory or less liquid assets."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.32,
+    "unit": "ratio",
+    "formula": "(Short-term borrowings + Long-term debt) / Total stockholders' equity",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-equity ratio of 1.32 suggests that JPMorgan Chase uses $1.32 of debt for every dollar of equity, indicating a moderate reliance on debt financing relative to shareholder funding."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.11,
+    "unit": "ratio",
+    "formula": "(Short-term borrowings + Long-term debt) / Total assets",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total assets": 4002814
+    },
+    "reason": "The debt-to-assets ratio of 0.11 means that approximately 11% of JPMorgan Chase's assets are financed by debt, indicating a relatively low proportion of assets funded by borrowing."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.57,
+    "unit": "ratio",
+    "formula": "(Short-term borrowings + Long-term debt) / (Short-term borrowings + Long-term debt + Total stockholders' equity)",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-capital ratio of 0.57 indicates that 57% of JPMorgan Chase's total capital (debt plus equity) is composed of debt, reflecting the company's capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / EBITDA",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Net income": 58471,
+      "Income tax expense": 16610,
+      "Interest expense": 101350,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be fully calculated as Depreciation and Amortization data is not available in the provided financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": 0.74,
+    "unit": "ratio",
+    "formula": "Income before income tax expense / Interest expense",
+    "inputs": {
+      "Income before income tax expense": 75081,
+      "Interest expense": 101350
+    },
+    "reason": "An interest coverage ratio of 0.74 suggests that JPMorgan Chase's earnings before interest and taxes are not sufficient to cover its interest expenses, indicating potential challenges in meeting its debt obligations from operating income."
+  }
+}

@@ -1,0 +1,160 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0 -- /Users/pixalate/PycharmProjects/pdf_identify/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/pixalate/PycharmProjects/pdf_identify
+plugins: anyio-4.12.1
+collecting ... collected 105 items
+
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_balance_sheet_exact PASSED [  0%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_balance_sheet_no_spaces PASSED [  1%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_consolidated_balance_sheet PASSED [  2%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_consolidated_balance_sheets PASSED [  3%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_consolidated_statement_of_financial_position PASSED [  4%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_consolidated_statement_of_income PASSED [  5%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_consolidated_statements_of_income PASSED [  6%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_consolidated_statements_of_operations PASSED [  7%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_empty_string PASSED [  8%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_exactly_9_chars_rejected PASSED [  9%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_generic_financial_text_returns_none PASSED [ 10%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_income_statement_exact PASSED [ 11%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_income_statement_no_spaces PASSED [ 12%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_mixed_case_balance PASSED [ 13%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_none_input PASSED [ 14%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_random_text_returns_none PASSED [ 15%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_short_string_below_10_chars PASSED [ 16%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_statement_of_financial_position PASSED [ 17%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_statement_of_operations PASSED [ 18%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_unrelated_text_returns_none PASSED [ 19%]
+tests/test_pipeline.py::TestFuzzyMatchFinancialStatement::test_uppercase_income PASSED [ 20%]
+tests/test_pipeline.py::TestFilterTopPages::test_all_scores_tied_keeps_top2 PASSED [ 20%]
+tests/test_pipeline.py::TestFilterTopPages::test_empty_dict_unchanged PASSED [ 21%]
+tests/test_pipeline.py::TestFilterTopPages::test_four_pages_keeps_top_two PASSED [ 22%]
+tests/test_pipeline.py::TestFilterTopPages::test_one_page_unchanged PASSED [ 23%]
+tests/test_pipeline.py::TestFilterTopPages::test_table_data_preserved PASSED [ 24%]
+tests/test_pipeline.py::TestFilterTopPages::test_three_pages_keeps_top_two PASSED [ 25%]
+tests/test_pipeline.py::TestFilterTopPages::test_two_pages_unchanged PASSED [ 26%]
+tests/test_pipeline.py::TestFilterTopPages::test_unique_top1_all_others_tied_keeps_only_top1 PASSED [ 27%]
+tests/test_pipeline.py::TestFilterTopPages::test_unique_top1_but_others_differ_keeps_top2 PASSED [ 28%]
+tests/test_pipeline.py::TestSaveResults::test_empty_results_only_header PASSED [ 29%]
+tests/test_pipeline.py::TestSaveResults::test_error_row PASSED           [ 30%]
+tests/test_pipeline.py::TestSaveResults::test_multiple_rows_sorted_by_filename PASSED [ 31%]
+tests/test_pipeline.py::TestSaveResults::test_success_row_income_and_balance PASSED [ 32%]
+tests/test_pipeline.py::TestLoadResultsCsv::test_error_rows_excluded PASSED [ 33%]
+tests/test_pipeline.py::TestLoadResultsCsv::test_multiple_rows PASSED    [ 34%]
+tests/test_pipeline.py::TestLoadResultsCsv::test_single_page_per_statement PASSED [ 35%]
+tests/test_pipeline.py::TestLoadResultsCsv::test_success_but_no_pages_excluded PASSED [ 36%]
+tests/test_pipeline.py::TestLoadResultsCsv::test_success_rows_parsed PASSED [ 37%]
+tests/test_pipeline.py::TestExtractPagesAsPdf::test_all_out_of_range_raises PASSED [ 38%]
+tests/test_pipeline.py::TestExtractPagesAsPdf::test_duplicate_pages_deduped PASSED [ 39%]
+tests/test_pipeline.py::TestExtractPagesAsPdf::test_multiple_pages_extracted PASSED [ 40%]
+tests/test_pipeline.py::TestExtractPagesAsPdf::test_out_of_range_page_skipped PASSED [ 40%]
+tests/test_pipeline.py::TestExtractPagesAsPdf::test_pages_returned_in_sorted_order PASSED [ 41%]
+tests/test_pipeline.py::TestExtractPagesAsPdf::test_returns_bytes PASSED [ 42%]
+tests/test_pipeline.py::TestExtractPagesAsPdf::test_single_page_extracted PASSED [ 43%]
+tests/test_pipeline.py::TestSaveExtractedPages::test_balance_file_created PASSED [ 44%]
+tests/test_pipeline.py::TestSaveExtractedPages::test_both_files_created PASSED [ 45%]
+tests/test_pipeline.py::TestSaveExtractedPages::test_extracted_page_count_correct PASSED [ 46%]
+tests/test_pipeline.py::TestSaveExtractedPages::test_income_file_created PASSED [ 47%]
+tests/test_pipeline.py::TestSaveExtractedPages::test_output_filenames_match_stem PASSED [ 48%]
+tests/test_pipeline.py::TestStats::test_cv_calculation PASSED            [ 49%]
+tests/test_pipeline.py::TestStats::test_empty_list_returns_all_none PASSED [ 50%]
+tests/test_pipeline.py::TestStats::test_identical_values_zero_cv PASSED  [ 51%]
+tests/test_pipeline.py::TestStats::test_mean_zero_cv_is_none PASSED      [ 52%]
+tests/test_pipeline.py::TestStats::test_min_max_correct PASSED           [ 53%]
+tests/test_pipeline.py::TestStats::test_negative_mean_cv_uses_abs PASSED [ 54%]
+tests/test_pipeline.py::TestStats::test_rounding_to_4_decimal_places PASSED [ 55%]
+tests/test_pipeline.py::TestStats::test_single_value_zero_std PASSED     [ 56%]
+tests/test_pipeline.py::TestStats::test_ten_identical_values_consistent_pattern PASSED [ 57%]
+tests/test_pipeline.py::TestCheckConsistency::test_all_null_not_consistent PASSED [ 58%]
+tests/test_pipeline.py::TestCheckConsistency::test_all_same_values_consistent PASSED [ 59%]
+tests/test_pipeline.py::TestCheckConsistency::test_cv_just_below_threshold_consistent PASSED [ 60%]
+tests/test_pipeline.py::TestCheckConsistency::test_high_cv_not_consistent PASSED [ 60%]
+tests/test_pipeline.py::TestCheckConsistency::test_invalid_string_value_treated_as_null PASSED [ 61%]
+tests/test_pipeline.py::TestCheckConsistency::test_one_null_makes_not_consistent PASSED [ 62%]
+tests/test_pipeline.py::TestCheckConsistency::test_report_contains_all_metrics PASSED [ 63%]
+tests/test_pipeline.py::TestCheckConsistency::test_report_metadata PASSED [ 64%]
+tests/test_pipeline.py::TestCheckConsistency::test_string_values_coerced_to_float PASSED [ 65%]
+tests/test_pipeline.py::TestCall2JsonOutput::test_clean_json_parsed PASSED [ 66%]
+tests/test_pipeline.py::TestCall2JsonOutput::test_gemini_called_with_correct_arguments PASSED [ 67%]
+tests/test_pipeline.py::TestCall2JsonOutput::test_json_with_json_backtick_fence_stripped PASSED [ 68%]
+tests/test_pipeline.py::TestCall2JsonOutput::test_json_with_triple_backtick_fence_stripped PASSED [ 69%]
+tests/test_pipeline.py::TestCall2JsonOutput::test_multiple_metrics_in_response PASSED [ 70%]
+tests/test_pipeline.py::TestCall2JsonOutput::test_null_value_in_response PASSED [ 71%]
+tests/test_pipeline.py::TestCombinePdfs::test_balance_positions_follow_income PASSED [ 72%]
+tests/test_pipeline.py::TestCombinePdfs::test_combined_page_count PASSED [ 73%]
+tests/test_pipeline.py::TestCombinePdfs::test_income_positions_are_1_indexed PASSED [ 74%]
+tests/test_pipeline.py::TestCombinePdfs::test_returns_bytes PASSED       [ 75%]
+tests/test_pipeline.py::TestCombinePdfs::test_single_page_each PASSED    [ 76%]
+tests/test_pipeline.py::TestCellLabel::test_all_null PASSED              [ 77%]
+tests/test_pipeline.py::TestCellLabel::test_consistent_with_cv PASSED    [ 78%]
+tests/test_pipeline.py::TestCellLabel::test_consistent_with_cv_zero PASSED [ 79%]
+tests/test_pipeline.py::TestCellLabel::test_consistent_with_none_cv PASSED [ 80%]
+tests/test_pipeline.py::TestCellLabel::test_variable_null_cv_with_nulls PASSED [ 80%]
+tests/test_pipeline.py::TestCellLabel::test_variable_with_cv_and_some_nulls PASSED [ 81%]
+tests/test_pipeline.py::TestCellLabel::test_variable_with_cv_no_nulls PASSED [ 82%]
+tests/test_pipeline.py::TestBuildReport::test_all_null_in_grid PASSED    [ 83%]
+tests/test_pipeline.py::TestBuildReport::test_companies_list PASSED      [ 84%]
+tests/test_pipeline.py::TestBuildReport::test_company_summary_consistent_count PASSED [ 85%]
+tests/test_pipeline.py::TestBuildReport::test_company_summary_consistent_pct PASSED [ 86%]
+tests/test_pipeline.py::TestBuildReport::test_grid_has_all_companies_and_metrics PASSED [ 87%]
+tests/test_pipeline.py::TestBuildReport::test_metric_summary_consistent_count PASSED [ 88%]
+tests/test_pipeline.py::TestBuildReport::test_n_companies PASSED         [ 89%]
+tests/test_pipeline.py::TestBuildReport::test_n_runs_each PASSED         [ 90%]
+tests/test_pipeline.py::TestBuildReport::test_temperature_from_first_report PASSED [ 91%]
+tests/test_pipeline.py::TestSaveCsv::test_consistent_flag_in_csv PASSED  [ 92%]
+tests/test_pipeline.py::TestSaveCsv::test_csv_columns PASSED             [ 93%]
+tests/test_pipeline.py::TestSaveCsv::test_csv_file_created PASSED        [ 94%]
+tests/test_pipeline.py::TestSaveCsv::test_csv_row_count PASSED           [ 95%]
+tests/test_pipeline.py::TestLoadAllReports::test_company_name_preserved PASSED [ 96%]
+tests/test_pipeline.py::TestLoadAllReports::test_empty_directory_returns_empty_list PASSED [ 97%]
+tests/test_pipeline.py::TestLoadAllReports::test_loads_all_matching_files PASSED [ 98%]
+tests/test_pipeline.py::TestLoadAllReports::test_report_json_content_intact PASSED [ 99%]
+tests/test_pipeline.py::TestLoadAllReports::test_returns_sorted_by_filename PASSED [100%]
+
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+.venv/lib/python3.10/site-packages/requests/__init__.py:113
+  /Users/pixalate/PycharmProjects/pdf_identify/.venv/lib/python3.10/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.6.3) or chardet (6.0.0.post1)/charset_normalizer (3.4.4) doesn't match a supported version!
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 105 passed, 6 warnings in 0.72s ========================
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+
+  Test Class                          Module          Tests   Result
+  ──────────────────────────────────  ──────────────  ──────  ──────────────────
+  TestFuzzyMatchFinancialStatement    step_1          21      PASSED (21/21)
+  TestFilterTopPages                  step_1           9      PASSED  (9/9)
+  TestSaveResults                     step_1           4      PASSED  (4/4)
+  TestLoadResultsCsv                  step_2           5      PASSED  (5/5)
+  TestExtractPagesAsPdf               step_2           7      PASSED  (7/7)
+  TestSaveExtractedPages              step_2           5      PASSED  (5/5)
+  TestStats                           step_3           9      PASSED  (9/9)
+  TestCheckConsistency                step_3           8      PASSED  (8/8)
+  TestCall2JsonOutput                 step_3           6      PASSED  (6/6)
+  TestCombinePdfs                     step_3           5      PASSED  (5/5)
+  TestCellLabel                       step_4           7      PASSED  (7/7)
+  TestBuildReport                     step_4           9      PASSED  (9/9)
+  TestSaveCsv                         step_4           4      PASSED  (4/4)
+  TestLoadAllReports                  step_4           5      PASSED  (5/5)
+  ──────────────────────────────────  ──────────────  ──────  ──────────────────
+  TOTAL                                              105      105 passed, 0 failed
+
+  Duration : 0.72 seconds
+  Platform : darwin / Python 3.10.11
+  Status   : ALL TESTS PASSED
+================================================================================

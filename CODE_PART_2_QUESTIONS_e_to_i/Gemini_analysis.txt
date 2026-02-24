@@ -1,0 +1,892 @@
+Found 9 company pair(s) in data/extracted
+
+======================================================================
+Company  : Alibaba_2024
+Income   : Alibaba_2024_income_statement.pdf
+Balance  : Alibaba_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 2,308,960 bytes  (income pages [1, 2], balance pages [3, 4])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Alibaba_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — Alibaba_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                        71332.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                 17.9407       34.1734    1.9048      0  ✗ variable
+  quick_ratio                           1.6562        0.2034    0.1228      0  ✗ variable
+  debt_to_equity_ratio                  0.1673        0.0081    0.0485      0  ✓ consistent
+  debt_to_assets_ratio                  0.0972        0.0009    0.0097      0  ✓ consistent
+  debt_to_capital_ratio                 0.1439        0.0064    0.0445      0  ✓ consistent
+  debt_to_ebitda_ratio                  1.2060        0.0453    0.0375      7  ✗ variable
+  interest_coverage_ratio              14.5647        0.8540    0.0586      1  ✗ variable
+
+  Saved → Alibaba_2024_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : EM_2024
+Income   : EM_2024_income_statement.pdf
+Balance  : EM_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 329,044 bytes  (income pages [1, 2], balance pages [3])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → EM_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — EM_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                        36010.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                  9.2302       25.1500    2.7248      0  ✗ variable
+  quick_ratio                           1.0653        0.0001    0.0001      0  ✓ consistent
+  debt_to_equity_ratio                  0.1964        0.0022    0.0113      0  ✓ consistent
+  debt_to_assets_ratio                  0.1106        0.0002    0.0014      0  ✓ consistent
+  debt_to_capital_ratio                 0.1641        0.0015    0.0093      0  ✓ consistent
+  debt_to_ebitda_ratio                  0.5639        0.0050    0.0088      0  ✓ consistent
+  interest_coverage_ratio              65.2431        7.4330    0.1139      0  ✗ variable
+
+  Saved → EM_2024_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : GM_2023
+Income   : GM_2023_income_statement.pdf
+Balance  : GM_2023_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 156,036 bytes  (income pages [1], balance pages [2])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → GM_2023_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — GM_2023  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                        10040.9000      131.5199    0.0131      0  ✓ consistent
+  cost_to_income_ratio                 38.4036       45.8760    1.1946      0  ✗ variable
+  quick_ratio                           0.7257        0.1659    0.2287      0  ✗ variable
+  debt_to_equity_ratio                  1.8927        0.0018    0.0009      0  ✓ consistent
+  debt_to_assets_ratio                  9.2731       17.6535    1.9037      0  ✗ variable
+  debt_to_capital_ratio                13.6110       25.9145    1.9039      0  ✗ variable
+  debt_to_ebitda_ratio                 13.0922        0.0000    0.0000      9  ✗ variable
+  interest_coverage_ratio               6.7702        4.9539    0.7317      0  ✗ variable
+
+  Saved → GM_2023_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : Google_2024
+Income   : Google_2024_income_statement.pdf
+Balance  : Google_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 542,755 bytes  (income pages [1, 2], balance pages [3])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Google_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — Google_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                       100118.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                  7.4000       20.1633    2.7248      0  ✗ variable
+  quick_ratio                           1.6604        0.0003    0.0002      0  ✓ consistent
+  debt_to_equity_ratio                  0.0331        0.0011    0.0317      0  ✓ consistent
+  debt_to_assets_ratio                  0.0238        0.0013    0.0530      0  ✗ variable
+  debt_to_capital_ratio                 0.0322        0.0007    0.0224      0  ✓ consistent
+  debt_to_ebitda_ratio                     N/A           N/A       N/A     10  ✗ variable
+  interest_coverage_ratio                  N/A           N/A       N/A     10  ✗ variable
+
+  Saved → Google_2024_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : JPM_2024
+Income   : JPM_2024_income_statement.pdf
+Balance  : JPM_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 77,875 bytes  (income pages [1, 2], balance pages [3])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → JPM_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — JPM_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                        58471.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                 20.9882       25.0720    1.1946      0  ✗ variable
+  quick_ratio                           1.8687        1.6387    0.8769      1  ✗ variable
+  debt_to_equity_ratio                  2.1431        2.3458    1.0946      0  ✗ variable
+  debt_to_assets_ratio                  2.3004        4.2098    1.8300      0  ✗ variable
+  debt_to_capital_ratio                11.5618       21.8924    1.8935      0  ✗ variable
+  debt_to_ebitda_ratio                  2.3550        0.0750    0.0318      8  ✗ variable
+  interest_coverage_ratio               1.4315        0.4906    0.3427      1  ✗ variable
+
+  Saved → JPM_2024_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : LVMH_2024
+Income   : LVMH_2024_income_statement.pdf
+Balance  : LVMH_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 119,143 bytes  (income pages [1, 2], balance pages [3])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → LVMH_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — LVMH_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                        12550.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                 28.0935       34.6172    1.2322      0  ✗ variable
+  quick_ratio                           0.6363        0.0984    0.1547      0  ✗ variable
+  debt_to_equity_ratio                  0.4338        0.1263    0.2911      0  ✗ variable
+  debt_to_assets_ratio                  0.2008        0.0592    0.2947      0  ✗ variable
+  debt_to_capital_ratio                 0.2977        0.0594    0.1997      0  ✗ variable
+  debt_to_ebitda_ratio                     N/A           N/A       N/A     10  ✗ variable
+  interest_coverage_ratio              20.2610        1.2030    0.0594      0  ✗ variable
+
+  Saved → LVMH_2024_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : Meta_2024
+Income   : Meta_2024_income_statement.pdf
+Balance  : Meta_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 328,003 bytes  (income pages [1, 2], balance pages [3])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Meta_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — Meta_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                        62360.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                  6.3024       17.1725    2.7248      0  ✗ variable
+  quick_ratio                           2.8215        0.0010    0.0004      0  ✓ consistent
+  debt_to_equity_ratio                  0.1580        0.0007    0.0042      0  ✓ consistent
+  debt_to_assets_ratio                  0.1040        0.0013    0.0127      0  ✓ consistent
+  debt_to_capital_ratio                 0.1367        0.0011    0.0081      0  ✓ consistent
+  debt_to_ebitda_ratio                  0.4155        0.0000    0.0000      9  ✗ variable
+  interest_coverage_ratio              54.7443        0.4723    0.0086      7  ✗ variable
+
+  Saved → Meta_2024_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : Tencent_2024
+Income   : Tencent_2024_income_statement.pdf
+Balance  : Tencent_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 256,883 bytes  (income pages [1, 2], balance pages [3, 4])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Tencent_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — Tencent_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                       196467.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                  5.2346       13.9566    2.6662      0  ✗ variable
+  quick_ratio                           3.7930        0.0000    0.0000      9  ✗ variable
+  debt_to_equity_ratio                  0.2833        0.0095    0.0334      0  ✓ consistent
+  debt_to_assets_ratio                  0.1606        0.0061    0.0380      0  ✓ consistent
+  debt_to_capital_ratio                 0.2209        0.0057    0.0259      0  ✓ consistent
+  debt_to_ebitda_ratio                     N/A           N/A       N/A     10  ✗ variable
+  interest_coverage_ratio              17.6358        0.5333    0.0302      0  ✓ consistent
+
+  Saved → Tencent_2024_consistency_report.json
+======================================================================
+
+======================================================================
+Company  : Volkswagan_2024
+Income   : Volkswagan_2024_income_statement.pdf
+Balance  : Volkswagan_2024_balance_sheet.pdf
+Runs     : 10  |  Temperature: 0.7
+======================================================================
+
+Combining extracted PDFs with PyMuPDF...
+  Combined PDF : 112,195 bytes  (income pages [1], balance pages [2])
+
+  ── Run 01/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_01.json
+
+  ── Run 02/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_02.json
+
+  ── Run 03/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_03.json
+
+  ── Run 04/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_04.json
+
+  ── Run 05/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_05.json
+
+  ── Run 06/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_06.json
+
+  ── Run 07/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_07.json
+
+  ── Run 08/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_08.json
+
+  ── Run 09/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_09.json
+
+  ── Run 10/10 ──────────────────────────────────
+  Gemini Call 1 — chain-of-thought...
+  Done.
+  Gemini Call 2 — JSON formatting...
+  Done.
+  Saved → Volkswagan_2024_financial_ratios_run_10.json
+
+  Completed 10/10 runs successfully.
+
+======================================================================
+CONSISTENCY REPORT — Volkswagan_2024  (10 runs, temperature=0.7)
+======================================================================
+  Metric                                  Mean           Std        CV  Nulls  Status
+  ────────────────────────────  ──────────────  ────────────  ────────  ─────  ──────────
+  net_income                        12394.0000        0.0000    0.0000      0  ✓ consistent
+  cost_to_income_ratio                 49.3612       39.5844    0.8019      0  ✗ variable
+  quick_ratio                              N/A           N/A       N/A     10  ✗ variable
+  debt_to_equity_ratio                     N/A           N/A       N/A     10  ✗ variable
+  debt_to_assets_ratio                  0.3170        0.0000    0.0000      9  ✗ variable
+  debt_to_capital_ratio                    N/A           N/A       N/A     10  ✗ variable
+  debt_to_ebitda_ratio                     N/A           N/A       N/A     10  ✗ variable
+  interest_coverage_ratio               5.8437        0.3992    0.0683      0  ✗ variable
+
+  Saved → Volkswagan_2024_consistency_report.json
+======================================================================

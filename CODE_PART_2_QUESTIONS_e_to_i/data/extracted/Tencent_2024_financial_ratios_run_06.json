@@ -1,0 +1,90 @@
+{
+  "net_income": {
+    "value": 196467,
+    "unit": "Millions RMB",
+    "formula": "Profit for the year",
+    "inputs": {
+      "Profit for the year": 196467
+    },
+    "reason": "Tencent's net income for 2024 was 196,467 million RMB, representing the company's total profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.471,
+    "unit": "ratio",
+    "formula": "Cost of revenues / Revenues",
+    "inputs": {
+      "Cost of revenues": 311011,
+      "Revenues": 660257
+    },
+    "reason": "For every RMB of revenue, Tencent incurred approximately 0.47 RMB in costs, indicating the efficiency of its operations."
+  },
+  "quick_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Cash and Cash Equivalents + Restricted Cash + Accounts Receivable + Current Financial Assets at FVTPL + Current Financial Assets at FVOCI) / Current Liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 132519,
+      "Restricted cash": 3334,
+      "Accounts receivable": 48203,
+      "Financial assets at fair value through profit or loss (Current)": 9568,
+      "Financial assets at fair value through other comprehensive income (Current)": 3345,
+      "Current Liabilities": null
+    },
+    "reason": "The quick ratio cannot be calculated due to the unavailability of explicit 'Current Liabilities' in the provided financial statements."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.2846,
+    "unit": "ratio",
+    "formula": "(Borrowings (Non-current) + Notes payable (Non-current)) / Equity attributable to equity holders of the Company",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Equity attributable to equity holders of the Company": 973548
+    },
+    "reason": "Tencent's debt-to-equity ratio of 0.2846 suggests that the company uses a relatively low amount of debt financing compared to equity financing."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1556,
+    "unit": "ratio",
+    "formula": "(Borrowings (Non-current) + Notes payable (Non-current)) / Total assets",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Total assets": 1780995
+    },
+    "reason": "Approximately 15.56% of Tencent's assets are financed by debt, indicating a moderate level of leverage."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.2216,
+    "unit": "ratio",
+    "formula": "(Borrowings (Non-current) + Notes payable (Non-current)) / ((Borrowings (Non-current) + Notes payable (Non-current)) + Equity attributable to equity holders of the Company)",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Equity attributable to equity holders of the Company": 973548
+    },
+    "reason": "Debt constitutes about 22.16% of Tencent's total capital structure, suggesting a balanced approach to financing its operations and growth."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "x",
+    "formula": "(Borrowings (Non-current) + Notes payable (Non-current)) / EBITDA",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Operating profit": 208099,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The debt-to-EBITDA ratio cannot be accurately calculated as depreciation and amortization figures were not provided in the income statement to derive EBITDA."
+  },
+  "interest_coverage_ratio": {
+    "value": 17.3695,
+    "unit": "x",
+    "formula": "Operating profit / Finance costs",
+    "inputs": {
+      "Operating profit": 208099,
+      "Finance costs": 11981
+    },
+    "reason": "Tencent's operating profit is 17.37 times its finance costs, indicating a strong ability to cover its interest obligations."
+  }
+}

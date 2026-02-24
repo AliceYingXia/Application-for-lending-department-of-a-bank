@@ -1,0 +1,101 @@
+{
+  "net_income": {
+    "value": 12394,
+    "unit": "millions EUR",
+    "formula": "Earnings after tax",
+    "inputs": {
+      "Earnings after tax": 12394
+    },
+    "reason": "Volkswagen's net income for 2024 was \u20ac12,394 million, representing the company's profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 81.68,
+    "unit": "%",
+    "formula": "(Cost of sales / Sales revenue) * 100",
+    "inputs": {
+      "Cost of sales": 265184,
+      "Sales revenue": 324656
+    },
+    "reason": "Volkswagen's cost-to-income ratio of 81.68% indicates that for every euro of sales revenue, the company incurred approximately 81.68 cents in cost of sales."
+  },
+  "quick_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Marketable securities and time deposits + Trade receivables + Financial services receivables (current) + Other financial assets (current) + Other receivables (current) + Tax receivables (current)) / Current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 40296,
+      "Marketable securities and time deposits": 27326,
+      "Trade receivables": 21130,
+      "Financial services receivables (Current assets)": 68855,
+      "Other financial assets (Current assets)": 18649,
+      "Other receivables (Current assets)": 10217,
+      "Tax receivables (Current assets)": 2038,
+      "Current liabilities": "N/A"
+    },
+    "reason": "The quick ratio cannot be calculated due to the unavailability of 'Current liabilities' in the provided financial data."
+  },
+  "debt_to_equity_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / Equity",
+    "inputs": {
+      "Financial services receivables (Non-current assets)": 101087,
+      "Other financial assets (Non-current assets)": 12129,
+      "Financial services receivables (Current assets)": 68855,
+      "Other financial assets (Current assets)": 18649,
+      "Equity": "N/A"
+    },
+    "reason": "The debt-to-equity ratio cannot be calculated due to the unavailability of 'Equity' in the provided financial data."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.317,
+    "unit": "ratio",
+    "formula": "Total Debt / Total assets",
+    "inputs": {
+      "Financial services receivables (Non-current assets)": 101087,
+      "Other financial assets (Non-current assets)": 12129,
+      "Financial services receivables (Current assets)": 68855,
+      "Other financial assets (Current assets)": 18649,
+      "Total assets": 632905
+    },
+    "reason": "Volkswagen's debt-to-assets ratio of 0.317 indicates that approximately 31.7% of the company's assets are financed by debt."
+  },
+  "debt_to_capital_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / (Total Debt + Equity)",
+    "inputs": {
+      "Financial services receivables (Non-current assets)": 101087,
+      "Other financial assets (Non-current assets)": 12129,
+      "Financial services receivables (Current assets)": 68855,
+      "Other financial assets (Current assets)": 18649,
+      "Equity": "N/A"
+    },
+    "reason": "The debt-to-capital ratio cannot be calculated due to the unavailability of 'Equity' in the provided financial data."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / EBITDA",
+    "inputs": {
+      "Financial services receivables (Non-current assets)": 101087,
+      "Other financial assets (Non-current assets)": 12129,
+      "Financial services receivables (Current assets)": 68855,
+      "Other financial assets (Current assets)": 18649,
+      "Earnings before tax": 16806,
+      "Interest expenses": 3446,
+      "Depreciation and Amortization": "N/A"
+    },
+    "reason": "The debt-to-EBITDA ratio cannot be calculated due to the unavailability of 'Depreciation and Amortization' in the provided financial data."
+  },
+  "interest_coverage_ratio": {
+    "value": 5.53,
+    "unit": "ratio",
+    "formula": "Operating result / Interest expenses (absolute value)",
+    "inputs": {
+      "Operating result": 19060,
+      "Interest expenses": 3446
+    },
+    "reason": "Volkswagen's interest coverage ratio of 5.53 indicates that the company's operating income is 5.53 times its interest expenses, suggesting a healthy ability to cover its interest obligations."
+  }
+}

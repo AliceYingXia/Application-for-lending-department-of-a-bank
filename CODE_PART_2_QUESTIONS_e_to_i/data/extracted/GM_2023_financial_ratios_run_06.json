@@ -1,0 +1,97 @@
+{
+  "net_income": {
+    "value": 10127,
+    "unit": "millions USD",
+    "formula": "Net income (loss) attributable to stockholders",
+    "inputs": {
+      "Net income (loss) attributable to stockholders": 10127
+    },
+    "reason": "GM's net income for 2023 was $10,127 million, representing the company's profitability after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 94.59,
+    "unit": "%",
+    "formula": "Total Costs and Expenses / Total Net Sales and Revenue",
+    "inputs": {
+      "Total costs and expenses": 162544,
+      "Total net sales and revenue": 171842
+    },
+    "reason": "GM's cost-to-income ratio of 94.59% indicates that a large portion of its revenue is consumed by expenses, suggesting relatively thin profit margins on sales."
+  },
+  "quick_ratio": {
+    "value": 0.83,
+    "unit": "ratio",
+    "formula": "(Cash and Cash Equivalents + Marketable Debt Securities + Accounts and Notes Receivable, net + GM Financial Receivables, net (current portion)) / Total Current Liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 18853,
+      "Marketable debt securities": 7613,
+      "Accounts and notes receivable, net": 12378,
+      "GM Financial receivables, net (current portion)": 39076,
+      "Total current liabilities": 94445
+    },
+    "reason": "A quick ratio of 0.83x suggests that GM has less than one dollar in quick assets for every dollar of current liabilities, indicating potential short-term liquidity challenges without relying on inventory."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.89,
+    "unit": "ratio",
+    "formula": "Total Debt / Total Stockholders' Equity",
+    "inputs": {
+      "Short-term debt and current portion of long-term debt - Automotive": 428,
+      "Short-term debt and current portion of long-term debt - GM Financial": 38540,
+      "Long-term debt - Automotive": 15985,
+      "Long-term debt - GM Financial": 66788,
+      "Total stockholders' equity": 64286
+    },
+    "reason": "A debt-to-equity ratio of 1.89x indicates that GM relies more on debt financing than equity, which could imply higher financial risk."
+  },
+  "debt_to_assets_ratio": {
+    "value": 44.58,
+    "unit": "%",
+    "formula": "Total Debt / Total Assets",
+    "inputs": {
+      "Short-term debt and current portion of long-term debt - Automotive": 428,
+      "Short-term debt and current portion of long-term debt - GM Financial": 38540,
+      "Long-term debt - Automotive": 15985,
+      "Long-term debt - GM Financial": 66788,
+      "Total Assets": 273064
+    },
+    "reason": "With a debt-to-assets ratio of 44.58%, nearly half of GM's assets are financed by debt, suggesting a moderate level of financial leverage."
+  },
+  "debt_to_capital_ratio": {
+    "value": 65.44,
+    "unit": "%",
+    "formula": "Total Debt / (Total Debt + Total Stockholders' Equity)",
+    "inputs": {
+      "Short-term debt and current portion of long-term debt - Automotive": 428,
+      "Short-term debt and current portion of long-term debt - GM Financial": 38540,
+      "Long-term debt - Automotive": 15985,
+      "Long-term debt - GM Financial": 66788,
+      "Total stockholders' equity": 64286
+    },
+    "reason": "A debt-to-capital ratio of 65.44% shows that a significant portion of GM's total capital structure is composed of debt, indicating higher financial risk."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / (Operating income (loss) + Depreciation & Amortization)",
+    "inputs": {
+      "Short-term debt and current portion of long-term debt - Automotive": 428,
+      "Short-term debt and current portion of long-term debt - GM Financial": 38540,
+      "Long-term debt - Automotive": 15985,
+      "Long-term debt - GM Financial": 66788,
+      "Operating income (loss)": 9298,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be calculated as depreciation and amortization data was not provided in the financial statements, which is essential for determining EBITDA."
+  },
+  "interest_coverage_ratio": {
+    "value": 10.21,
+    "unit": "x",
+    "formula": "Operating Income / Automotive Interest Expense",
+    "inputs": {
+      "Operating income (loss)": 9298,
+      "Automotive interest expense": 911
+    },
+    "reason": "An interest coverage ratio of 10.21x indicates that GM's operating income is more than sufficient to cover its automotive interest expenses, suggesting good ability to meet its debt obligations."
+  }
+}

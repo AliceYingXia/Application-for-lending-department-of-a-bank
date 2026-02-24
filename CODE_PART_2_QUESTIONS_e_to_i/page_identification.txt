@@ -1,0 +1,597 @@
+
+================================================================================
+BATCH PROCESSING: 9 PDF FILES
+================================================================================
+
+
+────────────────────────────────────────────────────────────────────────────────
+[1/9] Processing: Alibaba_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 341
+✓ Found tables on 4 page(s)
+
+  Income statements: 2 tables
+  Balance sheets: 2 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 254: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Income Statements"
+    Dimensions: 89 rows × 7 cols
+    Preview (first 3 rows):
+      ['', '', '', '2022', '2023', '2024', '']
+      ['', '', '', '', '', '', '']
+      ['', '', '', 'RMB', 'RMB', 'RMB', 'US$']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 255: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Statements of Comprehensive Income"
+    Dimensions: 45 rows × 9 cols
+    Preview (first 3 rows):
+      ['', '', '', '', '', '2022', '2023', '2024', '']
+      ['', '', '', '', '', '', '', '', '']
+      ['', '', '', '', '', 'RMB', 'RMB', 'RMB', 'US$']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 256: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Balance Sheets"
+    Dimensions: 77 rows × 6 cols
+    Preview (first 3 rows):
+      ['', '', '', 'Consolidated', 'Balance Sh', 'eets']
+      ['', '', '', '', '', '']
+      ['', '', '', '', 'As of March 31,', '']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 257: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Balance Sheets"
+    Dimensions: 57 rows × 8 cols
+    Preview (first 3 rows):
+      ['onsolidated', 'Balance', 'Shee', 'ts', '', '', '', '']
+      ['', '', '', '', '', '', '', '']
+      ['', '', '', '', '', 'As o', 'f March 31,', '']
+
+
+✓ Success: Found 2 income statement(s) and 2 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[2/9] Processing: EM_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 152
+✓ Found tables on 3 page(s)
+
+  Income statements: 2 tables
+  Balance sheets: 1 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 88: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATEDSTATEMENTOFINCOME"
+    Dimensions: 45 rows × 3 cols
+    Preview (first 3 rows):
+      ['Revenuesandotherinco...', '', '']
+      ['', '', '']
+      ['Salesandotheroperati...', '398,675', '276,692']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 89: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATEDSTATEMENTOFCOMPREHENSIVEINCOME"
+    Dimensions: 24 rows × 3 cols
+    Preview (first 3 rows):
+      ['(millionsofdollars) ...', '2022', '2021']
+      ['', '', '']
+      ['Netincome(loss)inclu...', '57,577', '23,598']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 90: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATEDBALANCESHEET"
+    Dimensions: 80 rows × 3 cols
+    Preview (first 3 rows):
+      ['D\nReference', 'ecember D', 'ecember']
+      ['(millionsofdollars)\n...', '1,2023 3', '1,2022']
+      ['Number', '', '']
+
+
+✓ Success: Found 2 income statement(s) and 1 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[3/9] Processing: GM_2023.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 113
+✓ Found tables on 2 page(s)
+
+  Income statements: 1 tables
+  Balance sheets: 1 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 61: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED INCOME STATEMENTS"
+    Dimensions: 67 rows × 12 cols
+    Preview (first 3 rows):
+      ['', '', 'GEN', 'ER', 'AL MOTORS', 'COMPANY AND SUBSID', 'IAR', 'IES', '', '', '', '']
+      ['', '', '', '', '', '', '', '', '', '', '', '']
+      ['tem 8. Financia', 'l Statement', 's and Su', 'pp', 'lementary Data', '', '', '', '', '', '', '']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 62: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED BALANCE SHEETS"
+    Dimensions: 60 rows × 11 cols
+    Preview (first 3 rows):
+      ['', '', '', 'C', 'ONSO', 'LIDATED', 'BALANCE SHEETS', '', '', '', '']
+      ['', '', '', '(', 'In mill', 'ions, excep', 't per share amounts)', '', '', '', '']
+      ['', '', '', '', '', '', '', '', '', '', '']
+
+
+✓ Success: Found 1 income statement(s) and 1 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[4/9] Processing: Google_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 140
+✓ Found tables on 3 page(s)
+
+  Income statements: 2 tables
+  Balance sheets: 1 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 83: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED STATEMENTS OF INCOME"
+    Dimensions: 25 rows × 8 cols
+    Preview (first 3 rows):
+      ['', '', '', 'Year', 'Ende', 'd December', '31,', '']
+      ['', '', '', '', '', '', '', '']
+      ['', '', '', '2022', '', '2023', '', '2024']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 84: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME"
+    Dimensions: 33 rows × 10 cols
+    Preview (first 3 rows):
+      ['Table of', 'Contents', '', '', '', '', '', '', 'Alphabe', 't Inc.']
+      ['', '', '', '', '', '', '', '', '', '']
+      ['', '', '', 'Alphabet I', 'nc.', '', '', '', '', '']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 82: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED BALANCE SHEETS"
+    Dimensions: 57 rows × 10 cols
+    Preview (first 3 rows):
+      ['10:53 AM', '', '', '', 'goog-20', '241231', '', '', '', '']
+      ['', '', '', '', '', '', '', '', '', '']
+      ['e of Contents', '', '', '', '', '', '', '', 'Alph', 'abet Inc']
+
+
+✓ Success: Found 2 income statement(s) and 1 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[5/9] Processing: JPM_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 372
+✓ Found tables on 3 page(s)
+
+  Income statements: 2 tables
+  Balance sheets: 1 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 206: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated statements of income"
+    Dimensions: 74 rows × 8 cols
+    Preview (first 3 rows):
+      ['PMorgan Chase', '& Co.', '', '', '', '', '', '']
+      ['Consolidated sta', 'tements of income', '', '', '', '', '', '']
+      ['', '', '', '', '', '', '', '']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 207: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated statements of comprehensive income"
+    Dimensions: 28 rows × 6 cols
+    Preview (first 3 rows):
+      ['PMorgan Chase &', 'Co.', '', '', '', '']
+      ['Consolidated state', 'ments of comprehensi...', '', '', '', '']
+      ['', '', '', '', '', '']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 208: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated balance sheets"
+    Dimensions: 103 rows × 10 cols
+    Preview (first 3 rows):
+      ['December 31, (in m', 'illions, except sh', 'are data)', '', '', '', '', '2024', '', '2023']
+      ['', '', '', '', '', '', '', '', '', '']
+      ['Assets', '', '', '', '', '', '', '', '', '']
+
+
+✓ Success: Found 2 income statement(s) and 1 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[6/9] Processing: LVMH_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 70
+✓ Found tables on 3 page(s)
+
+  Income statements: 2 tables
+  Balance sheets: 1 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 23: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED INCOME STATEMENT 22"
+    Dimensions: 20 rows × 4 cols
+    Preview (first 3 rows):
+      ['CONDENSED C', 'ONSOL', 'IDATED', '']
+      ['FINANCIAL STA', 'TEMEN', 'TS', '']
+      ['', '', '', '']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 24: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated income statement"
+    Dimensions: 40 rows × 6 cols
+    Preview (first 3 rows):
+      ['Consolidated income ...', '', '', '', '', '']
+      ['', '', '', '', '', '']
+      ['CONSOLIDATED IN', 'COME STATEMENT', '', '', '', '']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 26: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated balance sheet"
+    Dimensions: 53 rows × 5 cols
+    Preview (first 3 rows):
+      ['Consolidated balance...', '', '', '', '']
+      ['', '', '', '', '']
+      ['CONSOLIDATED BALANCE...', '', '', '', '']
+
+
+✓ Success: Found 2 income statement(s) and 1 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[7/9] Processing: Meta_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 134
+✓ Found tables on 3 page(s)
+
+  Income statements: 2 tables
+  Balance sheets: 1 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 89: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED STATEMENTS OF INCOME"
+    Dimensions: 43 rows × 9 cols
+    Preview (first 3 rows):
+      ['', 'META', 'PLATFORMS, IN', 'C.', '', '', '', '', '']
+      ['CONSOL', 'IDATED', 'STATEMENTS', 'OF IN', 'COME', '', '', '', '']
+      ['(In', 'millions,', 'except per share a', 'mounts)', '', '', '', '', '']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 90: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME"
+    Dimensions: 16 rows × 4 cols
+    Preview (first 3 rows):
+      ['', 'Year Ended D', 'ecember', '31,']
+      ['', '', '', '']
+      ['20', '24 20', '23', '']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 88: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "CONSOLIDATED BALANCE SHEETS"
+    Dimensions: 72 rows × 9 cols
+    Preview (first 3 rows):
+      ['', '', '(In millions, ex', 'cept numbe', 'r of shares and par ...', '', '', '', '']
+      ['', '', '', '', '', '', '', '', '']
+      ['', '', '', '', '', '', 'Decemb', 'er 31,', '']
+
+
+✓ Success: Found 2 income statement(s) and 1 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[8/9] Processing: Tencent_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 274
+✓ Found tables on 4 page(s)
+
+  Income statements: 2 tables
+  Balance sheets: 2 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 124: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Income Statement"
+    Dimensions: 67 rows × 7 cols
+    Preview (first 3 rows):
+      ['', '', '', '', 'For the', 'year ended 31 De', 'cember 202']
+      ['', '', '', '', '', '', '']
+      ['', '', '', '', '', 'Year ended 31 De', 'cember']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 125: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Statement of Comprehensive Income"
+    Dimensions: 57 rows × 7 cols
+    Preview (first 3 rows):
+      ['', '', '', '', '', 'Year ended 31 De', 'cember']
+      ['', '', '', '', '', '', '']
+      ['', '', '', '', '', '2024', '2023']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 126: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Statement of Financial Position"
+    Dimensions: 67 rows × 8 cols
+    Preview (first 3 rows):
+      ['', '', '', '', '', '', 'As at 31 De', 'cember 202']
+      ['', '', '', '', '', '', '', '']
+      ['', '', '', '', '', '', 'As at 31 Dece', 'mber']
+
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 127: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Consolidated Statement of Financial Position"
+    Dimensions: 45 rows × 4 cols
+    Preview (first 3 rows):
+      ['', '', '2024', '2023']
+      ['', '', '', '']
+      ['', 'Note', 'RMB’Million', 'RMB’Million']
+
+
+✓ Success: Found 2 income statement(s) and 2 balance sheet(s)
+
+────────────────────────────────────────────────────────────────────────────────
+[9/9] Processing: Volkswagan_2024.pdf
+────────────────────────────────────────────────────────────────────────────────
+
+======================================================================
+TABLE IDENTIFICATION - pdfplumber
+======================================================================
+Total pages: 677
+✓ Found tables on 2 page(s)
+
+  Income statements: 1 tables
+  Balance sheets: 1 tables
+
+======================================================================
+INCOME STATEMENTS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 472: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Income Statement"
+    Dimensions: 57 rows × 6 cols
+    Preview (first 3 rows):
+      ['Consolidated Fi', 'nancial State', 'ments', '', 'Income', 'Statement']
+      ['', '', '', '', '', '']
+      ['', '', 'Income Stateme', 'nt', '', '']
+
+
+======================================================================
+BALANCE SHEETS
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Physical Page 475: 1 table(s)
+──────────────────────────────────────────────────────────────────────
+  Table #0
+    Title: "Balance Sheet"
+    Dimensions: 61 rows × 6 cols
+    Preview (first 3 rows):
+      ['Consolidated Finan', 'cial Statements', '', '', 'Balan', 'ce Sheet']
+      ['', '', '', '', '', '']
+      ['', 'Balance', 'Sheet', '', '', '']
+
+
+✓ Success: Found 1 income statement(s) and 1 balance sheet(s)
+
+
+================================================================================
+OVERALL BATCH PROCESSING SUMMARY
+================================================================================
+
+📊 Processing Statistics:
+   Total PDFs processed: 9
+   Successful: 9
+   Errors: 0
+
+📋 Tables Found:
+   Total Income Statements: 16
+   Total Balance Sheets: 11
+   Total Tables: 27
+
+📁 Detailed Results by PDF:
+────────────────────────────────────────────────────────────────────────────────
+
+✓ Alibaba_2024.pdf
+   Income Statements: 2 table(s) on page(s) [254, 255]
+   Balance Sheets: 2 table(s) on page(s) [256, 257]
+
+✓ EM_2024.pdf
+   Income Statements: 2 table(s) on page(s) [88, 89]
+   Balance Sheets: 1 table(s) on page(s) [90]
+
+✓ GM_2023.pdf
+   Income Statements: 1 table(s) on page(s) [61]
+   Balance Sheets: 1 table(s) on page(s) [62]
+
+✓ Google_2024.pdf
+   Income Statements: 2 table(s) on page(s) [83, 84]
+   Balance Sheets: 1 table(s) on page(s) [82]
+
+✓ JPM_2024.pdf
+   Income Statements: 2 table(s) on page(s) [206, 207]
+   Balance Sheets: 1 table(s) on page(s) [208]
+
+✓ LVMH_2024.pdf
+   Income Statements: 2 table(s) on page(s) [23, 24]
+   Balance Sheets: 1 table(s) on page(s) [26]
+
+✓ Meta_2024.pdf
+   Income Statements: 2 table(s) on page(s) [89, 90]
+   Balance Sheets: 1 table(s) on page(s) [88]
+
+✓ Tencent_2024.pdf
+   Income Statements: 2 table(s) on page(s) [124, 125]
+   Balance Sheets: 2 table(s) on page(s) [126, 127]
+
+✓ Volkswagan_2024.pdf
+   Income Statements: 1 table(s) on page(s) [472]
+   Balance Sheets: 1 table(s) on page(s) [475]
+
+================================================================================
+Batch processing complete!
+================================================================================
+
+
+Results saved to: /Users/pixalate/PycharmProjects/pdf_identify/data/results_20260302_202254.csv

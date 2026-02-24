@@ -1,0 +1,155 @@
+{
+  "company": "Tencent_2024",
+  "n_runs": 10,
+  "temperature": 0.7,
+  "metrics": {
+    "net_income": {
+      "values": [
+        196467.0,
+        196467.0,
+        196467.0,
+        196467.0,
+        196467.0,
+        196467.0,
+        196467.0,
+        196467.0,
+        196467.0,
+        196467.0
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 196467.0,
+      "std": 0.0,
+      "min": 196467.0,
+      "max": 196467.0,
+      "cv": 0.0
+    },
+    "cost_to_income_ratio": {
+      "values": [
+        0.9744,
+        0.471,
+        0.471,
+        0.471,
+        47.1,
+        0.471,
+        0.471,
+        0.471,
+        0.471,
+        0.9744
+      ],
+      "null_count": 0,
+      "consistent": false,
+      "mean": 5.2346,
+      "std": 13.9566,
+      "min": 0.471,
+      "max": 47.1,
+      "cv": 2.666222
+    },
+    "quick_ratio": {
+      "values": [
+        3.793
+      ],
+      "null_count": 9,
+      "consistent": false,
+      "mean": 3.793,
+      "std": 0.0,
+      "min": 3.793,
+      "max": 3.793,
+      "cv": 0.0
+    },
+    "debt_to_equity_ratio": {
+      "values": [
+        0.2726,
+        0.2994,
+        0.2846,
+        0.2629,
+        0.28,
+        0.2846,
+        0.2846,
+        0.2846,
+        0.2898,
+        0.29
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 0.2833,
+      "std": 0.0095,
+      "min": 0.2629,
+      "max": 0.2994,
+      "cv": 0.033386
+    },
+    "debt_to_assets_ratio": {
+      "values": [
+        0.1613,
+        0.1637,
+        0.1556,
+        0.1556,
+        0.16,
+        0.1556,
+        0.1556,
+        0.1556,
+        0.1715,
+        0.1715
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 0.1606,
+      "std": 0.0061,
+      "min": 0.1556,
+      "max": 0.1715,
+      "cv": 0.038033
+    },
+    "debt_to_capital_ratio": {
+      "values": [
+        0.2142,
+        0.2304,
+        0.2216,
+        0.2082,
+        0.22,
+        0.2216,
+        0.2216,
+        0.2216,
+        0.2247,
+        0.2247
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 0.2209,
+      "std": 0.0057,
+      "min": 0.2082,
+      "max": 0.2304,
+      "cv": 0.025934
+    },
+    "debt_to_ebitda_ratio": {
+      "values": [],
+      "null_count": 10,
+      "consistent": false,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "max": null,
+      "cv": null
+    },
+    "interest_coverage_ratio": {
+      "values": [
+        17.368,
+        17.369,
+        18.7,
+        17.369,
+        17.37,
+        17.3695,
+        17.369,
+        17.3698,
+        18.7049,
+        17.369
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 17.6358,
+      "std": 0.5333,
+      "min": 17.368,
+      "max": 18.7049,
+      "cv": 0.030241
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "net_income": {
+    "value": 196467,
+    "unit": "RMB'Million",
+    "formula": "Profit for the year",
+    "inputs": {
+      "Profit for the year": 196467
+    },
+    "reason": "Tencent's net income for 2024 was 196,467 RMB'Million, representing the total profit attributable to shareholders."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.471,
+    "unit": "ratio",
+    "formula": "Cost of revenues / Total Revenues",
+    "inputs": {
+      "Cost of revenues": 311011,
+      "Total Revenues": 660257
+    },
+    "reason": "For every RMB of revenue, Tencent spent approximately 0.47 RMB on cost of revenues, indicating its operational efficiency."
+  },
+  "quick_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Restricted cash + Accounts receivable + Current Financial assets at fair value through profit or loss) / Total Current Liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 132519,
+      "Restricted cash": 3334,
+      "Accounts receivable": 48203,
+      "Financial assets at fair value through profit or loss (Current)": 9568,
+      "Total Current Liabilities": null
+    },
+    "reason": "The quick ratio cannot be calculated as 'Total Current Liabilities' was not provided in the financial statements."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.2629,
+    "unit": "ratio",
+    "formula": "Total Debt / Total Equity",
+    "inputs": {
+      "Total Debt": 277107,
+      "Total Equity": 1053896
+    },
+    "reason": "Tencent's debt-to-equity ratio of 0.2629 indicates that the company uses relatively less debt compared to equity to finance its assets."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1556,
+    "unit": "ratio",
+    "formula": "Total Debt / Total Assets",
+    "inputs": {
+      "Total Debt": 277107,
+      "Total Assets": 1780995
+    },
+    "reason": "Approximately 15.56% of Tencent's assets are financed by debt, suggesting a conservative approach to leverage."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.2082,
+    "unit": "ratio",
+    "formula": "Total Debt / (Total Debt + Total Equity)",
+    "inputs": {
+      "Total Debt": 277107,
+      "Total Equity": 1053896
+    },
+    "reason": "About 20.82% of Tencent's total capital (debt plus equity) is comprised of debt, reflecting its capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / EBITDA (Operating profit + Depreciation & Amortization)",
+    "inputs": {
+      "Total Debt": 277107,
+      "Operating profit": 208099,
+      "Depreciation & Amortization": null
+    },
+    "reason": "The debt-to-EBITDA ratio cannot be calculated as 'Depreciation & Amortization' was not explicitly provided in the financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": 17.369,
+    "unit": "ratio",
+    "formula": "EBIT / Interest Expense",
+    "inputs": {
+      "Operating profit": 208099,
+      "Finance costs": 11981
+    },
+    "reason": "Tencent's operating profit is 17.369 times its interest expenses, indicating a very strong ability to cover its interest obligations."
+  }
+}

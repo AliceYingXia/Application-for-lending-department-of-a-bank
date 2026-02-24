@@ -1,0 +1,98 @@
+{
+  "net_income": {
+    "value": 12394,
+    "unit": "\u20ac million",
+    "formula": "Earnings after tax",
+    "inputs": {
+      "Earnings after tax": 12394
+    },
+    "reason": "Volkswagen's net income for 2024 was 12,394 million euros, representing the company's total profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.9439,
+    "unit": "ratio",
+    "formula": "(Cost of sales + Distribution expenses + Administrative expenses + Other operating expenses) / (Sales revenue + Other operating income)",
+    "inputs": {
+      "Cost of sales": 265184,
+      "Distribution expenses": 22320,
+      "Administrative expenses": 12754,
+      "Other operating expenses": 20312,
+      "Sales revenue": 324656,
+      "Other operating income": 14974
+    },
+    "reason": "A cost-to-income ratio of 0.9439 indicates that for every euro of income, Volkswagen incurs approximately 0.94 euros in operating costs."
+  },
+  "quick_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Marketable securities and time deposits + Trade receivables + Financial services receivables (current) + Other financial assets (current) + Other receivables (current) + Tax receivables (current)) / Current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 40296,
+      "Marketable securities and time deposits": 27326,
+      "Trade receivables": 21130,
+      "Financial services receivables (current)": 68855,
+      "Other financial assets (current)": 18649,
+      "Other receivables (current)": 10217,
+      "Tax receivables (current)": 2038,
+      "Current liabilities": null
+    },
+    "reason": "The quick ratio cannot be calculated due to the unavailability of current liabilities data, preventing an assessment of Volkswagen's short-term liquidity without inventory."
+  },
+  "debt_to_equity_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Current liabilities + Non-current liabilities) / Total equity",
+    "inputs": {
+      "Current liabilities": null,
+      "Non-current liabilities": null,
+      "Total equity": null
+    },
+    "reason": "The debt-to-equity ratio cannot be calculated as current liabilities, non-current liabilities, and total equity data are not provided, making it impossible to assess the company's financial leverage relative to shareholder equity."
+  },
+  "debt_to_assets_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Current liabilities + Non-current liabilities) / Total assets",
+    "inputs": {
+      "Current liabilities": null,
+      "Non-current liabilities": null,
+      "Total assets": 632905
+    },
+    "reason": "The debt-to-assets ratio cannot be determined due to missing current and non-current liabilities data, which prevents an evaluation of the proportion of Volkswagen's assets financed by debt."
+  },
+  "debt_to_capital_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Current liabilities + Non-current liabilities) / (Current liabilities + Non-current liabilities + Total equity)",
+    "inputs": {
+      "Current liabilities": null,
+      "Non-current liabilities": null,
+      "Total equity": null
+    },
+    "reason": "The debt-to-capital ratio cannot be computed because current liabilities, non-current liabilities, and total equity data are all unavailable, hindering an analysis of Volkswagen's capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Current liabilities + Non-current liabilities) / (Earnings before tax + Interest expenses + Depreciation & Amortization)",
+    "inputs": {
+      "Current liabilities": null,
+      "Non-current liabilities": null,
+      "Earnings before tax": 16806,
+      "Interest expenses": 3446,
+      "Depreciation & Amortization": null
+    },
+    "reason": "The debt-to-EBITDA ratio cannot be calculated as current liabilities, non-current liabilities, and depreciation & amortization data are not provided, making it impossible to assess Volkswagen's ability to service its debt with operating earnings."
+  },
+  "interest_coverage_ratio": {
+    "value": 6.23,
+    "unit": "times",
+    "formula": "(Operating result + Interest income) / Interest expenses",
+    "inputs": {
+      "Operating result": 19060,
+      "Interest income": 2419,
+      "Interest expenses": 3446
+    },
+    "reason": "An interest coverage ratio of 6.23 times indicates that Volkswagen's operating earnings are more than six times its interest obligations, suggesting a healthy ability to cover its interest payments."
+  }
+}

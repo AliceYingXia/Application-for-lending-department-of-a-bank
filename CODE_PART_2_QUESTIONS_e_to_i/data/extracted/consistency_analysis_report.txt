@@ -1,0 +1,785 @@
+================================================================================
+GEMINI FINANCIAL EXTRACTION — CONSISTENCY ANALYSIS REPORT
+================================================================================
+Experiment Setup
+  Model        : Gemini 2.5 Flash
+  Runs per co. : 10
+  Temperature  : 0.7
+  Companies    : 9
+  Metrics      : 8
+  Total cells  : 72 (9 companies × 8 metrics)
+  Consistent   : 29  (40.3%)
+  Variable     : 35  (48.6%)
+  All-null     : 8   (11.1%)
+
+Consistency criterion: CV (coefficient of variation = std / |mean|) < 5%,
+with zero null values across all 10 runs.
+================================================================================
+
+
+════════════════════════════════════════════════════════════════════════════════
+SECTION 1 — PER-METRIC ANALYSIS
+════════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────
+1.1  NET INCOME
+     Status across companies : 9/9 CONSISTENT  (100%)
+     Median CV               : 0.0000
+────────────────────────────────────────────────────────────────────────────────
+
+Net income is the only metric that achieves perfect consistency across every
+company. In 8 of 9 cases, Gemini returns exactly the same value in all 10 runs
+(CV = 0.000, std = 0). GM_2023 shows a trivially small variation (CV = 0.013)
+caused by two slightly different interpretations of the bottom-line figure
+($9,840M vs $10,127M), likely reflecting a choice between "Net income
+attributable to stockholders" and "Net income including noncontrolling
+interests". Even so, the variance is well within the 5% threshold.
+
+The high reliability of net income is expected: it is prominently labelled on
+every income statement and has a single, clearly defined line item.
+
+  Company          Mean (local currency, millions)   CV        Status
+  ───────────────  ────────────────────────────────  ────────  ──────────────
+  Alibaba_2024     71,332  CNY                       0.0000    ✓ Consistent
+  EM_2024          36,010  USD                       0.0000    ✓ Consistent
+  GM_2023          10,041  USD                       0.0131    ✓ Consistent
+  Google_2024     100,118  USD                       0.0000    ✓ Consistent
+  JPM_2024         58,471  USD                       0.0000    ✓ Consistent
+  LVMH_2024        12,550  EUR                       0.0000    ✓ Consistent
+  Meta_2024        62,360  USD                       0.0000    ✓ Consistent
+  Tencent_2024    196,467  CNY                       0.0000    ✓ Consistent
+  Volkswagen_2024  12,394  EUR                       0.0000    ✓ Consistent
+
+Root cause of GM variance: two valid bottom-line figures exist on the same
+page ($9,840M net income attributable to common stockholders vs. $10,127M
+consolidated net income). Gemini alternates between them depending on the
+chain-of-thought path taken.
+
+Recommendation: Net income extraction is production-ready. No prompt changes
+needed. For GM specifically, clarifying "consolidated net income before
+minority interest deduction" would eliminate the remaining variance.
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.2  COST-TO-INCOME RATIO
+     Status across companies : 0/9 CONSISTENT  (0%)
+     Median CV               : 1.9048
+────────────────────────────────────────────────────────────────────────────────
+
+Cost-to-income is the worst-performing metric — not a single company passes
+the consistency test. The failure mode is identical across all 9 companies:
+Gemini randomly expresses the ratio either as a decimal fraction (e.g., 0.8454)
+or as a percentage (e.g., 84.54). In most runs one form dominates, but one or
+two rogue runs flip to the other scale, producing catastrophically high CV
+values (~1.2 to 2.7).
+
+Observed values per company:
+
+  Alibaba_2024
+    Decimal runs (×7): 0.8454, 0.8454, 0.88
+    Percentage runs (×3): 88.0, 84.54 — CV = 1.905
+
+  EM_2024
+    Decimal runs (×9): ~0.8468
+    Percentage run (×1): 84.68 — CV = 2.725
+
+  GM_2023
+    Decimal runs (×5): 0.9459–0.946
+    Percentage runs (×5): 94.59 — CV = 1.195
+
+  Google_2024
+    Decimal runs (×9): 0.6789
+    Percentage run (×1): 67.89 — CV = 2.725
+
+  JPM_2024
+    Decimal runs (×5): ~0.517
+    Percentage runs (×5): 51.7 — CV = 1.195
+
+  LVMH_2024
+    Mixed: 0.77–0.78 (×4), 44.74 (×1), 76.92 (×2), 77.7 (×1) — CV = 1.232
+    (LVMH has additional ambiguity in what "cost" to use)
+
+  Meta_2024
+    Decimal runs (×9): 0.5782
+    Percentage run (×1): 57.82 — CV = 2.725
+
+  Tencent_2024
+    Decimal runs (×8): 0.471–0.974
+    Percentage run (×1): 47.1 — CV = 2.666
+
+  Volkswagen_2024
+    Multiple decimal forms (×6): 0.817–0.944
+    Percentage forms (×4): 81.68–81.69 — CV = 0.802
+
+Pattern: The underlying ratio value itself is largely consistent (~84% for
+Alibaba, ~67% for Google, ~52% for JPM, etc.) — the disagreement is purely
+in how that value is expressed. This is a unit ambiguity problem, not a
+data-extraction problem.
+
+Root cause: The prompt does not specify whether cost-to-income should be
+expressed as a decimal ratio or a percentage. Gemini independently decides
+each time, and at temperature 0.7 it occasionally switches conventions.
+
+Recommendation: Add explicit unit instruction to the prompt:
+  "Express cost-to-income ratio as a percentage (0–100 scale), e.g. 67.89
+   for 67.89%."
+This single change should fix all 9 companies simultaneously.
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.3  QUICK RATIO
+     Status across companies : 3/9 CONSISTENT  (33.3%)
+     Median CV               : 0.1228
+     All-null companies      : 1 (Volkswagen_2024)
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent (3): EM_2024, Google_2024, Meta_2024
+Variable  (5): Alibaba_2024, GM_2023, JPM_2024, LVMH_2024, Tencent_2024
+All-null  (1): Volkswagen_2024
+
+  Company          Mean    Min     Max     CV        Nulls  Status
+  ───────────────  ──────  ──────  ──────  ────────  ─────  ──────────────
+  EM_2024          1.065   1.065   1.065   0.000084  0      ✓ Consistent
+  Google_2024      1.660   1.660   1.661   0.000170  0      ✓ Consistent
+  Meta_2024        2.822   2.820   2.822   0.000355  0      ✓ Consistent
+  Alibaba_2024     1.656   1.303   1.790   0.122783  0      ✗ Variable
+  LVMH_2024        0.636   0.427   0.706   0.154713  0      ✗ Variable
+  GM_2023          0.726   0.410   0.830   0.228682  0      ✗ Variable
+  Tencent_2024     3.793   3.793   3.793   0.000000  9      ✗ (9/10 null)
+  JPM_2024         1.869   0.443   5.780   0.876935  1      ✗ Variable
+  Volkswagen_2024  —       —       —       —         10     — All null
+
+Analysis by company:
+
+  EM / Google / Meta: Near-perfect consistency. The balance sheet for these
+  companies clearly separates "current assets excluding inventory" and
+  "current liabilities", enabling unambiguous calculation.
+
+  Alibaba_2024 (CV = 0.123): Two clusters visible — ~1.303 (×2) and
+  ~1.786 (×7). Likely reflects choice of which short-term investments or
+  restricted cash items to include in "quick assets".
+
+  LVMH_2024 (CV = 0.155): Range 0.427–0.706. LVMH's luxury-goods balance
+  sheet has significant prepayments and brand intangibles that some runs
+  include and others exclude.
+
+  GM_2023 (CV = 0.229): Bimodal pattern — some runs return ~0.41 (×2)
+  and others ~0.83 (×7). The lower cluster likely excludes GM Financial
+  assets; the higher cluster includes them. Auto companies with captive
+  finance arms have inherently ambiguous "current assets".
+
+  Tencent_2024 (CV = 0.000, but 9/10 null): Only 1 of 10 runs succeeded
+  (value = 3.793). Tencent's balance sheet may not present current liabilities
+  separately in the extracted pages, making extraction unreliable.
+
+  JPM_2024 (CV = 0.877): Extreme variance (0.44–5.78). JPM is a bank —
+  the quick ratio concept does not translate to financial institutions where
+  "liquid assets" could be interpreted as trading securities, cash, or the
+  entire loan portfolio. Gemini picks different items each run.
+
+  Volkswagen_2024: Consistently returns null across all 10 runs. The
+  extracted balance sheet pages likely do not separate current vs. non-current
+  assets in a way Gemini can parse.
+
+Recommendation: For banks (JPM), either skip quick ratio or redefine the
+metric (e.g., Tier-1 ratio). For Volkswagen, verify that the extracted pages
+include the current assets section. For others, specify which line items
+constitute "quick assets" in the prompt.
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.4  DEBT-TO-EQUITY RATIO
+     Status across companies : 6/9 CONSISTENT  (66.7%)
+     Median CV               : 0.0334
+     All-null companies      : 1 (Volkswagen_2024)
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent (6): Alibaba, EM, GM, Google, Meta, Tencent
+Variable  (2): JPM_2024, LVMH_2024
+All-null  (1): Volkswagen_2024
+
+  Company          Mean    Min     Max     CV        Nulls  Status
+  ───────────────  ──────  ──────  ──────  ────────  ─────  ──────────────
+  GM_2023          1.893   1.890   1.894   0.000925  0      ✓ Consistent
+  Meta_2024        0.158   0.158   0.160   0.004177  0      ✓ Consistent
+  EM_2024          0.196   0.196   0.203   0.011253  0      ✓ Consistent
+  Google_2024      0.033   0.030   0.034   0.031674  0      ✓ Consistent
+  Tencent_2024     0.283   0.263   0.299   0.033386  0      ✓ Consistent
+  Alibaba_2024     0.167   0.155   0.173   0.048534  0      ✓ Consistent
+  LVMH_2024        0.434   0.330   0.589   0.291075  0      ✗ Variable
+  JPM_2024         2.143   1.160   9.160   1.094580  0      ✗ Variable
+  Volkswagen_2024  —       —       —       —         10     — All null
+
+LVMH_2024 (CV = 0.291): Two distinct clusters — ~0.33 (×5 runs) and ~0.59
+(×5 runs). LVMH's debt definition is ambiguous: short-term and long-term
+borrowings alone give ~0.33; adding lease obligations and other financial
+liabilities gives ~0.59. Gemini alternates between narrow and broad debt
+definitions.
+
+JPM_2024 (CV = 1.095): Extreme variance (1.16–9.16). Banks have complex
+liability structures. "Debt" could mean deposits, short-term borrowings,
+long-term debt, or all interest-bearing liabilities. The outlier of 9.16
+likely includes deposits, while 1.16–1.88 reflects bond/loan debt only.
+
+Volkswagen_2024: Zero valid extractions. The automotive group's complex
+consolidated balance sheet (leasing vehicles, financial services division)
+may require pages beyond what was extracted.
+
+Recommendation: D/E ratio is reliable for tech companies (Meta, Google,
+Alibaba, Tencent, EM). For financial institutions (JPM) and conglomerates
+(LVMH, Volkswagen), explicitly define "debt" in the prompt as "total
+financial debt (short-term borrowings + current portion of long-term debt +
+long-term debt), excluding operating lease obligations and trade payables."
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.5  DEBT-TO-ASSETS RATIO
+     Status across companies : 4/9 CONSISTENT  (44.4%)
+     Median CV               : 0.0380
+     All-null companies      : 0
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent (4): Alibaba, EM, Meta, Tencent
+Variable  (5): GM, Google, JPM, LVMH, Volkswagen
+
+  Company          Mean    Min     Max     CV        Nulls  Status
+  ───────────────  ──────  ──────  ──────  ────────  ─────  ──────────────
+  EM_2024          0.111   0.111   0.111   0.001357  0      ✓ Consistent
+  Alibaba_2024     0.097   0.097   0.100   0.009716  0      ✓ Consistent
+  Meta_2024        0.104   0.100   0.104   0.012697  0      ✓ Consistent
+  Tencent_2024     0.161   0.156   0.172   0.038033  0      ✓ Consistent
+  Google_2024      0.024   0.020   0.024   0.052986  0      ✗ Variable
+  LVMH_2024        0.201   0.150   0.273   0.294715  0      ✗ Variable
+  GM_2023          9.273   0.446   44.58   1.903727  0      ✗ Variable
+  JPM_2024         2.300   0.110   11.35   1.830013  0      ✗ Variable
+  Volkswagen_2024  0.317   0.317   0.317   0.000000  9      ✗ (9/10 null)
+
+Google_2024 (CV = 0.053, borderline): Nine runs return 0.0242; one run
+returns 0.020. The single outlier is marginally lower, suggesting one run
+used a slightly different total assets figure. Almost consistent.
+
+LVMH_2024 (CV = 0.295): Two stable clusters — ~0.15 (×4 runs) and ~0.27
+(×4 runs) — reflecting the same narrow vs. broad debt definition seen in D/E.
+
+GM_2023 (CV = 1.904): Catastrophic bimodal split — 0.45 (×8 runs) vs.
+44.58 (×2 runs). The high-value runs appear to have expressed debt as a
+percentage of assets (44.58%) rather than as a ratio (0.4458). Same
+unit-ambiguity pattern as cost-to-income.
+
+JPM_2024 (CV = 1.830): Wide scatter from 0.11 to 11.35. JPM's total assets
+include the entire loan portfolio and trading assets. Different debt
+definitions produce dramatically different ratios.
+
+Volkswagen_2024: Only 1 successful extraction (0.317); 9 null. Gemini
+could not locate total assets or total debt for Volkswagen in 9 of 10 runs.
+
+Recommendation: For GM, add a unit instruction. For JPM and LVMH, define
+the debt numerator precisely. For Volkswagen, investigate whether the balance
+sheet pages cover total assets.
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.6  DEBT-TO-CAPITAL RATIO
+     Status across companies : 5/9 CONSISTENT  (55.6%)
+     Median CV               : 0.0445
+     All-null companies      : 1 (Volkswagen_2024)
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent (5): Alibaba, EM, Google, Meta, Tencent
+Variable  (3): GM, JPM, LVMH
+All-null  (1): Volkswagen_2024
+
+  Company          Mean    Min     Max     CV        Nulls  Status
+  ───────────────  ──────  ──────  ──────  ────────  ─────  ──────────────
+  EM_2024          0.164   0.164   0.169   0.009268  0      ✓ Consistent
+  Meta_2024        0.137   0.136   0.140   0.008122  0      ✓ Consistent
+  Google_2024      0.032   0.030   0.032   0.022388  0      ✓ Consistent
+  Tencent_2024     0.221   0.208   0.230   0.025934  0      ✓ Consistent
+  Alibaba_2024     0.144   0.134   0.150   0.044537  0      ✓ Consistent
+  LVMH_2024        0.298   0.249   0.371   0.199673  0      ✗ Variable
+  GM_2023         13.611   0.650   65.44   1.903938  0      ✗ Variable
+  JPM_2024        11.562   0.569   56.85   1.893517  0      ✗ Variable
+  Volkswagen_2024  —       —       —       —         10     — All null
+
+LVMH_2024 (CV = 0.200): Two clusters — ~0.25 (×4 runs) and ~0.37 (×4 runs),
+mirroring the same split seen in D/E and D/A ratios. Consistent underlying
+debt ambiguity for LVMH.
+
+GM_2023 (CV = 1.904) and JPM_2024 (CV = 1.894): Both exhibit the
+percentage-vs-decimal problem again: GM returns either ~0.65 or ~65.44;
+JPM returns either ~0.57 or ~56.85. This is a unit-expression issue, not
+a data-extraction issue — the actual ratio is stable.
+
+Volkswagen_2024: Same pattern as D/E — consistently null, reflecting missing
+capital structure data in the extracted pages.
+
+Recommendation: The same unit-specification fix that resolves cost-to-income
+and D/A for GM would also fix D/Capital for GM and JPM.
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.7  DEBT-TO-EBITDA RATIO
+     Status across companies : 1/9 CONSISTENT  (11.1%)
+     Median CV               : 0.0088
+     All-null companies      : 4 (Google, LVMH, Tencent, Volkswagen)
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent (1): EM_2024
+Variable  (0): none with sufficient data
+Sparse    (4): Alibaba, GM, JPM, Meta  (1–3 values out of 10)
+All-null  (4): Google, LVMH, Tencent, Volkswagen
+
+  Company          Mean    Min     Max     CV        Nulls  Status
+  ───────────────  ──────  ──────  ──────  ────────  ─────  ──────────────
+  EM_2024          0.564   0.560   0.570   0.008835  0      ✓ Consistent
+  Alibaba_2024     1.206   1.174   1.270   0.037525  7      ✗ Sparse (3/10)
+  JPM_2024         2.355   2.280   2.430   0.031847  8      ✗ Sparse (2/10)
+  GM_2023         13.092  13.092  13.092   0.000000  9      ✗ Sparse (1/10)
+  Meta_2024        0.416   0.416   0.416   0.000000  9      ✗ Sparse (1/10)
+  Google_2024      —       —       —       —         10     — All null
+  LVMH_2024        —       —       —       —         10     — All null
+  Tencent_2024     —       —       —       —         10     — All null
+  Volkswagen_2024  —       —       —       —         10     — All null
+
+This metric has the most missing data. EBITDA requires Depreciation &
+Amortization (D&A), which is typically disclosed on the cash flow statement
+or in footnotes — not on the income statement or balance sheet pages provided
+to Gemini. When D&A is absent, Gemini cannot compute EBITDA and returns null.
+
+EM_2024 (the only fully consistent result) is exceptional: EM's annual report
+appears to present EBITDA explicitly on the income statement pages, or D&A
+is visible on the extracted pages, allowing consistent computation.
+
+For Alibaba, GM, JPM, and Meta: the handful of successful runs likely caught
+D&A values mentioned incidentally on the income statement (e.g., in a
+combined statement or footnote reference), while most runs found them absent.
+
+For Google, LVMH, Tencent, and Volkswagen: no runs succeeded at all.
+
+Recommendation: To reliably compute Debt/EBITDA, extract and provide the
+cash flow statement pages (specifically the operating section showing D&A
+add-back) in addition to income statement and balance sheet pages. This is
+a data-availability issue, not a model-quality issue.
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.8  INTEREST COVERAGE RATIO
+     Status across companies : 1/9 CONSISTENT  (11.1%)
+     Median CV               : 0.0683
+     All-null companies      : 1 (Google_2024)
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent (1): Tencent_2024
+Variable  (7): Alibaba, EM, GM, JPM, LVMH, Meta, Volkswagen
+All-null  (1): Google_2024
+
+  Company          Mean     Min      Max      CV        Nulls  Status
+  ───────────────  ───────  ───────  ───────  ────────  ─────  ──────────────
+  Tencent_2024     17.636   17.368   18.705   0.030241  0      ✓ Consistent
+  Meta_2024        54.744   54.076   55.080   0.008627  7      ✗ Sparse (3/10)
+  Alibaba_2024     14.565   14.260   16.980   0.058636  1      ✗ Variable
+  LVMH_2024        20.261   19.860   23.870   0.059375  0      ✗ Variable
+  EM_2024          65.243   61.590   87.480   0.113928  0      ✗ Variable
+  JPM_2024          1.432    0.740    1.850   0.342699  1      ✗ Variable
+  GM_2023           6.770    0.757   12.420   0.731719  0      ✗ Variable
+  Volkswagen_2024   5.844    5.170    6.580   0.068309  0      ✗ Variable
+  Google_2024       —        —        —       —         10     — All null
+
+Analysis by company:
+
+  Tencent_2024 (CV = 0.030): Consistently calculates ~17.4x, with 2 runs
+  returning ~18.7x (a slightly different EBIT figure). Good reliability for
+  a non-financial Chinese tech company with clear interest expense disclosure.
+
+  Meta_2024 (CV = 0.009, but 7/10 null): The 3 successful runs are highly
+  consistent (~54–55x), but most runs fail to extract interest expense
+  because Meta has minimal debt and interest expense may not be prominently
+  displayed on the income statement pages.
+
+  Alibaba_2024 (CV = 0.059): One outlier run returns 16.98x; the remaining
+  9 return ~14.26x. The outlier likely used a different EBIT figure.
+
+  LVMH_2024 (CV = 0.059): One outlier run returns 23.87x; the remaining
+  9 return 19.86x. Single-run anomaly in EBIT or interest expense selection.
+
+  EM_2024 (CV = 0.114): Most runs return ~63x, but one returns 87.5x.
+  EM's interest expense appears to have multiple presentation options in the
+  notes (total vs. net interest expense), and Gemini occasionally picks the
+  wrong line.
+
+  JPM_2024 (CV = 0.343): Bimodal — ~0.74x (×3 runs) and ~1.74–1.85x
+  (×6 runs). For a bank, "interest expense" encompasses all deposit costs,
+  which dwarfs operating income. The low cluster (~0.74) likely uses total
+  interest expense; the high cluster (~1.74) uses a narrower definition.
+
+  GM_2023 (CV = 0.732): Dramatic bimodal split — ~0.76x (×3 runs) vs.
+  ~10.2–12.4x (×7 runs). The low cluster treats all financing costs as
+  interest expense; the high cluster uses only "automotive interest expense"
+  excluding GM Financial's consumer interest costs.
+
+  Volkswagen_2024 (CV = 0.068): Ranges 5.17–6.58x, unstable. VW's complex
+  financial services division creates the same ambiguity as GM.
+
+  Google_2024: All 10 runs return null. Google has negligible interest
+  expense relative to its size, and the metric may not appear on extracted
+  pages in a clearly labelled form.
+
+Recommendation: Interest coverage is inherently ambiguous for companies
+with financial services divisions (GM, JPM, Volkswagen). For these, the
+prompt should specify: "Use EBIT from the automotive/industrial segment only,
+and use interest expense excluding financial services subsidiaries."
+For companies with low debt (Google, Meta), providing the notes pages that
+disclose interest expense would help.
+
+
+════════════════════════════════════════════════════════════════════════════════
+SECTION 2 — PER-COMPANY ANALYSIS
+════════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────
+2.1  EM_2024  — BEST PERFORMER
+     Consistent: 6/8 (75%)   Variable: 2/8   All-null: 0/8
+────────────────────────────────────────────────────────────────────────────────
+
+EM has the highest consistency score of all nine companies. Six of eight
+metrics pass the threshold, including the rare Debt/EBITDA.
+
+Consistent metrics (6):
+  Net Income             CV = 0.0000  (36,010 USD M, perfect)
+  Quick Ratio            CV = 0.000084 (1.065, near-perfect)
+  Debt/Equity            CV = 0.011   (0.196)
+  Debt/Assets            CV = 0.001   (0.111)
+  Debt/Capital           CV = 0.009   (0.164)
+  Debt/EBITDA            CV = 0.009   (0.564)
+
+Inconsistent metrics (2):
+  Cost-to-Income  CV = 2.725  — unit ambiguity (0.847 vs 84.68%)
+  Interest Cov.   CV = 0.114  — one outlier run returns 87.48x vs ~63x
+
+Why EM performs so well: EM's annual report appears to use straightforward
+financial statement layouts with clearly labelled line items. The income
+statement and balance sheet pages provide all required data including D&A
+(enabling Debt/EBITDA), which is rare among the nine companies.
+
+Remaining issues: The cost-to-income unit problem is universal (not EM-
+specific). The interest coverage outlier suggests one run picked a different
+EBIT or interest expense definition.
+
+────────────────────────────────────────────────────────────────────────────────
+2.2  META_2024
+     Consistent: 5/8 (62.5%)   Variable: 3/8   All-null: 0/8
+────────────────────────────────────────────────────────────────────────────────
+
+Meta achieves strong consistency for balance-sheet ratios. Its clean,
+straightforward balance sheet (low debt, tech company) makes calculations
+reliable.
+
+Consistent metrics (5):
+  Net Income       CV = 0.0000  (62,360 USD M)
+  Quick Ratio      CV = 0.000355 (2.822)
+  Debt/Equity      CV = 0.004   (0.158)
+  Debt/Assets      CV = 0.013   (0.104)
+  Debt/Capital     CV = 0.008   (0.137)
+
+Inconsistent metrics (3):
+  Cost-to-Income  CV = 2.725  — unit ambiguity (0.578 vs 57.82%)
+  Debt/EBITDA     CV = 0.000  but 9/10 null  (only 1 value extracted)
+  Interest Cov.   CV = 0.009  but 7/10 null  (only 3 values extracted)
+
+Meta's low debt means interest expense is minimal and may not appear
+prominently on the extracted pages, explaining the sparse extraction of
+Debt/EBITDA and Interest Coverage.
+
+────────────────────────────────────────────────────────────────────────────────
+2.3  TENCENT_2024
+     Consistent: 5/8 (62.5%)   Variable: 2/8   All-null: 1/8
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent metrics (5):
+  Net Income       CV = 0.0000  (196,467 CNY M)
+  Debt/Equity      CV = 0.033   (0.283)
+  Debt/Assets      CV = 0.038   (0.161)
+  Debt/Capital     CV = 0.026   (0.221)
+  Interest Cov.    CV = 0.030   (17.64x) — only company besides EM consistent here
+
+Inconsistent metrics (2):
+  Cost-to-Income  CV = 2.666  — unit ambiguity (0.471 vs 47.1%)
+  Quick Ratio     CV = 0.000  but 9/10 null  (only 1 value extracted)
+
+All-null metrics (1):
+  Debt/EBITDA  — all 10 runs null
+
+Tencent is notable for being one of only two companies (with EM) to pass the
+interest coverage test. Its interest expense is clearly labelled in the
+income statement pages. The quick ratio failure (9/10 null) suggests that
+Tencent's balance sheet does not present current assets/liabilities in a
+readily parseable format.
+
+────────────────────────────────────────────────────────────────────────────────
+2.4  ALIBABA_2024
+     Consistent: 4/8 (50%)   Variable: 4/8   All-null: 0/8
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent metrics (4):
+  Net Income       CV = 0.0000  (71,332 CNY M)
+  Debt/Equity      CV = 0.049   (0.167) — just within 5% threshold
+  Debt/Assets      CV = 0.010   (0.097)
+  Debt/Capital     CV = 0.045   (0.144) — near the threshold
+
+Inconsistent metrics (4):
+  Cost-to-Income  CV = 1.905  — unit ambiguity
+  Quick Ratio     CV = 0.123  — two clusters (1.30 vs 1.79)
+  Debt/EBITDA     CV = 0.038  but 7/10 null  (only 3 values)
+  Interest Cov.   CV = 0.059  with 1 null + 1 outlier
+
+Alibaba's moderate performance reflects ambiguity in classifying assets
+(e.g., short-term investments, time deposits) as quick assets.
+
+────────────────────────────────────────────────────────────────────────────────
+2.5  GOOGLE_2024
+     Consistent: 4/8 (50%)   Variable: 2/8   All-null: 2/8
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent metrics (4):
+  Net Income       CV = 0.0000  (100,118 USD M)
+  Quick Ratio      CV = 0.000170 (1.660)
+  Debt/Equity      CV = 0.032   (0.033)
+  Debt/Capital     CV = 0.022   (0.032)
+
+Inconsistent metrics (2):
+  Cost-to-Income  CV = 2.725  — unit ambiguity
+  Debt/Assets     CV = 0.053  — borderline (one run: 0.020 vs 0.024 cluster)
+
+All-null metrics (2):
+  Debt/EBITDA       — all 10 runs null
+  Interest Coverage — all 10 runs null
+
+Google is interesting: it has near-zero debt, so its leverage ratios are
+tiny (D/E = 0.033, D/Capital = 0.032). This also means interest expense is
+negligible and not prominently shown, explaining both Debt/EBITDA and
+Interest Coverage being always null.
+
+────────────────────────────────────────────────────────────────────────────────
+2.6  GM_2023
+     Consistent: 2/8 (25%)   Variable: 6/8   All-null: 0/8
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent metrics (2):
+  Net Income       CV = 0.013   (10,041 USD M) — two valid interpretations
+  Debt/Equity      CV = 0.001   (1.893) — very consistent
+
+Inconsistent metrics (6):
+  Cost-to-Income  CV = 1.195  — 50/50 split: 0.946 vs 94.59
+  Quick Ratio     CV = 0.229  — bimodal: ~0.41 vs ~0.83
+  Debt/Assets     CV = 1.904  — unit ambiguity: 0.446 vs 44.58
+  Debt/Capital    CV = 1.904  — unit ambiguity: 0.654 vs 65.44
+  Debt/EBITDA     CV = 0.000  but 9/10 null  (only 1 value)
+  Interest Cov.   CV = 0.732  — bimodal: 0.76x vs ~10–12x
+
+GM has two systemic problems:
+(a) Unit ambiguity: multiple ratio metrics are output as both decimal and
+    percentage in a near-50/50 split. This is the most severe expression
+    of the cost-to-income issue and affects Debt/Assets and Debt/Capital too.
+(b) Financial complexity: GM's captive finance arm (GM Financial) creates
+    structural ambiguity in quick ratio, interest coverage, and leverage ratios.
+
+────────────────────────────────────────────────────────────────────────────────
+2.7  JPM_2024  — WORST PERFORMING (FINANCIAL INSTITUTION)
+     Consistent: 1/8 (12.5%)   Variable: 7/8   All-null: 0/8
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent metrics (1):
+  Net Income only  CV = 0.0000  (58,471 USD M)
+
+Inconsistent metrics (7):
+  Cost-to-Income  CV = 1.195  — 50/50 decimal/percentage
+  Quick Ratio     CV = 0.877  — extreme scatter 0.44 to 5.78
+  Debt/Equity     CV = 1.095  — one outlier 9.16 vs cluster ~1.32
+  Debt/Assets     CV = 1.830  — scatter 0.11 to 11.35
+  Debt/Capital    CV = 1.894  — 0.57 vs 56.85 (unit + structural)
+  Debt/EBITDA     CV = 0.032  but 8/10 null  (only 2 values)
+  Interest Cov.   CV = 0.343  — bimodal ~0.74x vs ~1.74x
+
+JPM's near-complete inconsistency is structurally expected. J.P. Morgan
+Chase is a systemically important bank where:
+  - "Debt" can mean short-term borrowings, long-term notes, deposits, or all
+    interest-bearing liabilities — a range spanning orders of magnitude
+  - "Current assets" vs "current liabilities" does not apply to banks in the
+    same way (entire loan book is an asset; deposits are liabilities)
+  - EBITDA is not a meaningful concept for banks
+  - Interest coverage is defined differently (net interest income approach)
+
+JPM should be treated as a special case. Standard corporate financial ratios
+need adaptation for banks. Alternatively, replace these metrics with
+bank-specific metrics: Tier-1 Capital Ratio, Net Interest Margin, Return on
+Assets, Loan-to-Deposit Ratio.
+
+────────────────────────────────────────────────────────────────────────────────
+2.8  LVMH_2024  — WORST PERFORMING (CONGLOMERATE)
+     Consistent: 1/8 (12.5%)   Variable: 6/8   All-null: 1/8
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent metrics (1):
+  Net Income only  CV = 0.0000  (12,550 EUR M)
+
+Inconsistent metrics (6):
+  Cost-to-Income  CV = 1.232  — mixed: 0.78, 44.74, 76.92, 77.7
+  Quick Ratio     CV = 0.155  — scatter 0.43–0.71
+  Debt/Equity     CV = 0.291  — bimodal: 0.33 vs 0.59
+  Debt/Assets     CV = 0.295  — bimodal: 0.15 vs 0.27
+  Debt/Capital    CV = 0.200  — bimodal: 0.25 vs 0.37
+  Interest Cov.   CV = 0.059  — one outlier 23.87 vs cluster 19.86
+
+All-null metrics (1):
+  Debt/EBITDA  — all 10 runs null
+
+LVMH's pattern is distinctive: most metrics show a stable bimodal split
+between two distinct values (e.g., 0.33 and 0.59 for D/E). This suggests
+Gemini consistently finds two different but internally valid ways to define
+debt for LVMH — likely the choice between including or excluding lease
+obligations, which are substantial in a retail luxury company.
+
+Unlike JPM's structural incompatibility, LVMH's issues could be largely
+resolved by specifying the debt definition in the prompt.
+
+────────────────────────────────────────────────────────────────────────────────
+2.9  VOLKSWAGEN_2024  — WORST PERFORMING (AUTOMOTIVE)
+     Consistent: 1/8 (12.5%)   Variable: 3/8   All-null: 4/8
+────────────────────────────────────────────────────────────────────────────────
+
+Consistent metrics (1):
+  Net Income only  CV = 0.0000  (12,394 EUR M)
+
+Inconsistent metrics (3):
+  Cost-to-Income  CV = 0.802  — decimal/percentage confusion
+  Debt/Assets     CV = 0.000  but 9/10 null  (only 1 value extracted)
+  Interest Cov.   CV = 0.068  — range 5.17–6.58x, unstable
+
+All-null metrics (4):
+  Quick Ratio      — 10/10 null
+  Debt/Equity      — 10/10 null
+  Debt/Capital     — 10/10 null
+  Debt/EBITDA      — 10/10 null
+
+Volkswagen has the most missing data of any company. The combination of:
+  (a) a complex automotive + financial services (VW Financial Services) structure
+  (b) German IFRS reporting conventions with German-language headings in some
+      tables
+  (c) a very large annual report where the key balance sheet items may be
+      spread across multiple pages beyond what was extracted
+
+results in Gemini being unable to find the necessary current assets, equity,
+and capital figures in 90–100% of runs for most metrics.
+
+The balance sheet extraction coverage for Volkswagen should be reviewed first
+before attempting further Gemini analysis.
+
+
+════════════════════════════════════════════════════════════════════════════════
+SECTION 3 — ROOT CAUSE TAXONOMY
+════════════════════════════════════════════════════════════════════════════════
+
+The inconsistencies observed fall into five distinct root-cause categories:
+
+  Category A — Unit / Scale Ambiguity (fixable with prompt change)
+  ─────────────────────────────────────────────────────────────────
+  Affected metrics: Cost-to-Income (all 9 companies), Debt/Assets (GM),
+                    Debt/Capital (GM, JPM)
+  Pattern: Gemini returns the same underlying value but alternates between
+           expressing it as a decimal (0.9459) or percentage (94.59).
+  Fix: Explicitly specify the unit in the prompt. Example:
+       "Express cost-to-income as a percentage on a 0–100 scale."
+       "Express Debt/Assets as a decimal (0–1 range)."
+
+  Category B — Debt Definition Ambiguity (fixable with prompt change)
+  ─────────────────────────────────────────────────────────────────────
+  Affected companies: LVMH (D/E, D/A, D/Capital), JPM (all leverage ratios)
+  Pattern: Gemini finds two valid debt figures — one narrower (financial
+           debt only) and one broader (including leases or deposits).
+  Fix: Specify "total financial debt = short-term borrowings + current
+       portion of LTD + long-term debt, excluding leases and trade payables."
+
+  Category C — Structural Inapplicability (requires metric redesign)
+  ────────────────────────────────────────────────────────────────────
+  Affected: JPM (Quick Ratio, D/E, D/A, D/Capital, Debt/EBITDA, Interest Cov.)
+            GM, Volkswagen (Quick Ratio, Interest Coverage)
+  Pattern: Standard corporate ratios do not apply to financial institutions
+           or automotive companies with captive finance arms. Gemini produces
+           variable results because no single correct answer exists.
+  Fix: Use sector-appropriate metrics for banks and auto-finance companies.
+
+  Category D — Data Availability (fixable by providing more pages)
+  ─────────────────────────────────────────────────────────────────
+  Affected metrics: Debt/EBITDA (5 companies null or sparse), Interest
+                    Coverage (Google, Volkswagen), Quick Ratio (Tencent,
+                    Volkswagen)
+  Pattern: Required line items (D&A, interest expense, current liabilities)
+           are not present on the extracted income statement / balance sheet
+           pages.
+  Fix: Include cash flow statement pages for Debt/EBITDA; include notes
+       pages for interest expense; verify balance sheet coverage.
+
+  Category E — Minor Outlier / Single-Run Anomaly (low severity)
+  ──────────────────────────────────────────────────────────────────
+  Affected: Alibaba (Quick Ratio, Interest Cov.), LVMH (Interest Cov.),
+            EM (Interest Cov.), Tencent (Interest Cov.), GM (Net Income)
+  Pattern: 9 of 10 runs agree; 1 run returns a slightly different value due
+           to a legitimate but alternative line-item choice.
+  Fix: Reduce temperature to 0.3 or 0.0 for more deterministic extraction.
+
+
+════════════════════════════════════════════════════════════════════════════════
+SECTION 4 — METRIC RELIABILITY RANKING
+════════════════════════════════════════════════════════════════════════════════
+
+  Rank  Metric                 Consistent  Notes
+  ────  ─────────────────────  ──────────  ─────────────────────────────────────
+  1st   Net Income             9/9 (100%)  Production-ready. Minor GM ambiguity.
+  2nd   Debt/Equity            6/9  (67%)  Good for tech; fails for JPM/LVMH/VW.
+  3rd   Debt/Capital           5/9  (56%)  Similar pattern to D/E.
+  4th   Debt/Assets            4/9  (44%)  Unit ambiguity issue for GM.
+  5th   Quick Ratio            3/9  (33%)  Sparse for Tencent; inapplicable JPM/VW.
+  6th   Cost-to-Income         0/9   (0%)  Universal unit ambiguity — easiest fix.
+  7th   Debt/EBITDA            1/9  (11%)  Data availability — need cash flow pages.
+  8th   Interest Coverage      1/9  (11%)  Structural issues + data availability.
+
+
+════════════════════════════════════════════════════════════════════════════════
+SECTION 5 — RECOMMENDATIONS SUMMARY
+════════════════════════════════════════════════════════════════════════════════
+
+Priority 1 — High impact, low effort (prompt changes only):
+  [P1.1] Fix cost-to-income unit: add "Express as % on 0–100 scale" to prompt.
+         Expected improvement: 0/9 → 9/9 consistent.
+  [P1.2] Fix ratio unit ambiguity for Debt/Assets and Debt/Capital:
+         add "Express as decimal (0–1 range)" to prompt.
+         Expected improvement: fixes GM in both metrics.
+  [P1.3] Define "debt" precisely in the prompt (financial debt only, excl.
+         leases). Expected improvement: fixes LVMH D/E, D/A, D/Capital.
+
+Priority 2 — Medium effort (data extraction changes):
+  [P2.1] Add cash flow statement pages to input for Debt/EBITDA calculation.
+         Expected improvement: 1/9 → potentially 6–7/9 consistent.
+  [P2.2] Add notes/supplemental pages for interest expense disclosure
+         (Google, Meta, Volkswagen). Expected improvement for Interest Coverage.
+  [P2.3] Review Volkswagen page extraction — balance sheet may need additional
+         pages to capture current assets and equity components.
+
+Priority 3 — Structural redesign (sector-specific metrics):
+  [P3.1] For JPM: replace Quick Ratio, D/E, D/A, D/Capital, Debt/EBITDA,
+         and Interest Coverage with bank-specific metrics.
+  [P3.2] For GM and Volkswagen: use separate metrics for the automotive
+         industrial segment vs. the financial services division.
+
+Priority 4 — Model parameter tuning (optional):
+  [P4.1] Reduce temperature to 0.3 for production use. This would reduce
+         single-run outliers (Category E issues) without affecting the
+         systematic unit ambiguity or structural problems.
+
+
+================================================================================
+END OF REPORT
+================================================================================
+Generated from: data/extracted/*_consistency_report.json (9 companies, 10 runs each)
+Report file  : data/extracted/consistency_analysis_report.txt
+================================================================================

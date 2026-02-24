@@ -1,0 +1,99 @@
+{
+  "net_income": {
+    "value": 58471,
+    "unit": "millions USD",
+    "formula": "Net income (from Income Statement)",
+    "inputs": {
+      "Net income": 58471
+    },
+    "reason": "JPMorgan Chase & Co. reported a net income of $58,471 million for the year ended December 31, 2024, representing the company's total profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.517,
+    "unit": "ratio",
+    "formula": "Total Noninterest Expense / Total Net Revenue",
+    "inputs": {
+      "Total noninterest expense": 91797,
+      "Total net revenue": 177556
+    },
+    "reason": "The cost-to-income ratio of 0.5170 indicates that JPMorgan Chase & Co. spent approximately $0.52 in noninterest expenses for every dollar of net revenue generated in 2024."
+  },
+  "quick_ratio": {
+    "value": 0.471,
+    "unit": "ratio",
+    "formula": "(Cash and Due from Banks + Deposits with Banks + Federal Funds Sold and Securities Purchased Under Resale Agreements + Securities Borrowed + Trading Assets + Accrued Interest and Accounts Receivable) / Total Liabilities",
+    "inputs": {
+      "Cash and due from banks": 23372,
+      "Deposits with banks": 445945,
+      "Federal funds sold and securities purchased under resale agreements": 295001,
+      "Securities borrowed": 219546,
+      "Trading assets": 637784,
+      "Accrued interest and accounts receivable": 101223,
+      "Total liabilities": 3658056
+    },
+    "reason": "JPMorgan Chase & Co.'s quick ratio of 0.4710 suggests that its highly liquid assets can cover approximately 47.10% of its total liabilities, indicating its short-term liquidity position."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.3178,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Stockholders' Equity",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-equity ratio of 1.3178 indicates that JPMorgan Chase & Co. has $1.32 in debt for every dollar of equity, suggesting a moderate reliance on debt financing relative to shareholder equity."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1135,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Assets",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total assets": 4002814
+    },
+    "reason": "The debt-to-assets ratio of 0.1135 shows that approximately 11.35% of JPMorgan Chase & Co.'s assets are financed by debt, reflecting a relatively low proportion of assets funded by borrowing."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.5685,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / (Short-term Borrowings + Long-term Debt + Total Stockholders' Equity)",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "JPMorgan Chase & Co.'s debt-to-capital ratio of 0.5685 indicates that debt constitutes about 56.85% of its total capital structure, suggesting a notable reliance on debt to fund its operations and growth."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / EBITDA",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Net income": 58471,
+      "Income tax expense": 16610,
+      "Interest expense": 101350,
+      "Provision for credit losses": 10678,
+      "Depreciation & Amortization": null
+    },
+    "reason": "The debt-to-EBITDA ratio cannot be fully calculated as the 'Depreciation & Amortization' figure was not provided in the attached financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": 1.7408,
+    "unit": "ratio",
+    "formula": "(Income before income tax expense + Interest expense) / Interest expense",
+    "inputs": {
+      "Net interest income": 92583,
+      "Total noninterest expense": 91797,
+      "Interest expense": 101350,
+      "Income tax expense": 16610,
+      "Provision for credit losses": 10678,
+      "Total net revenue": 177556,
+      "Income before income tax expense": 75081
+    },
+    "reason": "JPMorgan Chase & Co.'s interest coverage ratio of 1.7408 indicates that its earnings before interest and taxes are approximately 1.74 times its interest expense, showing its ability to meet its interest obligations."
+  }
+}

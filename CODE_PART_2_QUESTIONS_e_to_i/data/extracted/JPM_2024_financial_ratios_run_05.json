@@ -1,0 +1,87 @@
+{
+  "net_income": {
+    "value": 58471.0,
+    "unit": "millions USD",
+    "formula": "Net income",
+    "inputs": {
+      "Net income": 58471.0
+    },
+    "reason": "JPMorgan Chase & Co. reported a net income of $58,471 million for the year ended December 31, 2024, indicating the company's overall profitability."
+  },
+  "cost_to_income_ratio": {
+    "value": 51.7,
+    "unit": "%",
+    "formula": "Total noninterest expense / Total net revenue",
+    "inputs": {
+      "Total noninterest expense": 91797.0,
+      "Total net revenue": 177556.0
+    },
+    "reason": "With a cost-to-income ratio of 51.70%, JPMorgan Chase & Co. spent approximately 51.70 cents to generate every dollar of net revenue, reflecting its operational efficiency."
+  },
+  "quick_ratio": {
+    "value": 5.78,
+    "unit": "ratio",
+    "formula": "(Cash and due from banks + Deposits with banks + Federal funds sold and securities purchased under resale agreements + Securities borrowed + Trading assets) / Accounts payable and other liabilities",
+    "inputs": {
+      "Cash and due from banks": 23372.0,
+      "Deposits with banks": 445945.0,
+      "Federal funds sold and securities purchased under resale agreements": 295001.0,
+      "Securities borrowed": 219546.0,
+      "Trading assets": 637784.0,
+      "Accounts payable and other liabilities": 280672.0
+    },
+    "reason": "A Quick Ratio of 5.78 indicates that JPMorgan Chase & Co. has strong short-term liquidity, with sufficient liquid assets to cover its immediate liabilities."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.16,
+    "unit": "x",
+    "formula": "Long-term debt / Total stockholders' equity",
+    "inputs": {
+      "Long-term debt": 401418.0,
+      "Total stockholders' equity": 344758.0
+    },
+    "reason": "A Debt-to-Equity Ratio of 1.16x suggests that JPMorgan Chase & Co. uses a substantial amount of debt relative to equity to finance its assets."
+  },
+  "debt_to_assets_ratio": {
+    "value": 10.03,
+    "unit": "%",
+    "formula": "Long-term debt / Total assets",
+    "inputs": {
+      "Long-term debt": 401418.0,
+      "Total assets": 4002814.0
+    },
+    "reason": "With a Debt-to-Assets Ratio of 10.03%, approximately 10.03% of JPMorgan Chase & Co.'s assets are financed through long-term debt, indicating a relatively low reliance on long-term debt to fund its asset base."
+  },
+  "debt_to_capital_ratio": {
+    "value": 53.8,
+    "unit": "%",
+    "formula": "Long-term debt / (Long-term debt + Total stockholders' equity)",
+    "inputs": {
+      "Long-term debt": 401418.0,
+      "Total stockholders' equity": 344758.0
+    },
+    "reason": "A Debt-to-Capital Ratio of 53.80% indicates that 53.80% of JPMorgan Chase & Co.'s total capital is composed of long-term debt, reflecting a significant reliance on debt financing relative to equity."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": 2.28,
+    "unit": "x",
+    "formula": "Long-term debt / (Income before income tax expense + Interest expense + Depreciation & Amortization)",
+    "inputs": {
+      "Long-term debt": 401418.0,
+      "Income before income tax expense": 75081.0,
+      "Interest expense": 101350.0,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA Ratio of 2.28x (approximation due to missing D&A) suggests that it would take approximately 2.28 years for JPMorgan Chase & Co. to pay off its long-term debt using its approximate EBITDA."
+  },
+  "interest_coverage_ratio": {
+    "value": 0.74,
+    "unit": "x",
+    "formula": "Income before income tax expense / Interest expense",
+    "inputs": {
+      "Income before income tax expense": 75081.0,
+      "Interest expense": 101350.0
+    },
+    "reason": "An Interest Coverage Ratio of 0.74x indicates that JPMorgan Chase & Co.'s earnings before income tax expense are not sufficient to cover its interest expenses, which could be a concern for its debt servicing ability."
+  }
+}

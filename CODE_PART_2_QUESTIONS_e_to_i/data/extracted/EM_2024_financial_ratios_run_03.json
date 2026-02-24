@@ -1,0 +1,89 @@
+{
+  "net_income": {
+    "value": 36010,
+    "unit": "million dollars",
+    "formula": "Net income (loss) attributable to ExxonMobil",
+    "inputs": {
+      "Net income (loss) attributable to ExxonMobil": 36010
+    },
+    "reason": "ExxonMobil reported a net income of 36,010 million dollars, indicating strong profitability for the period."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.8468,
+    "unit": "ratio",
+    "formula": "Total costs and other deductions / Total revenues and other income",
+    "inputs": {
+      "Total costs and other deductions": 291799,
+      "Total revenues and other income": 344582
+    },
+    "reason": "With a cost-to-income ratio of 0.8468, ExxonMobil spends approximately 84.68 cents to generate every dollar of income, suggesting a relatively high operational cost structure."
+  },
+  "quick_ratio": {
+    "value": 1.0653,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Cash and cash equivalents \u2013 restricted + Notes and accounts receivable \u2013 net) / Total current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 31539,
+      "Cash and cash equivalents \u2013 restricted": 29,
+      "Notes and accounts receivable \u2013 net": 38015,
+      "Total current liabilities": 65316
+    },
+    "reason": "A quick ratio of 1.0653 indicates that ExxonMobil has sufficient liquid assets to cover its short-term liabilities without relying on inventory."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.1956,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / Total Equity",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Total Equity": 212538
+    },
+    "reason": "ExxonMobil's debt-to-equity ratio of 0.1956 suggests a low reliance on debt financing compared to equity, indicating a strong financial position."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1105,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / Total Assets",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Total Assets": 376317
+    },
+    "reason": "A debt-to-assets ratio of 0.1105 indicates that a small portion of ExxonMobil's assets are financed by debt, reflecting a conservative financial leverage strategy."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.1636,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / (Long-term debt + Notes and loans payable + Total Equity)",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Total Equity": 212538
+    },
+    "reason": "ExxonMobil's debt-to-capital ratio of 0.1636 shows that debt constitutes a relatively small portion of its total capital structure, implying financial stability."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": 0.5597,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / (Net income (loss) before income taxes + Interest expense + Depreciation and depletion)",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Net income (loss) before income taxes": 52783,
+      "Interest expense": 849,
+      "Depreciation and depletion (includes impairments)": 20641
+    },
+    "reason": "A debt-to-EBITDA ratio of 0.5597 suggests that ExxonMobil can comfortably cover its total debt with less than a year's worth of EBITDA, indicating low leverage and strong debt repayment capacity."
+  },
+  "interest_coverage_ratio": {
+    "value": 63.17,
+    "unit": "ratio",
+    "formula": "(Net income (loss) before income taxes + Interest expense) / Interest expense",
+    "inputs": {
+      "Net income (loss) before income taxes": 52783,
+      "Interest expense": 849
+    },
+    "reason": "An interest coverage ratio of 63.17 indicates that ExxonMobil's earnings before interest and taxes are more than sufficient to cover its interest expenses, highlighting its strong ability to service its debt."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "net_income": {
+    "value": 12550,
+    "unit": "EUR millions",
+    "formula": "Net profit, Group share",
+    "inputs": {
+      "Net profit, Group share": 12550
+    },
+    "reason": "LVMH's net income for 2024 is a substantial 12,550 million EUR, representing the total profit attributable to the group's shareholders."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.777,
+    "unit": "ratio",
+    "formula": "(Cost of sales + Marketing and selling expenses + General and administrative expenses + Other operating income and expenses) / Revenue",
+    "inputs": {
+      "Cost of sales": -27918,
+      "Marketing and selling expenses": -31002,
+      "General and administrative expenses": -6220,
+      "Other operating income and expenses": -664,
+      "Revenue": 84683
+    },
+    "reason": "With a cost-to-income ratio of 0.777, LVMH incurs 77.7 cents in operating costs for every euro of revenue generated, indicating its operational efficiency."
+  },
+  "quick_ratio": {
+    "value": 0.677,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Trade accounts receivable + Other current assets) / (Short-term borrowings + Current lease liabilities + Trade accounts payable + Income taxes (current) + Current provisions and other liabilities)",
+    "inputs": {
+      "Cash and cash equivalents": 9631,
+      "Trade accounts receivable": 4730,
+      "Other current assets": 8455,
+      "Short-term borrowings": 10851,
+      "Current lease liabilities": 2972,
+      "Trade accounts payable": 8630,
+      "Income taxes (current)": 1231,
+      "Current provisions and other liabilities": 10012
+    },
+    "reason": "LVMH's quick ratio of 0.677 suggests that its highly liquid assets cover only about 67.7% of its current liabilities, indicating potential short-term liquidity challenges without relying on inventory."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.3311,
+    "unit": "ratio",
+    "formula": "(Long-term borrowings + Short-term borrowings) / (Equity, Group share + Minority interests)",
+    "inputs": {
+      "Long-term borrowings": 12091,
+      "Short-term borrowings": 10851,
+      "Equity, Group share": 67517,
+      "Minority interests": 1770
+    },
+    "reason": "A debt-to-equity ratio of 0.3311 indicates that LVMH uses approximately 33 cents of debt for every euro of equity, suggesting a relatively conservative capital structure."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1538,
+    "unit": "ratio",
+    "formula": "(Long-term borrowings + Short-term borrowings) / Total assets",
+    "inputs": {
+      "Long-term borrowings": 12091,
+      "Short-term borrowings": 10851,
+      "Total assets": 149190
+    },
+    "reason": "The debt-to-assets ratio of 0.1538 signifies that 15.38% of LVMH's assets are financed by debt, reflecting a low reliance on external borrowing relative to its total asset base."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.2488,
+    "unit": "ratio",
+    "formula": "(Long-term borrowings + Short-term borrowings) / (Long-term borrowings + Short-term borrowings + Equity, Group share + Minority interests)",
+    "inputs": {
+      "Long-term borrowings": 12091,
+      "Short-term borrowings": 10851,
+      "Equity, Group share": 67517,
+      "Minority interests": 1770
+    },
+    "reason": "LVMH's debt-to-capital ratio of 0.2488 indicates that debt constitutes about 24.88% of its total capital (debt plus equity), showing a balanced approach to financing its operations."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Long-term borrowings + Short-term borrowings) / EBITDA",
+    "inputs": {
+      "Long-term borrowings": 12091,
+      "Short-term borrowings": 10851,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be calculated as the 'Depreciation and Amortization' figure was not provided in the financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": 19.86,
+    "unit": "ratio",
+    "formula": "EBIT / (Cost of net financial debt + Interest on lease liabilities)",
+    "inputs": {
+      "Revenue": 84683,
+      "Cost of sales": -27918,
+      "Marketing and selling expenses": -31002,
+      "General and administrative expenses": -6220,
+      "Income/(Loss) from joint ventures and associates": 28,
+      "Other operating income and expenses": -664,
+      "Cost of net financial debt": -442,
+      "Interest on lease liabilities": -510
+    },
+    "reason": "With an interest coverage ratio of 19.86, LVMH's operating profit is nearly 20 times its interest expenses, demonstrating a very strong ability to meet its interest obligations."
+  }
+}

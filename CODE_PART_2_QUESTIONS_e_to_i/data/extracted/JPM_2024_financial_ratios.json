@@ -1,0 +1,93 @@
+{
+  "net_income": {
+    "value": 58471,
+    "unit": "millions USD",
+    "formula": "Net income",
+    "inputs": {
+      "Net income": 58471
+    },
+    "reason": "JPMorgan Chase reported a net income of $58,471 million for the year ended December 31, 2024, indicating its overall profitability."
+  },
+  "cost_to_income_ratio": {
+    "value": 51.69,
+    "unit": "%",
+    "formula": "(Total Noninterest Expense / Total Net Revenue) * 100",
+    "inputs": {
+      "Total noninterest expense": 91797,
+      "Total net revenue": 177556
+    },
+    "reason": "With a cost-to-income ratio of 51.69%, JPMorgan Chase spends approximately 51.69 cents to generate each dollar of revenue, reflecting its operational efficiency."
+  },
+  "quick_ratio": {
+    "value": 6.14,
+    "unit": "ratio",
+    "formula": "(Cash + Deposits with Banks + Federal Funds Sold + Securities Borrowed + Trading Assets + Accrued Interest & Accounts Receivable) / Accounts Payable and Other Liabilities",
+    "inputs": {
+      "Cash and due from banks": 23372,
+      "Deposits with banks": 445945,
+      "Federal funds sold and securities purchased under resale agreements": 295001,
+      "Securities borrowed": 219546,
+      "Trading assets": 637784,
+      "Accrued interest and accounts receivable": 101223,
+      "Accounts payable and other liabilities": 280672
+    },
+    "reason": "A quick ratio of 6.14 indicates that JPMorgan Chase has substantial liquid assets to cover its short-term liabilities, demonstrating strong liquidity."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.32,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Stockholders' Equity",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-equity ratio of 1.32 suggests that JPMorgan Chase uses a significant amount of debt financing relative to equity, indicating a moderate level of financial leverage."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.11,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Assets",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total assets": 4002814
+    },
+    "reason": "The debt-to-assets ratio of 0.11 indicates that 11% of JPMorgan Chase's assets are financed by debt, suggesting a relatively low reliance on debt compared to its total asset base."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.57,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / (Short-term Borrowings + Long-term Debt + Total Stockholders' Equity)",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-capital ratio of 0.57 means that 57% of JPMorgan Chase's total capital (debt plus equity) is composed of debt, reflecting its capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / EBITDA",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Net income": 58471,
+      "Income tax expense": 16610,
+      "Interest expense": 101350,
+      "Depreciation & Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be calculated due to the unavailability of Depreciation & Amortization data in the provided financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": 1.74,
+    "unit": "x",
+    "formula": "(Income Before Income Tax Expense + Interest Expense) / Interest Expense",
+    "inputs": {
+      "Income before income tax expense": 75081,
+      "Interest expense": 101350
+    },
+    "reason": "An interest coverage ratio of 1.74x indicates that JPMorgan Chase's earnings before interest and taxes are 1.74 times its interest expense, suggesting a limited ability to cover its interest obligations."
+  }
+}

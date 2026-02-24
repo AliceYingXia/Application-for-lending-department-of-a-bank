@@ -1,0 +1,89 @@
+{
+  "net_income": {
+    "value": 36010,
+    "unit": "millions USD",
+    "formula": "Net income (loss) attributable to ExxonMobil",
+    "inputs": {
+      "Net income (loss) attributable to ExxonMobil": 36010
+    },
+    "reason": "ExxonMobil reported a net income of $36,010 million in 2023, indicating strong profitability for the period."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.8468,
+    "unit": "ratio",
+    "formula": "Total costs and other deductions / Total revenues and other income",
+    "inputs": {
+      "Total costs and other deductions": 291799,
+      "Total revenues and other income": 344582
+    },
+    "reason": "With a cost-to-income ratio of 0.8468, ExxonMobil spends approximately 84.68 cents to generate each dollar of revenue, suggesting a relatively high proportion of revenue is consumed by costs."
+  },
+  "quick_ratio": {
+    "value": 1.0653,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Cash and cash equivalents \u2013 restricted + Notes and accounts receivable - net) / Total current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 31539,
+      "Cash and cash equivalents \u2013 restricted": 29,
+      "Notes and accounts receivable - net": 38015,
+      "Total current liabilities": 65316
+    },
+    "reason": "A quick ratio of 1.0653 indicates that ExxonMobil has slightly more than enough liquid assets to cover its short-term liabilities without relying on inventory, demonstrating good short-term liquidity."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.203,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / ExxonMobil share of equity",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "ExxonMobil share of equity": 204802
+    },
+    "reason": "ExxonMobil's debt-to-equity ratio of 0.2030 suggests that the company uses a relatively low amount of debt financing compared to equity, indicating a conservative financial structure."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1105,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / Total Assets",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Total Assets": 376317
+    },
+    "reason": "A debt-to-assets ratio of 0.1105 indicates that approximately 11.05% of ExxonMobil's assets are financed by debt, suggesting a low reliance on debt to fund its assets."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.1687,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / ((Long-term debt + Notes and loans payable) + ExxonMobil share of equity)",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "ExxonMobil share of equity": 204802
+    },
+    "reason": "With a debt-to-capital ratio of 0.1687, debt constitutes about 16.87% of ExxonMobil's total capital structure, indicating a healthy balance between debt and equity financing."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": 0.56,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / (Income (loss) before income taxes + Interest expense + Depreciation and depletion (includes impairments))",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Income (loss) before income taxes": 52783,
+      "Interest expense": 849,
+      "Depreciation and depletion (includes impairments)": 20641
+    },
+    "reason": "A debt-to-EBITDA ratio of 0.5600 suggests that ExxonMobil's total debt is less than its annual EBITDA, indicating a strong ability to service its debt obligations from operational earnings."
+  },
+  "interest_coverage_ratio": {
+    "value": 63.17,
+    "unit": "ratio",
+    "formula": "(Income (loss) before income taxes + Interest expense) / Interest expense",
+    "inputs": {
+      "Income (loss) before income taxes": 52783,
+      "Interest expense": 849
+    },
+    "reason": "An interest coverage ratio of 63.17 demonstrates that ExxonMobil can comfortably cover its interest expenses with its earnings before interest and taxes, indicating excellent debt-servicing capacity."
+  }
+}

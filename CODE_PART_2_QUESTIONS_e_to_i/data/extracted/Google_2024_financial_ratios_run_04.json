@@ -1,0 +1,83 @@
+{
+  "net_income": {
+    "value": 100118,
+    "unit": "millions USD",
+    "formula": "Net income",
+    "inputs": {
+      "Net income": 100118
+    },
+    "reason": "Google's net income for 2024 was $100,118 million, representing its total profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.6789,
+    "unit": "ratio",
+    "formula": "Total costs and expenses / Revenues",
+    "inputs": {
+      "Total costs and expenses": 237628,
+      "Revenues": 350018
+    },
+    "reason": "A cost-to-income ratio of 0.6789 indicates that for every dollar of revenue, Google incurs approximately $0.68 in costs and expenses."
+  },
+  "quick_ratio": {
+    "value": 1.6606,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Marketable securities + Accounts receivable, net) / Total current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 23466,
+      "Marketable securities": 72191,
+      "Accounts receivable, net": 52340,
+      "Total current liabilities": 89122
+    },
+    "reason": "A quick ratio of 1.6606 suggests that Google has $1.66 in quick assets to cover every dollar of current liabilities, indicating good short-term liquidity."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.0335,
+    "unit": "ratio",
+    "formula": "Long-term debt / Total stockholders' equity",
+    "inputs": {
+      "Long-term debt": 10883,
+      "Total stockholders' equity": 325084
+    },
+    "reason": "A debt-to-equity ratio of 0.0335 indicates that Google uses very little debt financing compared to equity financing, suggesting a low financial risk."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.0242,
+    "unit": "ratio",
+    "formula": "Long-term debt / Total assets",
+    "inputs": {
+      "Long-term debt": 10883,
+      "Total assets": 450256
+    },
+    "reason": "A debt-to-assets ratio of 0.0242 means that only 2.42% of Google's assets are financed by long-term debt, indicating a strong asset base relative to its debt."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.0324,
+    "unit": "ratio",
+    "formula": "Long-term debt / (Long-term debt + Total stockholders' equity)",
+    "inputs": {
+      "Long-term debt": 10883,
+      "Total stockholders' equity": 325084
+    },
+    "reason": "A debt-to-capital ratio of 0.0324 shows that long-term debt constitutes only 3.24% of Google's total capital structure, highlighting a conservative financing approach."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Long-term debt / EBITDA",
+    "inputs": {
+      "Long-term debt": 10883,
+      "EBITDA": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be calculated as EBITDA, specifically Depreciation & Amortization and a clear Interest Expense breakdown, was not directly available in the provided financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Income before income taxes / Interest Expense",
+    "inputs": {
+      "Income before income taxes": 119815,
+      "Interest Expense": null
+    },
+    "reason": "The Interest Coverage Ratio cannot be calculated because Interest Expense was not explicitly disclosed as a separate line item in the provided income statement pages."
+  }
+}

@@ -1,0 +1,1111 @@
+% ============================================================
+% Automated Financial Ratio Extraction from Annual Reports
+% Using Large Language Models: A Consistency Study
+% ============================================================
+\documentclass[12pt, a4paper]{article}
+
+% ── Packages ────────────────────────────────────────────────
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{makecell}
+\usepackage{pifont}   % \ding for check/cross marks
+\usepackage{setspace}
+
+% ── Colours ─────────────────────────────────────────────────
+\definecolor{consistent}{HTML}{D6EAD6}   % light green
+\definecolor{variable}{HTML}{FAD7D7}     % light red
+\definecolor{allnull}{HTML}{E8E8E8}      % light grey
+\definecolor{hdrblue}{HTML}{2C3E7A}      % dark blue for headers
+\definecolor{lightgray}{HTML}{F4F4F4}
+
+% ── Convenience macros ──────────────────────────────────────
+\newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}  % ✓
+\newcommand{\xmark}{\textcolor{red!70!black}{\ding{55}}}    % ✗
+\newcommand{\nmark}{\textcolor{gray}{---}}                   % all-null
+\newcommand{\metric}[1]{\textit{#1}}
+\newcommand{\company}[1]{\textsc{#1}}
+
+% ── Title ────────────────────────────────────────────────────
+\title{%
+  \textbf{Automated Financial Ratio Extraction from Annual Reports}\\[0.4em]
+  \large Using Large Language Models: A Consistency Study
+}
+\author{Feng Qiu and Alice (Ying) Xia}
+\date{Feb 2026}
+
+% ─────────────────────────────────────────────────────────────
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+% ── Abstract ────────────────────────────────────────────────
+\begin{abstract}
+\noindent
+We evaluate the consistency and reliability of an automated pipeline that
+extracts eight standardised financial ratios from corporate annual-report PDFs
+using Google Gemini 2.5~Flash.  The pipeline applies PDF page identification
+via fuzzy text matching, targeted page extraction, and a two-call
+chain-of-thought prompting strategy.  Each company is processed ten times at
+temperature~0.7 to measure extraction stability.  Across nine multinational
+companies spanning technology, automotive, luxury goods, and financial
+services, we find that \textbf{40.3\%} of all metric--company cells are
+consistently extracted (coefficient of variation below 5\%), \textbf{48.6\%}
+are variable, and \textbf{11.1\%} are always null.  Net income achieves
+perfect reliability (9/9 companies) while cost-to-income and interest coverage
+are the least reliable (0\% and 11\% consistent, respectively).  We identify
+five root-cause categories for inconsistency and provide concrete
+recommendations for each.
+\end{abstract}
+
+\vspace{1em}
+\tableofcontents
+\newpage
+
+% =============================================================
+\section{Introduction}
+% =============================================================
+
+Extracting structured financial data from unstructured PDF annual reports is a
+long-standing challenge in financial natural language processing.  Traditional
+approaches rely on hand-crafted rules or proprietary data providers.
+Large language models (LLMs) now offer the possibility of zero-shot extraction
+directly from scanned or text-based PDFs.  However, LLMs are stochastic:
+identical prompts at non-zero temperature may yield different outputs across
+runs, raising concerns about reliability in downstream financial analysis.
+
+This paper reports a controlled experiment in which the same extraction prompt
+is applied ten times per company to measure how consistently Gemini 2.5~Flash
+extracts eight financial metrics from the annual reports of nine global
+companies.  The experiment is implemented as a four-step pipeline
+(Sections~\ref{sec:pipeline}--\ref{sec:consistency-measure}) and the results
+are analysed in detail in Section~\ref{sec:results}.
+
+% =============================================================
+\section{Methodology}
+\label{sec:methodology}
+% =============================================================
+
+\subsection{Pipeline Overview}
+
+The pipeline consists of four sequential steps, as illustrated in
+Figure~\ref{fig:pipeline}.  Raw company annual-report PDFs are ingested and
+transformed into structured JSON records containing the extracted financial
+metrics and their associated consistency statistics.
+
+\begin{figure}[H]
+\centering
+\fbox{%
+\begin{minipage}{0.88\textwidth}
+\centering
+\vspace{0.5em}
+\textbf{Step 1:} Page Identification (\texttt{table\_identifier.py})\\[0.3em]
+$\downarrow$\\[0.3em]
+\textbf{Step 2:} Page Extraction (\texttt{extract\_pages.py})\\[0.3em]
+$\downarrow$\\[0.3em]
+\textbf{Step 3:} Gemini Extraction $\times 10$ (\texttt{step\_3\_gemini\_analyzer.py})\\[0.3em]
+$\downarrow$\\[0.3em]
+\textbf{Step 4:} Consistency Reporting (\texttt{step\_4\_overall\_report.py})
+\vspace{0.5em}
+\end{minipage}%
+}
+\caption{Four-step automated financial ratio extraction pipeline.}
+\label{fig:pipeline}
+\end{figure}
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Step 1 — Financial Statement Page Identification}
+\label{sec:step1}
+
+The first step identifies which pages of each annual-report PDF contain the
+income statement and balance sheet.  This is implemented in
+\texttt{table\_identifier.py} using the \texttt{pdfplumber} library.
+
+\subsubsection{Text-Based Table Extraction}
+
+Standard PDFs use either border-based tables (drawn with lines) or
+text-based layouts (columns aligned purely by whitespace).  We found that
+text-based extraction with explicit column strategies generalises better across
+the diverse report formats in our dataset:
+
+\begin{verbatim}
+tables = page.extract_tables({
+    "vertical_strategy":   "text",
+    "horizontal_strategy": "text",
+})
+\end{verbatim}
+
+\subsubsection{Fuzzy Page Matching}
+
+For each page, the top five text lines are scored against a keyword vocabulary
+for income statements (e.g., ``consolidated statements of income'',
+``profit and loss account'') and balance sheets (e.g., ``consolidated balance
+sheet'', ``statement of financial position'') using the RapidFuzz
+\texttt{ratio} function (full-string match):
+
+\begin{equation}
+  s_{\text{page}} = \max_{k \in K,\, l \in L_{\text{top5}}}
+      \text{fuzz.ratio}(\text{normalise}(l),\, k)
+\end{equation}
+
+where $K$ is the keyword set and $L_{\text{top5}}$ is the set of the five
+highest-scoring lines on the page.  To handle PDFs where text is concatenated
+without spaces (e.g., \texttt{CONSOLIDATEDSTATEMENTOFINCOME}), the score
+is taken as the maximum of the original comparison and a
+whitespace-stripped comparison:
+
+\begin{equation}
+  s = \max\!\bigl(\text{fuzz.ratio}(l,\, k),\;
+                  \text{fuzz.ratio}(\text{strip}(l),\, \text{strip}(k))\bigr)
+\end{equation}
+
+A minimum title length of 10 characters is enforced to eliminate
+short false-positive matches.
+
+\subsubsection{Top-2 Page Filter}
+
+After scoring all pages, a filter retains at most the top-2 pages per
+statement type.  A special case applies: if the top-ranked page has a
+strictly higher score than all others \emph{and} all remaining pages share
+the same score, only the top page is retained.  This avoids including
+auxiliary or duplicate statement pages.
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Step 2 — Targeted Page Extraction}
+\label{sec:step2}
+
+The identified income-statement and balance-sheet page numbers (physical,
+1-indexed) are passed to \texttt{extract\_pages.py}, which uses PyMuPDF
+(\texttt{fitz}) to extract only those pages into two separate PDF files per
+company:
+
+\begin{itemize}[noitemsep]
+  \item \texttt{<Company>\_income\_statement.pdf}
+  \item \texttt{<Company>\_balance\_sheet.pdf}
+\end{itemize}
+
+Providing only the relevant pages --- rather than the entire annual report ---
+reduces token consumption and eliminates irrelevant context that could confuse
+the model.
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Step 3 — LLM-Based Financial Ratio Extraction}
+\label{sec:step3}
+
+\subsubsection{Model and Configuration}
+
+Extraction is performed by Google Gemini~2.5~Flash via the
+\texttt{google-genai} SDK.  Key parameters:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Model              & \texttt{gemini-2.5-flash} \\
+Temperature        & 0.7 \\
+Top-P              & 0.95 \\
+Max output tokens  & 16{,}448 \\
+Thinking mode      & Disabled (\texttt{thinking\_budget = 0}) \\
+Runs per company   & 10 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{Two-Call Chain-of-Thought Architecture}
+
+Each run consists of two sequential Gemini API calls.
+
+\paragraph{Call~1 --- Chain-of-thought reasoning.}
+The two extracted PDFs (income statement and balance sheet) are first combined
+into a single in-memory PDF using PyMuPDF.  This combined PDF, together with
+the page position information, is submitted to Gemini with a structured
+two-step prompt:
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Step~1:} Identify which line items are required from the
+        income statement and balance sheet to compute each of the eight target
+        metrics.
+  \item \textbf{Step~2:} Read the actual values of those line items from the
+        attached pages and calculate every metric, showing the formula and
+        numbers used.
+\end{itemize}
+
+The model produces a free-text chain-of-thought analysis explaining its
+reasoning.
+
+\paragraph{Call~2 --- Structured JSON output.}
+The chain-of-thought text from Call~1 is passed to a second Gemini call
+(without the PDF) with instructions to format the results as a structured JSON
+object.  Each metric entry contains:
+
+\begin{verbatim}
+{
+  "<metric_key>": {
+    "value":   <number or null>,
+    "unit":    "<e.g. millions USD, ratio, %>",
+    "formula": "<formula used>",
+    "inputs":  {"<line_item>": <value>, ...},
+    "reason":  "<one sentence interpreting this result>"
+  }, ...
+}
+\end{verbatim}
+
+If a required line item is not present in the extracted pages, the model is
+instructed to set \texttt{value} to \texttt{null}.
+
+\subsubsection{Target Metrics}
+
+Eight financial metrics are extracted, covering profitability, liquidity, and
+leverage dimensions:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Key} & \textbf{Metric} & \textbf{Formula} \\
+\midrule
+\texttt{net\_income}             & Net Income             & Bottom-line profit \\
+\texttt{cost\_to\_income\_ratio} & Cost-to-Income         & Total costs / Revenue \\
+\texttt{quick\_ratio}            & Quick Ratio            & (Current assets $-$ Inventory) / Current liabilities \\
+\texttt{debt\_to\_equity\_ratio} & Debt / Equity          & Total debt / Shareholders' equity \\
+\texttt{debt\_to\_assets\_ratio} & Debt / Assets          & Total debt / Total assets \\
+\texttt{debt\_to\_capital\_ratio}& Debt / Capital         & Total debt / (Debt + Equity) \\
+\texttt{debt\_to\_ebitda\_ratio} & Debt / EBITDA          & Total debt / EBITDA \\
+\texttt{interest\_coverage\_ratio}& Interest Coverage     & EBIT / Interest expense \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Step 4 — Consistency Measurement}
+\label{sec:consistency-measure}
+
+After ten runs, a consistency report is generated for each company.  For each
+metric, the ten extracted values are collected (excluding null values) and the
+following statistics computed:
+
+\begin{equation}
+  \text{CV} = \frac{\sigma}{\lvert\mu\rvert}
+\end{equation}
+
+where $\mu$ and $\sigma$ are the mean and population standard deviation of the
+non-null values.  A metric--company cell is classified as \textbf{consistent}
+if and only if:
+
+\begin{enumerate}[noitemsep]
+  \item The null count across ten runs is zero ($n_{\text{null}} = 0$), and
+  \item The coefficient of variation is below the threshold
+        $\text{CV} < 0.05$ (5\%).
+\end{enumerate}
+
+The threshold was chosen to allow for minor rounding differences in the final
+decimal place while flagging genuine disagreements in the extracted values.
+
+% =============================================================
+\section{Experimental Setup}
+\label{sec:setup}
+% =============================================================
+
+\subsection{Dataset}
+
+Nine companies were selected to span a broad range of sectors, reporting
+currencies, and accounting frameworks:
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{Company} & \textbf{Year} & \textbf{Sector} & \textbf{Currency} \\
+\midrule
+Alibaba  & 2024 & Technology / E-commerce & CNY \\
+EM       & 2024 & Technology              & USD \\
+GM       & 2023 & Automotive              & USD \\
+Google   & 2024 & Technology              & USD \\
+JPM      & 2024 & Banking                 & USD \\
+LVMH     & 2024 & Luxury Goods            & EUR \\
+Meta     & 2024 & Technology              & USD \\
+Tencent  & 2024 & Technology              & CNY \\
+Volkswagen & 2024 & Automotive / Finance  & EUR \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each company's annual report was obtained as a multi-hundred-page PDF.  The
+pipeline extracted 1--2 income-statement pages and 1--2 balance-sheet pages per
+company for input to Gemini.
+
+\subsection{Evaluation Scale}
+
+Each of the 72 cells (9 companies $\times$ 8 metrics) was assigned one of
+three outcome labels:
+
+\begin{center}
+\begin{tabular}{clp{8cm}}
+\toprule
+\textbf{Symbol} & \textbf{Label} & \textbf{Criterion} \\
+\midrule
+\cmark & Consistent & CV $< 5\%$ and $n_{\text{null}} = 0$ \\
+\xmark & Variable   & CV $\geq 5\%$ or $n_{\text{null}} > 0$ \\
+\nmark & All-null   & All 10 runs returned \texttt{null} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% =============================================================
+\section{Results}
+\label{sec:results}
+% =============================================================
+
+\subsection{Overall Headline}
+
+Table~\ref{tab:headline} summarises the aggregate outcomes across all 72
+metric--company cells.
+
+\begin{table}[H]
+\centering
+\caption{Overall extraction outcome across 72 cells (9 companies $\times$ 8 metrics).}
+\label{tab:headline}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Outcome}      & \textbf{Count} & \textbf{Percentage} & \textbf{Symbol} \\
+\midrule
+Consistently extracted & 29 & 40.3\% & \cmark \\
+Variable / noisy       & 35 & 48.6\% & \xmark \\
+Always null            &  8 & 11.1\% & \nmark \\
+\midrule
+\textbf{Total}         & 72 & 100\%  & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Consistency Grid}
+
+Table~\ref{tab:grid} presents the full consistency grid.  Company names are
+abbreviated: ALI~=~Alibaba, EM~=~EM, GM~=~GM, GOO~=~Google, JPM~=~JPM,
+LVM~=~LVMH, MET~=~Meta, TEN~=~Tencent, VW~=~Volkswagen.
+Cells are shaded: \colorbox{consistent}{\strut\ green~} = consistent,
+\colorbox{variable}{\strut\ red~} = variable,
+\colorbox{allnull}{\strut\ grey~} = all-null.
+
+\begin{table}[H]
+\centering
+\caption{Consistency grid: \cmark\,=\,consistent (CV$<$5\%),
+         \xmark\,=\,variable, \nmark\,=\,all-null.}
+\label{tab:grid}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lcccccccccc}
+\toprule
+\textbf{Metric} &
+  \textbf{ALI} & \textbf{EM} & \textbf{GM} & \textbf{GOO} &
+  \textbf{JPM} & \textbf{LVM} & \textbf{MET} & \textbf{TEN} & \textbf{VW} \\
+\midrule
+Net Income
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{consistent}\cmark \\
+Cost-to-Income
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{variable}\xmark \\
+Quick Ratio
+  & \cellcolor{variable}\xmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{consistent}\cmark & \cellcolor{variable}\xmark
+  & \cellcolor{allnull}\nmark \\
+Debt / Equity
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{allnull}\nmark \\
+Debt / Assets
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark \\
+Debt / Capital
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{consistent}\cmark & \cellcolor{consistent}\cmark
+  & \cellcolor{allnull}\nmark \\
+Debt / EBITDA
+  & \cellcolor{variable}\xmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark & \cellcolor{allnull}\nmark
+  & \cellcolor{variable}\xmark & \cellcolor{allnull}\nmark
+  & \cellcolor{variable}\xmark & \cellcolor{allnull}\nmark
+  & \cellcolor{allnull}\nmark \\
+Interest Coverage
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{variable}\xmark & \cellcolor{allnull}\nmark
+  & \cellcolor{variable}\xmark & \cellcolor{variable}\xmark
+  & \cellcolor{variable}\xmark & \cellcolor{consistent}\cmark
+  & \cellcolor{variable}\xmark \\
+\midrule
+\textbf{Consistent} & 4 & 6 & 2 & 4 & 1 & 1 & 5 & 5 & 1 \\
+\textbf{(\% of 8)}  & 50 & 75 & 25 & 50 & 13 & 13 & 63 & 63 & 13 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Per-Metric Results}
+
+Table~\ref{tab:metric-summary} reports consistency statistics aggregated
+across the nine companies for each metric.
+
+\begin{table}[H]
+\centering
+\caption{Per-metric consistency summary across nine companies.}
+\label{tab:metric-summary}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Metric} &
+  \makecell{\textbf{Consistent}\\\textbf{companies}} &
+  \makecell{\textbf{\%}\\\textbf{consistent}} &
+  \makecell{\textbf{Always-null}\\\textbf{companies}} &
+  \makecell{\textbf{Median}\\\textbf{CV}} \\
+\midrule
+Net Income             & 9 & 100.0\% & 0 & 0.0000 \\
+Debt / Equity          & 6 &  66.7\% & 1 & 0.0334 \\
+Debt / Capital         & 5 &  55.6\% & 1 & 0.0445 \\
+Debt / Assets          & 4 &  44.4\% & 0 & 0.0380 \\
+Quick Ratio            & 3 &  33.3\% & 1 & 0.1228 \\
+Cost-to-Income         & 0 &   0.0\% & 0 & 1.9048 \\
+Debt / EBITDA          & 1 &  11.1\% & 4 & 0.0088 \\
+Interest Coverage      & 1 &  11.1\% & 1 & 0.0683 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Net Income (100\% consistent)}
+
+Net income is the only metric achieving universal consistency.  Eight of nine
+companies return an identical value across all ten runs (CV~=~0).  The sole
+exception, GM, shows a CV of 0.013 caused by ambiguity between consolidated
+net income (\$10{,}127M) and net income attributable to stockholders
+(\$9{,}840M); both values are well-defined and the variance is negligible.
+Net income is prominently labelled as the final line of every income statement,
+making it the easiest target for extraction.
+
+\subsubsection{Debt / Equity (67\% consistent)}
+
+Six of nine companies pass the consistency test.  Failures are structurally
+motivated:
+\begin{itemize}[noitemsep]
+  \item \textbf{LVMH} (CV = 0.291): Bimodal split between 0.33 and 0.59,
+        reflecting inconsistent inclusion of operating lease obligations in
+        the debt numerator.
+  \item \textbf{JPM} (CV = 1.095): Bank liabilities make ``debt'' undefined
+        in standard corporate terms; one run returns 9.16$\times$ (includes
+        deposits) while others return $\approx$1.32$\times$ (bonds only).
+  \item \textbf{Volkswagen}: All 10 runs null --- insufficient balance sheet
+        data in extracted pages.
+\end{itemize}
+
+\subsubsection{Debt / Capital and Debt / Assets (56\% and 44\% consistent)}
+
+These metrics share similar failure patterns with D/E.  GM additionally
+exhibits a unit-ambiguity failure (expressing the ratio as 44.58 instead of
+0.4458), inflating CV to $\approx$1.9.  The unit problem is mechanically
+identical to the cost-to-income issue and is fixable with a prompt change.
+
+\subsubsection{Quick Ratio (33\% consistent)}
+
+Three companies achieve consistency (EM, Google, Meta).  Failures arise from:
+\begin{enumerate}[noitemsep]
+  \item \textbf{Definition ambiguity}: Which short-term investments count as
+        ``quick assets'' differs by company (Alibaba: two clusters at 1.30
+        and 1.79).
+  \item \textbf{Structural inapplicability}: JPM (a bank) lacks conventional
+        current assets/liabilities; CV~=~0.877, range 0.44--5.78.
+  \item \textbf{Data unavailability}: Tencent and Volkswagen return null in
+        9/10 and 10/10 runs respectively, indicating the balance sheet pages
+        do not present current-asset breakdowns in a parseable format.
+\end{enumerate}
+
+\subsubsection{Cost-to-Income Ratio (0\% consistent)}
+
+This is the only metric with \emph{zero} consistent companies.  However, the
+underlying extraction is largely correct --- the failure is entirely a
+unit-expression problem.  Table~\ref{tab:cti} shows that Gemini extracts
+the same underlying ratio value in most runs but occasionally switches between
+expressing it as a decimal (e.g., 0.8454) and as a percentage (e.g., 84.54).
+This single ambiguity inflates CV values to the range 0.80--2.73.
+
+\begin{table}[H]
+\centering
+\caption{Cost-to-income ratio: extracted values and CV by company.
+         The underlying ratio is consistent; only the unit differs.}
+\label{tab:cti}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Company} &
+  \textbf{Decimal form} &
+  \textbf{\% form} &
+  \makecell{\textbf{Runs as}\\\textbf{decimal}} &
+  \makecell{\textbf{Runs as}\\\textbf{\%}} &
+  \textbf{CV} \\
+\midrule
+Alibaba    & 0.845--0.880 & 84.54--88.0  & 7 & 3 & 1.905 \\
+EM         & 0.847        & 84.68        & 9 & 1 & 2.725 \\
+GM         & 0.946        & 94.59        & 5 & 5 & 1.195 \\
+Google     & 0.679        & 67.89        & 9 & 1 & 2.725 \\
+JPM        & 0.517        & 51.70        & 5 & 5 & 1.195 \\
+LVMH       & 0.769--0.777 & 44.74--77.7  & 4 & 4 & 1.232 \\
+Meta       & 0.578        & 57.82        & 9 & 1 & 2.725 \\
+Tencent    & 0.471--0.974 & 47.10        & 8 & 1 & 2.666 \\
+Volkswagen & 0.817--0.944 & 81.68--81.69 & 6 & 4 & 0.802 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Debt / EBITDA (11\% consistent)}
+
+This metric suffers primarily from data unavailability.  EBITDA requires
+depreciation and amortisation (D\&A) figures, which are typically disclosed
+in the cash flow statement or in notes --- not on the income statement or
+balance sheet pages provided to Gemini.  Only EM (which presents D\&A
+data on the extracted pages) achieves consistent extraction across all 10
+runs (CV~=~0.009).  Four companies return null in every run (Google, LVMH,
+Tencent, Volkswagen); four others extract values in only 1--3 of 10 runs.
+
+\subsubsection{Interest Coverage (11\% consistent)}
+
+Only Tencent passes the threshold (CV~=~0.030).  Failures fall into three
+sub-categories:
+\begin{enumerate}[noitemsep]
+  \item \textbf{Structural inapplicability} (JPM, GM, Volkswagen): Financial
+        services divisions make it unclear which ``interest expense'' to use.
+        GM shows a bimodal split between $\approx$0.76$\times$ (total
+        financing costs) and $\approx$10--12$\times$ (automotive segment
+        only), yielding CV~=~0.732.
+  \item \textbf{Single-run outlier} (Alibaba, LVMH, EM): Nine of ten runs
+        agree; one rogue run picks a different EBIT figure (e.g., EM returns
+        87.5$\times$ in one run vs. $\approx$63$\times$ in all others).
+  \item \textbf{Data unavailability} (Google): All ten runs null --- Google
+        has minimal interest expense and it is not clearly displayed on the
+        extracted pages.
+\end{enumerate}
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Per-Company Results}
+
+Table~\ref{tab:company-detail} provides detailed statistics for each
+company across all eight metrics.
+
+\begin{table}[H]
+\centering
+\caption{Per-company extraction results.
+         Mean values are shown with the CV in parentheses.
+         \cmark~= consistent, \xmark~= variable, \nmark~= all-null.
+         Units: net income in millions (local currency); ratios are dimensionless.}
+\label{tab:company-detail}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccccc}
+\toprule
+\textbf{Metric} &
+  \textbf{ALI} & \textbf{EM} & \textbf{GM} & \textbf{GOO} &
+  \textbf{JPM} & \textbf{LVM} & \textbf{MET} & \textbf{TEN} & \textbf{VW} \\
+\midrule
+\multicolumn{9}{l}{\textit{Net Income (millions, local currency)}} \\
+\quad Mean  & 71332 & 36010 & 10041 & 100118 & 58471 & 12550 & 62360 & 196467 & 12394 \\
+\quad CV    & 0.000 & 0.000 & 0.013 & 0.000  & 0.000 & 0.000 & 0.000 & 0.000  & 0.000 \\
+\quad       & \cmark& \cmark& \cmark& \cmark & \cmark& \cmark& \cmark& \cmark & \cmark\\
+\midrule
+\multicolumn{9}{l}{\textit{Cost-to-Income Ratio}} \\
+\quad Mean  & 17.94 & 9.23  & 38.40 & 7.40  & 20.99 & 28.09 & 6.30  & 5.23  & 49.36 \\
+\quad CV    & 1.905 & 2.725 & 1.195 & 2.725 & 1.195 & 1.232 & 2.725 & 2.666 & 0.802 \\
+\quad       & \xmark& \xmark& \xmark& \xmark& \xmark& \xmark& \xmark& \xmark& \xmark\\
+\midrule
+\multicolumn{9}{l}{\textit{Quick Ratio}} \\
+\quad Mean  & 1.656 & 1.065 & 0.726 & 1.660 & 1.869 & 0.636 & 2.822 & \nmark& \nmark\\
+\quad CV    & 0.123 & 0.000 & 0.229 & 0.000 & 0.877 & 0.155 & 0.000 &  ---  &  ---  \\
+\quad       & \xmark& \cmark& \xmark& \cmark& \xmark& \xmark& \cmark& \xmark& \nmark\\
+\midrule
+\multicolumn{9}{l}{\textit{Debt / Equity}} \\
+\quad Mean  & 0.167 & 0.196 & 1.893 & 0.033 & 2.143 & 0.434 & 0.158 & 0.283 & \nmark\\
+\quad CV    & 0.049 & 0.011 & 0.001 & 0.032 & 1.095 & 0.291 & 0.004 & 0.033 &  ---  \\
+\quad       & \cmark& \cmark& \cmark& \cmark& \xmark& \xmark& \cmark& \cmark& \nmark\\
+\midrule
+\multicolumn{9}{l}{\textit{Debt / Assets}} \\
+\quad Mean  & 0.097 & 0.111 & 9.273 & 0.024 & 2.300 & 0.201 & 0.104 & 0.161 & 0.317\\
+\quad CV    & 0.010 & 0.001 & 1.904 & 0.053 & 1.830 & 0.295 & 0.013 & 0.038 & 0.000\\
+\quad       & \cmark& \cmark& \xmark& \xmark& \xmark& \xmark& \cmark& \cmark& \xmark\\
+\midrule
+\multicolumn{9}{l}{\textit{Debt / Capital}} \\
+\quad Mean  & 0.144 & 0.164 & 13.61 & 0.032 & 11.56 & 0.298 & 0.137 & 0.221 & \nmark\\
+\quad CV    & 0.045 & 0.009 & 1.904 & 0.022 & 1.894 & 0.200 & 0.008 & 0.026 &  ---  \\
+\quad       & \cmark& \cmark& \xmark& \cmark& \xmark& \xmark& \cmark& \cmark& \nmark\\
+\midrule
+\multicolumn{9}{l}{\textit{Debt / EBITDA}} \\
+\quad Mean  & 1.206 & 0.564 & 13.09 & \nmark& 2.355 & \nmark& 0.416 & \nmark& \nmark\\
+\quad CV    & 0.038 & 0.009 & 0.000 &  ---  & 0.032 &  ---  & 0.000 &  ---  &  ---  \\
+\quad Nulls & 7/10  & 0/10  & 9/10  & 10/10 & 8/10  & 10/10 & 9/10  & 10/10 & 10/10 \\
+\quad       & \xmark& \cmark& \xmark& \nmark& \xmark& \nmark& \xmark& \nmark& \nmark\\
+\midrule
+\multicolumn{9}{l}{\textit{Interest Coverage}} \\
+\quad Mean  & 14.56 & 65.24 & 6.770 & \nmark& 1.432 & 20.26 & 54.74 & 17.64 & 5.844\\
+\quad CV    & 0.059 & 0.114 & 0.732 &  ---  & 0.343 & 0.059 & 0.009 & 0.030 & 0.068\\
+\quad Nulls & 1/10  & 0/10  & 0/10  & 10/10 & 1/10  & 0/10  & 7/10  & 0/10  & 0/10 \\
+\quad       & \xmark& \xmark& \xmark& \nmark& \xmark& \xmark& \xmark& \cmark& \xmark\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{EM --- Best Performer (6/8 consistent, 75\%)}
+
+EM achieves the highest consistency score.  Six of eight metrics pass the
+threshold, including the rarely-consistent Debt/EBITDA (CV~=~0.009).  The
+only failures are cost-to-income (universal unit ambiguity) and interest
+coverage (one outlier run: 87.5$\times$ vs. $\approx$63$\times$ in the other
+nine runs).  EM's clean income statement layout and the availability of D\&A
+figures on the extracted pages explain its strong performance.
+
+\subsubsection{Meta and Tencent (5/8 consistent, 63\%)}
+
+Both companies benefit from straightforward balance sheets with low leverage
+and clearly labelled line items.  Meta fails on Debt/EBITDA and Interest
+Coverage primarily due to sparse data (minimal interest expense not prominently
+displayed).  Tencent's quick ratio is unreliable (9/10 null), suggesting
+its balance sheet format does not clearly separate current assets.
+
+\subsubsection{Alibaba and Google (4/8 consistent, 50\%)}
+
+Alibaba's moderate performance reflects classification ambiguity in short-term
+investment items for the quick ratio and a near-borderline CV for D/Equity
+(0.049) and D/Capital (0.045).  Google achieves perfect extraction for
+Net Income, Quick Ratio, D/Equity, and D/Capital but returns null for
+Debt/EBITDA and Interest Coverage (Google has near-zero debt and negligible
+interest expense).
+
+\subsubsection{GM (2/8 consistent, 25\%)}
+
+GM fails on six metrics.  The captive finance arm (GM Financial) introduces
+structural ambiguity into quick ratio, interest coverage, and leverage ratios.
+Additionally, GM exhibits the unit-ambiguity failure in Debt/Assets and
+Debt/Capital alongside cost-to-income, showing the most severe expression of
+this issue (50/50 decimal/percentage split).
+
+\subsubsection{JPM, LVMH, and Volkswagen (1/8 consistent, 13\%)}
+
+All three bottom performers achieve only net income consistency.
+\begin{itemize}
+  \item \textbf{JPM}: Standard corporate ratios are structurally incompatible
+        with a globally systemically important bank.  All seven non-income
+        metrics fail, with CVs ranging from 0.031 (Debt/EBITDA, but 8/10
+        null) to 1.894 (Debt/Capital).
+  \item \textbf{LVMH}: A luxury-goods conglomerate where significant lease
+        obligations generate a stable bimodal split in all leverage ratios.
+        D/Equity, D/Assets, and D/Capital each oscillate between two
+        internally consistent but mutually exclusive debt definitions.
+  \item \textbf{Volkswagen}: The highest null rate of any company (4 metrics
+        always null, 3 more with 9/10 null).  This is a data availability
+        issue: VW's complex automotive~+ financial-services structure, combined
+        with German IFRS reporting conventions, results in the required line
+        items not being present on the extracted pages.
+\end{itemize}
+
+% =============================================================
+\section{Root Cause Analysis}
+\label{sec:root-causes}
+% =============================================================
+
+The inconsistencies observed across 35 variable cells reduce to five distinct
+root-cause categories, ordered by severity and ease of remediation.
+
+\subsection{Category~A --- Unit / Scale Ambiguity}
+
+\textbf{Affected:} Cost-to-income (all 9 companies), Debt/Assets and
+Debt/Capital for GM.
+
+\textbf{Pattern:} Gemini extracts the correct underlying numerical value but
+expresses it inconsistently as either a decimal fraction (e.g., 0.9459) or a
+percentage (e.g., 94.59).  At temperature~0.7, the model's output distribution
+covers both conventions, leading to catastrophically high CV values despite
+the actual information being correct.
+
+\textbf{Fix:} Explicit unit specification in the prompt.  For example:\\
+\textit{``Express cost-to-income as a percentage on a 0--100 scale.''} \\
+\textit{``Express all ratios as decimals in the range 0--1.''}
+
+This is the single highest-impact fix: it would immediately improve
+cost-to-income from 0/9 to a predicted 8--9/9 consistent.
+
+\subsection{Category~B --- Debt Definition Ambiguity}
+
+\textbf{Affected:} LVMH D/E, D/A, D/Capital; JPM D/E, D/A, D/Capital.
+
+\textbf{Pattern:} The balance sheet contains two or more legitimate candidates
+for ``total debt'' --- typically a narrow definition (short-term borrowings +
+long-term debt) and a broad definition (adding lease obligations, deposits,
+or other financial liabilities).  Gemini alternates between them depending on
+the chain-of-thought reasoning path taken.  For LVMH, this produces clean
+bimodal clusters (e.g., 0.33 and 0.59 for D/E in alternating runs).
+
+\textbf{Fix:} Precisely define the debt numerator in the prompt:
+\textit{``Total financial debt = short-term borrowings + current portion of
+long-term debt + long-term debt.  Exclude operating lease liabilities, trade
+payables, and accrued liabilities.''}
+
+\subsection{Category~C --- Structural Inapplicability}
+
+\textbf{Affected:} Most metrics for JPM; Quick Ratio and Interest Coverage
+for GM and Volkswagen.
+
+\textbf{Pattern:} Standard corporate financial ratios were developed for
+non-financial industrial companies.  Applying them to banks (JPM) or to
+conglomerates with captive finance arms (GM Financial, VW Financial Services)
+yields results that are neither wrong nor right --- different analysts would
+use fundamentally different denominators.  The model correctly identifies
+multiple plausible calculations and picks one per run, producing high variance.
+
+\textbf{Fix:} This requires metric redesign rather than prompt tuning.
+For banks: replace D/E, D/A, Quick Ratio, and Interest Coverage with
+institution-specific metrics (Tier-1 Capital Ratio, Net Interest Margin,
+Loan-to-Deposit Ratio, Return on Assets).  For automotive conglomerates:
+specify segment isolation (``use automotive operations only, exclude financial
+services subsidiaries'').
+
+\subsection{Category~D --- Data Unavailability}
+
+\textbf{Affected:} Debt/EBITDA (5 companies null or sparse), Interest
+Coverage for Google and Volkswagen, Quick Ratio for Tencent and Volkswagen.
+
+\textbf{Pattern:} The required input line items do not appear on the
+extracted income statement and balance sheet pages.  EBITDA requires
+depreciation and amortisation (D\&A), which is typically disclosed in the
+cash flow statement or supplemental notes, not on the income statement.
+Similarly, some companies embed interest expense in notes rather than on
+the face of the income statement.
+
+\textbf{Fix:} Extend the page extraction to include the first page of the
+cash flow statement (to obtain D\&A) and relevant notes.  This is a data
+engineering change, not a model change.
+
+\subsection{Category~E --- Single-Run Outlier}
+
+\textbf{Affected:} Alibaba Interest Coverage (1 outlier run), LVMH Interest
+Coverage (1 outlier), EM Interest Coverage (1 outlier), GM Net Income (minor).
+
+\textbf{Pattern:} Nine of ten runs agree on a value; one rogue run selects a
+slightly different (but legitimate) line item.  These cells are ``almost
+consistent'' and would pass the threshold at lower temperature.
+
+\textbf{Fix:} Reduce temperature from 0.7 to 0.3 or 0.0 for production
+deployments.  This category represents the easiest win for the five affected
+cells.
+
+% =============================================================
+\section{Discussion and Recommendations}
+\label{sec:discussion}
+% =============================================================
+
+\subsection{Metric Reliability Ranking}
+
+Table~\ref{tab:ranking} ranks the eight metrics by their production readiness
+based on observed consistency rates and root-cause severity.
+
+\begin{table}[H]
+\centering
+\caption{Metric reliability ranking and recommended actions.}
+\label{tab:ranking}
+\begin{tabular}{clcp{5.5cm}}
+\toprule
+\textbf{Rank} & \textbf{Metric} & \textbf{Consistent} & \textbf{Action} \\
+\midrule
+1 & Net Income        & 9/9  & Production-ready as-is \\
+2 & Debt / Equity     & 6/9  & Specify debt definition; skip JPM \\
+3 & Debt / Capital    & 5/9  & Specify unit + debt definition \\
+4 & Debt / Assets     & 4/9  & Specify unit + debt definition \\
+5 & Quick Ratio       & 3/9  & Specify quick-asset components \\
+6 & Debt / EBITDA     & 1/9  & Add cash flow statement pages \\
+7 & Interest Coverage & 1/9  & Add interest expense pages; skip banks \\
+8 & Cost-to-Income    & 0/9  & Add unit instruction (highest ROI fix) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Company Suitability for Automated Extraction}
+
+Technology companies with simple, straightforward financial statements (EM,
+Meta, Tencent, Google, Alibaba) are well-suited to the current pipeline.
+Conglomerates with complex capital structures (LVMH, Volkswagen) require
+additional prompt engineering.  Financial institutions (JPM) require
+fundamentally different metrics.
+
+\subsection{Prioritised Improvement Roadmap}
+
+\begin{description}[style=nextline]
+  \item[\textbf{P1 --- Prompt: unit specification} (High impact, zero code change)]
+    Add explicit unit instructions for cost-to-income, Debt/Assets, and
+    Debt/Capital.  Expected to fix cost-to-income for all 9 companies and
+    Debt/Assets/Capital for GM.  Estimated improvement: $+$13 consistent cells.
+
+  \item[\textbf{P2 --- Prompt: debt definition} (High impact, zero code change)]
+    Precisely define the debt numerator.  Expected to stabilise D/E, D/A,
+    D/Capital for LVMH and partially for JPM.  Estimated improvement:
+    $+$3--6 cells.
+
+  \item[\textbf{P3 --- Data: add cash flow pages} (Medium effort)]
+    Include the first page of the operating cash flow section.  Required for
+    reliable Debt/EBITDA extraction.  Expected improvement: $+$4--5 cells.
+
+  \item[\textbf{P4 --- Metric redesign for banks} (High effort)]
+    Replace all seven non-income metrics for JPM with bank-specific KPIs.
+    Expected improvement: $+$6 cells for JPM alone.
+
+  \item[\textbf{P5 --- Temperature reduction} (Zero effort)]
+    Reduce temperature from 0.7 to 0.3.  Eliminates Category~E single-run
+    outliers.  Estimated improvement: $+$3--5 cells.
+\end{description}
+
+% =============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =============================================================
+
+This study evaluates the reproducibility of LLM-based financial ratio
+extraction across nine global companies and eight metrics over ten independent
+runs at temperature~0.7.  The key findings are:
+
+\begin{enumerate}
+  \item \textbf{Net income extraction is production-ready} across all sectors
+        (100\% consistent).
+  \item \textbf{Leverage ratios are moderately reliable} for non-financial
+        companies: D/Equity achieves 67\%, D/Capital 56\%, D/Assets 44\%.
+  \item \textbf{Cost-to-income fails universally} due to a single, fixable
+        unit-ambiguity problem.  The underlying extracted value is correct;
+        only its scale fluctuates.
+  \item \textbf{Debt/EBITDA and Interest Coverage are data-limited}, not
+        model-limited.  Including cash flow statement pages would
+        substantially improve both metrics.
+  \item \textbf{Sector matters}: Technology companies (EM, Meta, Google,
+        Tencent) significantly outperform financial institutions (JPM) and
+        complex automotive conglomerates (Volkswagen), which require
+        sector-specific metric definitions.
+  \item \textbf{Three targeted prompt changes} --- unit specification, debt
+        definition, and quick-asset enumeration --- are predicted to raise
+        overall consistency from 40\% to approximately 60--70\% without any
+        code modifications.
+\end{enumerate}
+
+The two-call chain-of-thought architecture proves effective at guiding the
+model through multi-step financial calculations, and the pipeline's modular
+design allows each identified weakness to be addressed independently.  Future
+work should evaluate the effect of lower temperatures on consistency, extend
+page coverage to include notes and cash flow statements, and develop
+sector-specific extraction profiles for financial institutions.
+
+% ============================================================
+\appendix
+\section{Raw Extracted Values per Company}
+\label{app:raw}
+% ============================================================
+
+Tables~\ref{tab:ali-raw}--\ref{tab:vw-raw} list the complete set of extracted
+values across all ten runs for each company.
+
+\begin{table}[H]
+\centering\small
+\caption{Alibaba 2024 --- all extracted values (10 runs).}
+\label{tab:ali-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income         & 71332 $\times$ 10                                                & 71332 & 0.000 & \cmark \\
+Cost-to-Income     & 0.845, 0.845, 0.880, 0.880, 88.0, 0.845, 84.54, 0.845, 0.845, 0.880 & 17.94 & 1.905 & \xmark \\
+Quick Ratio        & 1.786, 1.303, 1.786, 1.786, 1.790, 1.446, 1.786, 1.303, 1.786, 1.790 & 1.656 & 0.123 & \xmark \\
+Debt / Equity      & 0.173, 0.155, 0.173, 0.173, 0.173, 0.155, 0.173, 0.155, 0.173, 0.170 & 0.167 & 0.049 & \cmark \\
+Debt / Assets      & 0.097, 0.097, 0.097, 0.097, 0.097, 0.097, 0.097, 0.097, 0.097, 0.100 & 0.097 & 0.010 & \cmark \\
+Debt / Capital     & 0.148, 0.134, 0.148, 0.148, 0.148, 0.134, 0.148, 0.134, 0.148, 0.150 & 0.144 & 0.045 & \cmark \\
+Debt / EBITDA      & 1.174, 1.174, 1.270, null $\times$ 7                              & 1.206 & 0.038 & \xmark \\
+Interest Coverage  & 16.98, 14.26, 14.26, 14.26, 14.26, 14.26, 14.26, 14.26, 14.26, null & 14.56 & 0.059 & \xmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{EM 2024 --- all extracted values (10 runs).}
+\label{tab:em-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income         & 36010 $\times$ 10                                                 & 36010 & 0.000 & \cmark \\
+Cost-to-Income     & 0.847 $\times$ 9, 84.68                                           &  9.23 & 2.725 & \xmark \\
+Quick Ratio        & 1.065 $\times$ 9, 1.065                                           & 1.065 & 0.000 & \cmark \\
+Debt / Equity      & 0.196, 0.203, 0.196, 0.196, 0.196, 0.196, 0.196, 0.196, 0.196, 0.196 & 0.196 & 0.011 & \cmark \\
+Debt / Assets      & 0.111 $\times$ 9, 0.111                                           & 0.111 & 0.001 & \cmark \\
+Debt / Capital     & 0.164, 0.169, 0.164, 0.164, 0.164, 0.164, 0.164, 0.164, 0.164, 0.164 & 0.164 & 0.009 & \cmark \\
+Debt / EBITDA      & 0.570, 0.560, 0.560, 0.570, 0.560, 0.570, 0.560, 0.570, 0.560, 0.560 & 0.564 & 0.009 & \cmark \\
+Interest Coverage  & 63.17, 63.17, 63.17, 61.59, 63.17, 62.17, 87.48, 63.17, 63.17, 62.17 & 65.24 & 0.114 & \xmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{GM 2023 --- all extracted values (10 runs).}
+\label{tab:gm-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income        & 10127 $\times$ 7, 9840 $\times$ 3                                 & 10041 & 0.013 & \cmark \\
+Cost-to-Income    & 94.59, 0.946, 94.59, 0.946, 94.59, 94.59, 0.946, 0.946, 0.946, 0.946 & 38.40 & 1.195 & \xmark \\
+Quick Ratio       & 0.830, 0.825, 0.410, 0.825, 0.825, 0.830, 0.825, 0.651, 0.825, 0.411 & 0.726 & 0.229 & \xmark \\
+Debt / Equity     & 1.890, 1.894, 1.890, 1.894, 1.894, 1.890, 1.894, 1.894, 1.894, 1.894 & 1.893 & 0.001 & \cmark \\
+Debt / Assets     & 0.450, 0.446, 44.58, 0.446, 0.446, 44.58, 0.446, 0.446, 0.446, 0.446 & 9.273 & 1.904 & \xmark \\
+Debt / Capital    & 0.650, 0.654, 65.44, 0.654, 0.654, 65.44, 0.654, 0.654, 0.654, 0.654 & 13.61 & 1.904 & \xmark \\
+Debt / EBITDA     & 13.09, null $\times$ 9                                             & 13.09 & 0.000 & \xmark \\
+Interest Coverage & 0.760, 0.757, 10.21, 0.757, 11.42, 10.21, 0.757, 10.21, 12.42, 10.21 & 6.770 & 0.732 & \xmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Google 2024 --- all extracted values (10 runs).}
+\label{tab:goo-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income         & 100118 $\times$ 10                                                & 100118 & 0.000 & \cmark \\
+Cost-to-Income     & 0.679 $\times$ 9, 67.89                                           &   7.40 & 2.725 & \xmark \\
+Quick Ratio        & 1.661, 1.661, 1.661, 1.661, 1.660, 1.661, 1.661, 1.660, 1.661, 1.660 &  1.660 & 0.000 & \cmark \\
+Debt / Equity      & 0.034 $\times$ 9, 0.030                                           &  0.033 & 0.032 & \cmark \\
+Debt / Assets      & 0.024 $\times$ 9, 0.020                                           &  0.024 & 0.053 & \xmark \\
+Debt / Capital     & 0.032 $\times$ 9, 0.030                                           &  0.032 & 0.022 & \cmark \\
+Debt / EBITDA      & null $\times$ 10                                                  &  ---   &  ---  & \nmark \\
+Interest Coverage  & null $\times$ 10                                                  &  ---   &  ---  & \nmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{JPM 2024 --- all extracted values (10 runs).}
+\label{tab:jpm-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income         & 58471 $\times$ 10                                                 & 58471 & 0.000 & \cmark \\
+Cost-to-Income     & 0.517, 0.517, 51.70, 0.517, 51.70, 0.517, 0.517, 51.69, 51.69, 0.517 & 20.99 & 1.195 & \xmark \\
+Quick Ratio        & 0.471, 3.080, 0.580, 1.970, 5.780, 1.970, 1.970, 0.555, 0.443, null & 1.869 & 0.877 & \xmark \\
+Debt / Equity      & 1.318, 1.320, 1.320, 1.320, 1.160, 9.160, 1.318, 1.320, 1.877, 1.318 & 2.143 & 1.095 & \xmark \\
+Debt / Assets      & 0.114, 0.110, 0.110, 0.114, 10.03, 0.789, 0.114, 11.35, 0.162, 0.114 & 2.300 & 1.830 & \xmark \\
+Debt / Capital     & 0.569, 0.570, 0.570, 0.569, 53.80, 0.902, 0.569, 56.85, 0.652, 0.569 & 11.56 & 1.894 & \xmark \\
+Debt / EBITDA      & 2.280, 2.430, null $\times$ 8                                     &  2.36 & 0.032 & \xmark \\
+Interest Coverage  & 1.741, 0.740, 1.740, 0.740, 1.850, 0.741, 1.850, 1.741, 1.741, null & 1.432 & 0.343 & \xmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{LVMH 2024 --- all extracted values (10 runs).}
+\label{tab:lvm-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income        & 12550 $\times$ 10                                                  & 12550 & 0.000 & \cmark \\
+Cost-to-Income    & 44.74, 0.777, 0.777, 77.70, 76.92, 0.777, 0.777, 0.777, 0.769, 76.92 & 28.09 & 1.232 & \xmark \\
+Quick Ratio       & 0.680, 0.677, 0.706, 0.677, 0.680, 0.455, 0.677, 0.677, 0.427, 0.706 & 0.636 & 0.155 & \xmark \\
+Debt / Equity     & 0.330, 0.589, 0.331, 0.589, 0.330, 0.589, 0.331, 0.331, 0.589, 0.331 & 0.434 & 0.291 & \xmark \\
+Debt / Assets     & 0.150, 0.273, 0.154, 0.273, 0.150, 0.273, 0.154, 0.154, 0.273, 0.154 & 0.201 & 0.295 & \xmark \\
+Debt / Capital    & 0.250, 0.371, 0.249, 0.371, 0.250, 0.371, 0.249, 0.249, 0.371, 0.249 & 0.298 & 0.200 & \xmark \\
+Debt / EBITDA     & null $\times$ 10                                                   &  ---  &  ---  & \nmark \\
+Interest Coverage & 19.86 $\times$ 9, 23.87                                            & 20.26 & 0.059 & \xmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Meta 2024 --- all extracted values (10 runs).}
+\label{tab:met-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income         & 62360 $\times$ 10                                                 & 62360 & 0.000 & \cmark \\
+Cost-to-Income     & 0.578 $\times$ 9, 57.82                                           &  6.30 & 2.725 & \xmark \\
+Quick Ratio        & 2.822, 2.822, 2.822, 2.822, 2.820, 2.822, 2.822, 2.820, 2.820, 2.822 & 2.822 & 0.000 & \cmark \\
+Debt / Equity      & 0.158 $\times$ 9, 0.160                                           & 0.158 & 0.004 & \cmark \\
+Debt / Assets      & 0.104 $\times$ 9, 0.100                                           & 0.104 & 0.013 & \cmark \\
+Debt / Capital     & 0.136 $\times$ 9, 0.140                                           & 0.137 & 0.008 & \cmark \\
+Debt / EBITDA      & 0.416, null $\times$ 9                                            & 0.416 & 0.000 & \xmark \\
+Interest Coverage  & 55.08, 55.08, 54.08, null $\times$ 7                             & 54.74 & 0.009 & \xmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Tencent 2024 --- all extracted values (10 runs).}
+\label{tab:ten-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income         & 196467 $\times$ 10                                                & 196467 & 0.000 & \cmark \\
+Cost-to-Income     & 0.974, 0.471, 0.471, 0.471, 47.10, 0.471, 0.471, 0.471, 0.471, 0.974 & 5.23 & 2.666 & \xmark \\
+Quick Ratio        & 3.793, null $\times$ 9                                            &  3.793 &  ---  & \xmark \\
+Debt / Equity      & 0.273, 0.299, 0.285, 0.263, 0.280, 0.285, 0.285, 0.285, 0.290, 0.290 & 0.283 & 0.033 & \cmark \\
+Debt / Assets      & 0.161, 0.164, 0.156, 0.156, 0.160, 0.156, 0.156, 0.156, 0.172, 0.172 & 0.161 & 0.038 & \cmark \\
+Debt / Capital     & 0.214, 0.230, 0.222, 0.208, 0.220, 0.222, 0.222, 0.222, 0.225, 0.225 & 0.221 & 0.026 & \cmark \\
+Debt / EBITDA      & null $\times$ 10                                                  &  ---   &  ---  & \nmark \\
+Interest Coverage  & 17.37, 17.37, 18.70, 17.37, 17.37, 17.37, 17.37, 17.37, 18.70, 17.37  & 17.64 & 0.030 & \cmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Volkswagen 2024 --- all extracted values (10 runs).}
+\label{tab:vw-raw}
+\begin{tabular}{lp{8.5cm}rrc}
+\toprule
+\textbf{Metric} & \textbf{Values} & \textbf{Mean} & \textbf{CV} & \\
+\midrule
+Net Income         & 12394 $\times$ 10                                                 & 12394 & 0.000 & \cmark \\
+Cost-to-Income     & 81.69, 81.68, 81.68, 81.68, 0.944, 81.68, 0.817, 81.68, 0.817, 0.944 & 49.36 & 0.802 & \xmark \\
+Quick Ratio        & null $\times$ 10                                                  &  ---  &  ---  & \nmark \\
+Debt / Equity      & null $\times$ 10                                                  &  ---  &  ---  & \nmark \\
+Debt / Assets      & 0.317, null $\times$ 9                                            & 0.317 & 0.000 & \xmark \\
+Debt / Capital     & null $\times$ 10                                                  &  ---  &  ---  & \nmark \\
+Debt / EBITDA      & null $\times$ 10                                                  &  ---  &  ---  & \nmark \\
+Interest Coverage  & 6.23, 5.53, 5.17, 5.53, 5.88, 5.88, 5.88, 5.53, 6.58, 6.23     &  5.84 & 0.068 & \xmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

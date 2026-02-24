@@ -1,0 +1,103 @@
+{
+  "net_income": {
+    "value": 196467,
+    "unit": "Millions RMB",
+    "formula": "Profit for the year",
+    "inputs": {
+      "Profit for the year": 196467
+    },
+    "reason": "Tencent's net income for 2024 was 196,467 million RMB, representing the total profit generated during the year."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.471,
+    "unit": "ratio",
+    "formula": "Cost of revenues / Revenues (Total)",
+    "inputs": {
+      "Cost of revenues": 311011,
+      "Revenues (Total)": 660257
+    },
+    "reason": "For every RMB of revenue, Tencent incurred approximately 0.47 RMB in cost of revenues, indicating its operational efficiency in generating income."
+  },
+  "quick_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Cash and Cash Equivalents + Marketable Securities + Accounts Receivable + Other Current Assets - Inventories) / Total Current Liabilities",
+    "inputs": {
+      "Accounts receivable": 48203,
+      "Prepayments, deposits and other assets (Current)": 101044,
+      "Other financial assets (Current)": 4750,
+      "Financial assets at fair value through profit or loss (Current)": 9568,
+      "Financial assets at fair value through other comprehensive income (Current)": 3345,
+      "Term deposits (Current)": 192977,
+      "Restricted cash": 3334,
+      "Cash and cash equivalents": 132519,
+      "Inventories": 440,
+      "Total current liabilities": null
+    },
+    "reason": "The quick ratio could not be calculated due to the absence of 'Total current liabilities' in the provided financial statements."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.2994,
+    "unit": "ratio",
+    "formula": "Total Debt / Equity attributable to equity holders of the Company",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Long-term payables": 10201,
+      "Other financial liabilities (Non-current)": 4203,
+      "Equity attributable to equity holders of the Company": 973548
+    },
+    "reason": "Tencent has approximately 0.30 RMB of debt for every RMB of equity, indicating a moderate reliance on debt financing relative to shareholder equity."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1637,
+    "unit": "ratio",
+    "formula": "Total Debt / Total assets",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Long-term payables": 10201,
+      "Other financial liabilities (Non-current)": 4203,
+      "Total assets": 1780995
+    },
+    "reason": "Approximately 16.37% of Tencent's assets are financed by debt, suggesting a relatively low proportion of assets funded by borrowing."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.2304,
+    "unit": "ratio",
+    "formula": "Total Debt / (Total Debt + Equity attributable to equity holders of the Company)",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Long-term payables": 10201,
+      "Other financial liabilities (Non-current)": 4203,
+      "Equity attributable to equity holders of the Company": 973548
+    },
+    "reason": "About 23.04% of Tencent's total capital (debt plus equity) is comprised of debt, indicating a healthy mix of financing sources."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Total Debt / EBITDA",
+    "inputs": {
+      "Borrowings (Non-current)": 146521,
+      "Notes payable (Non-current)": 130586,
+      "Long-term payables": 10201,
+      "Other financial liabilities (Non-current)": 4203,
+      "Operating profit": 208099,
+      "Depreciation and Amortization": null
+    },
+    "reason": "The Debt-to-EBITDA ratio could not be calculated as 'Depreciation and Amortization' was not provided in the financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": 17.369,
+    "unit": "ratio",
+    "formula": "Operating Profit / Finance Costs",
+    "inputs": {
+      "Operating profit": 208099,
+      "Interest income": 16004,
+      "Finance costs": 11981
+    },
+    "reason": "Tencent's operating profit is 17.37 times its finance costs, indicating a strong ability to cover its interest obligations from its operating earnings."
+  }
+}

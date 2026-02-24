@@ -1,0 +1,98 @@
+{
+  "net_income": {
+    "value": 58471,
+    "unit": "millions USD",
+    "formula": "Net Income",
+    "inputs": {
+      "Net income": 58471
+    },
+    "reason": "JPMorgan Chase's net income for 2024 was $58,471 million, representing the company's total profit after all expenses, taxes, and provisions."
+  },
+  "cost_to_income_ratio": {
+    "value": 51.69,
+    "unit": "%",
+    "formula": "Total Noninterest Expense / Total Net Revenue",
+    "inputs": {
+      "Total noninterest expense": 91797,
+      "Total net revenue": 177556
+    },
+    "reason": "The cost-to-income ratio of 51.69% indicates that for every dollar of revenue, JPM_2024 spends approximately 51.69 cents on noninterest expenses, reflecting its operational efficiency."
+  },
+  "quick_ratio": {
+    "value": 1.97,
+    "unit": "ratio",
+    "formula": "(Cash and Due from Banks + Deposits with Banks + Federal Funds Sold and Securities Purchased under Resale Agreements + Securities Borrowed + Trading Assets) / (Accounts Payable and Other Liabilities + Short-term Borrowings + Trading Liabilities + Federal Funds Purchased and Securities Loaned or Sold under Repurchase Agreements)",
+    "inputs": {
+      "Cash and due from banks": 23372,
+      "Deposits with banks": 445945,
+      "Federal funds sold and securities purchased under resale agreements": 295001,
+      "Securities borrowed": 219546,
+      "Trading assets": 637784,
+      "Accounts payable and other liabilities": 280672,
+      "Short-term borrowings": 52893,
+      "Trading liabilities": 192883,
+      "Federal funds purchased and securities loaned or sold under repurchase agreements": 296835
+    },
+    "reason": "A quick ratio of 1.97 suggests that JPM_2024 has $1.97 in highly liquid assets for every dollar of quick liabilities, indicating strong short-term liquidity."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.32,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Stockholders' Equity",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-equity ratio of 1.32 means JPM_2024 has $1.32 of debt for every dollar of equity, indicating a moderate reliance on debt financing relative to shareholder capital."
+  },
+  "debt_to_assets_ratio": {
+    "value": 11.35,
+    "unit": "%",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Assets",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total assets": 4002814
+    },
+    "reason": "The debt-to-assets ratio of 11.35% indicates that 11.35% of JPM_2024's assets are financed by debt, suggesting a relatively low proportion of assets are funded by creditors."
+  },
+  "debt_to_capital_ratio": {
+    "value": 56.85,
+    "unit": "%",
+    "formula": "(Short-term Borrowings + Long-term Debt) / (Short-term Borrowings + Long-term Debt + Total Stockholders' Equity)",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Total stockholders' equity": 344758
+    },
+    "reason": "A debt-to-capital ratio of 56.85% means that 56.85% of JPM_2024's total capital (debt plus equity) is financed by debt, showing a significant but not overwhelming reliance on debt in its capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": 2.43,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / (Net Income + Income Tax Expense + Interest Expense + Depreciation & Amortization + Provision for Credit Losses)",
+    "inputs": {
+      "Short-term borrowings": 52893,
+      "Long-term debt": 401418,
+      "Net income": 58471,
+      "Income tax expense": 16610,
+      "Interest expense": 101350,
+      "Provision for credit losses": 10678,
+      "Depreciation and Amortization (D&A)": null
+    },
+    "reason": "A debt-to-EBITDA ratio of 2.43 indicates that JPM_2024's total debt is approximately 2.43 times its approximate annual EBITDA, suggesting its ability to cover its debt with operating earnings."
+  },
+  "interest_coverage_ratio": {
+    "value": 1.85,
+    "unit": "ratio",
+    "formula": "(Net Income + Income Tax Expense + Interest Expense + Provision for Credit Losses) / Interest Expense",
+    "inputs": {
+      "Net income": 58471,
+      "Income tax expense": 16610,
+      "Interest expense": 101350,
+      "Provision for credit losses": 10678
+    },
+    "reason": "An interest coverage ratio of 1.85 means JPM_2024's earnings before interest, taxes, and credit losses are 1.85 times its interest expense, indicating its capacity to meet its interest obligations."
+  }
+}

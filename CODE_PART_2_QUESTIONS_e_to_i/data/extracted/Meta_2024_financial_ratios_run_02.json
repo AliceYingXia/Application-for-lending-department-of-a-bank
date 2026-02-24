@@ -1,0 +1,88 @@
+{
+  "net_income": {
+    "value": 62360,
+    "unit": "millions USD",
+    "formula": "Net Income",
+    "inputs": {
+      "Net income": 62360
+    },
+    "reason": "Meta's net income for 2024 was $62,360 million, representing the company's total profit after all expenses and taxes."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.5782,
+    "unit": "ratio",
+    "formula": "Total Costs and Expenses / Revenue",
+    "inputs": {
+      "Total costs and expenses": 95121,
+      "Revenue": 164501
+    },
+    "reason": "Meta's cost-to-income ratio of 0.5782 indicates that for every dollar of revenue, the company incurs approximately $0.58 in costs and expenses."
+  },
+  "quick_ratio": {
+    "value": 2.8224,
+    "unit": "ratio",
+    "formula": "(Cash and Cash Equivalents + Marketable Securities + Accounts Receivable, Net) / Total Current Liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 43889,
+      "Marketable securities": 33926,
+      "Accounts receivable, net": 16994,
+      "Total current liabilities": 33596
+    },
+    "reason": "A quick ratio of 2.8224 suggests Meta has strong liquidity, possessing nearly three times its current liabilities in highly liquid assets."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.1578,
+    "unit": "ratio",
+    "formula": "Long-Term Debt / Total Stockholders' Equity",
+    "inputs": {
+      "Long-term debt": 28826,
+      "Total stockholders' equity": 182637
+    },
+    "reason": "Meta's debt-to-equity ratio of 0.1578 indicates that the company uses a relatively low amount of debt financing compared to equity financing."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1044,
+    "unit": "ratio",
+    "formula": "Long-Term Debt / Total Assets",
+    "inputs": {
+      "Long-term debt": 28826,
+      "Total assets": 276054
+    },
+    "reason": "A debt-to-assets ratio of 0.1044 shows that only about 10.44% of Meta's assets are financed through long-term debt."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.1363,
+    "unit": "ratio",
+    "formula": "Long-Term Debt / (Long-Term Debt + Total Stockholders' Equity)",
+    "inputs": {
+      "Long-term debt": 28826,
+      "Total stockholders' equity": 182637
+    },
+    "reason": "Meta's debt-to-capital ratio of 0.1363 indicates that long-term debt constitutes about 13.63% of the company's total capital structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "Long-Term Debt / EBITDA",
+    "inputs": {
+      "Long-term debt": 28826,
+      "Net income": 62360,
+      "Provision for income taxes": 8303,
+      "Interest and other income (expense), net": 1283,
+      "Depreciation and Amortization": "Not provided"
+    },
+    "reason": "This metric cannot be accurately calculated as Depreciation and Amortization is not provided in the financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "EBIT / Interest Expense",
+    "inputs": {
+      "Net income": 62360,
+      "Provision for income taxes": 8303,
+      "Interest and other income (expense), net": 1283,
+      "Interest expense": "Not explicitly broken out"
+    },
+    "reason": "This metric cannot be accurately calculated as Interest Expense is not separately disclosed, and the provided 'Interest and other income (expense), net' is a net income figure."
+  }
+}

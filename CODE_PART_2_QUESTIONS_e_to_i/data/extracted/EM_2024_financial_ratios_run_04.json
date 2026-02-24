@@ -1,0 +1,91 @@
+{
+  "net_income": {
+    "value": 36010,
+    "unit": "millions USD",
+    "formula": "Net income (loss) attributable to ExxonMobil",
+    "inputs": {
+      "Net income (loss) attributable to ExxonMobil": 36010
+    },
+    "reason": "ExxonMobil reported a net income of $36,010 million in 2023, indicating strong profitability for the period."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.847,
+    "unit": "ratio",
+    "formula": "Total costs and other deductions / Total revenues and other income",
+    "inputs": {
+      "Total costs and other deductions": 291799,
+      "Total revenues and other income": 344582
+    },
+    "reason": "With a cost-to-income ratio of 0.847, ExxonMobil spent approximately 84.7 cents to generate each dollar of revenue in 2023, reflecting its operational efficiency."
+  },
+  "quick_ratio": {
+    "value": 1.065,
+    "unit": "ratio",
+    "formula": "(Cash and cash equivalents + Cash and cash equivalents \u2013 restricted + Notes and accounts receivable - net) / Total current liabilities",
+    "inputs": {
+      "Cash and cash equivalents": 31539,
+      "Cash and cash equivalents \u2013 restricted": 29,
+      "Notes and accounts receivable - net": 38015,
+      "Total current liabilities": 65316
+    },
+    "reason": "ExxonMobil's quick ratio of 1.065 indicates that it has sufficient liquid assets to cover its short-term liabilities without relying on inventory, suggesting good short-term liquidity."
+  },
+  "debt_to_equity_ratio": {
+    "value": 0.196,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / Total Equity",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Total Equity": 212538
+    },
+    "reason": "A debt-to-equity ratio of 0.196 suggests that ExxonMobil relies relatively little on debt financing compared to equity, indicating a conservative capital structure."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.111,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / Total Assets",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Total Assets": 376317
+    },
+    "reason": "ExxonMobil's debt-to-assets ratio of 0.111 indicates that a small portion of its assets are financed by debt, highlighting a low level of financial leverage."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.164,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / (Long-term debt + Notes and loans payable + Total Equity)",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Total Equity": 212538
+    },
+    "reason": "With a debt-to-capital ratio of 0.164, debt constitutes a relatively small part of ExxonMobil's total capital, reflecting a healthy financial structure."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": 0.57,
+    "unit": "ratio",
+    "formula": "(Long-term debt + Notes and loans payable) / (Net income (loss) attributable to ExxonMobil + Income tax expense (benefit) + Interest expense + Depreciation and depletion (includes impairments))",
+    "inputs": {
+      "Long-term debt": 37483,
+      "Notes and loans payable": 4090,
+      "Net income (loss) attributable to ExxonMobil": 36010,
+      "Income tax expense (benefit)": 15429,
+      "Interest expense": 849,
+      "Depreciation and depletion (includes impairments)": 20641
+    },
+    "reason": "ExxonMobil's debt-to-EBITDA ratio of 0.570 suggests it could pay off its debt in less than a year using its operating earnings, indicating strong debt service capacity."
+  },
+  "interest_coverage_ratio": {
+    "value": 61.59,
+    "unit": "ratio",
+    "formula": "(Net income (loss) attributable to ExxonMobil + Income tax expense (benefit) + Interest expense) / Interest expense",
+    "inputs": {
+      "Net income (loss) attributable to ExxonMobil": 36010,
+      "Income tax expense (benefit)": 15429,
+      "Interest expense": 849
+    },
+    "reason": "An interest coverage ratio of 61.59 demonstrates ExxonMobil's exceptional ability to meet its interest payment obligations, indicating very low financial risk from debt."
+  }
+}

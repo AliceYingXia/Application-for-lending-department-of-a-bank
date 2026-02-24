@@ -1,0 +1,93 @@
+{
+  "net_income": {
+    "value": 58471,
+    "unit": "millions USD",
+    "formula": "Net Income",
+    "inputs": {
+      "Net income (IS)": 58471
+    },
+    "reason": "JPM_2024 reported a net income of $58,471 million for the year ended December 31, 2024."
+  },
+  "cost_to_income_ratio": {
+    "value": 0.517,
+    "unit": "ratio",
+    "formula": "Total Noninterest Expense / Total Net Revenue",
+    "inputs": {
+      "Total noninterest expense (IS)": 91797,
+      "Total net revenue (IS)": 177556
+    },
+    "reason": "For every dollar of revenue, JPM_2024 incurred approximately $0.52 in noninterest expenses."
+  },
+  "quick_ratio": {
+    "value": 0.4433,
+    "unit": "ratio",
+    "formula": "(Cash and Due from Banks + Deposits with Banks + Federal Funds Sold and Securities Purchased Under Resale Agreements + Securities Borrowed + Trading Assets) / Total Liabilities",
+    "inputs": {
+      "Cash and due from banks (BS)": 23372,
+      "Deposits with banks (BS)": 445945,
+      "Federal funds sold and securities purchased under resale agreements (BS)": 295001,
+      "Securities borrowed (BS)": 219546,
+      "Trading assets (BS)": 637784,
+      "Total liabilities (BS)": 3658056
+    },
+    "reason": "JPM_2024 has $0.44 in highly liquid assets for every dollar of total liabilities, indicating its ability to cover short-term obligations with readily available funds."
+  },
+  "debt_to_equity_ratio": {
+    "value": 1.3179,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Stockholders' Equity",
+    "inputs": {
+      "Short-term borrowings (BS)": 52893,
+      "Long-term debt (BS)": 401418,
+      "Total stockholders' equity (BS)": 344758
+    },
+    "reason": "JPM_2024's debt-to-equity ratio of 1.32 suggests that the company uses $1.32 of debt for every dollar of equity financing."
+  },
+  "debt_to_assets_ratio": {
+    "value": 0.1135,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / Total Assets",
+    "inputs": {
+      "Short-term borrowings (BS)": 52893,
+      "Long-term debt (BS)": 401418,
+      "Total assets (BS)": 4002814
+    },
+    "reason": "Approximately 11.35% of JPM_2024's assets are financed by debt, indicating a relatively low reliance on external borrowing to fund its assets."
+  },
+  "debt_to_capital_ratio": {
+    "value": 0.5685,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / (Short-term Borrowings + Long-term Debt + Total Stockholders' Equity)",
+    "inputs": {
+      "Short-term borrowings (BS)": 52893,
+      "Long-term debt (BS)": 401418,
+      "Total stockholders' equity (BS)": 344758
+    },
+    "reason": "Debt constitutes about 56.85% of JPM_2024's total capital structure, reflecting the proportion of funding from debt compared to equity."
+  },
+  "debt_to_ebitda_ratio": {
+    "value": null,
+    "unit": "ratio",
+    "formula": "(Short-term Borrowings + Long-term Debt) / (Total Net Revenue - Total Noninterest Expense + Interest Expense + Income Tax Expense + Depreciation & Amortization)",
+    "inputs": {
+      "Short-term borrowings (BS)": 52893,
+      "Long-term debt (BS)": 401418,
+      "Total net revenue (IS)": 177556,
+      "Total noninterest expense (IS)": 91797,
+      "Interest expense (IS)": 101350,
+      "Income tax expense (IS)": 16610,
+      "Depreciation & Amortization (D&A)": null
+    },
+    "reason": "The Debt-to-EBITDA ratio cannot be precisely calculated as depreciation and amortization data were not provided in the financial statements."
+  },
+  "interest_coverage_ratio": {
+    "value": 1.7408,
+    "unit": "ratio",
+    "formula": "(Income Before Income Tax Expense + Interest Expense) / Interest Expense",
+    "inputs": {
+      "Income before income tax expense (IS)": 75081,
+      "Interest expense (IS)": 101350
+    },
+    "reason": "JPM_2024's earnings before interest and taxes are 1.74 times its interest expense, indicating its ability to cover interest payments."
+  }
+}

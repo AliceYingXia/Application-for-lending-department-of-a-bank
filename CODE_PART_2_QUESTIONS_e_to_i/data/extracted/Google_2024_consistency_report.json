@@ -1,0 +1,153 @@
+{
+  "company": "Google_2024",
+  "n_runs": 10,
+  "temperature": 0.7,
+  "metrics": {
+    "net_income": {
+      "values": [
+        100118.0,
+        100118.0,
+        100118.0,
+        100118.0,
+        100118.0,
+        100118.0,
+        100118.0,
+        100118.0,
+        100118.0,
+        100118.0
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 100118.0,
+      "std": 0.0,
+      "min": 100118.0,
+      "max": 100118.0,
+      "cv": 0.0
+    },
+    "cost_to_income_ratio": {
+      "values": [
+        0.6789,
+        0.6789,
+        0.6789,
+        0.6789,
+        0.6789,
+        0.6789,
+        0.6789,
+        67.89,
+        0.6789,
+        0.6789
+      ],
+      "null_count": 0,
+      "consistent": false,
+      "mean": 7.4,
+      "std": 20.1633,
+      "min": 0.6789,
+      "max": 67.89,
+      "cv": 2.724771
+    },
+    "quick_ratio": {
+      "values": [
+        1.6606,
+        1.6606,
+        1.6606,
+        1.6606,
+        1.66,
+        1.6606,
+        1.6607,
+        1.66,
+        1.6606,
+        1.66
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 1.6604,
+      "std": 0.0003,
+      "min": 1.66,
+      "max": 1.6607,
+      "cv": 0.00017
+    },
+    "debt_to_equity_ratio": {
+      "values": [
+        0.0335,
+        0.0335,
+        0.0335,
+        0.0335,
+        0.0335,
+        0.0335,
+        0.0335,
+        0.03,
+        0.0335,
+        0.0335
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 0.0331,
+      "std": 0.0011,
+      "min": 0.03,
+      "max": 0.0335,
+      "cv": 0.031674
+    },
+    "debt_to_assets_ratio": {
+      "values": [
+        0.0242,
+        0.0242,
+        0.0242,
+        0.0242,
+        0.0242,
+        0.0242,
+        0.0242,
+        0.02,
+        0.0242,
+        0.0242
+      ],
+      "null_count": 0,
+      "consistent": false,
+      "mean": 0.0238,
+      "std": 0.0013,
+      "min": 0.02,
+      "max": 0.0242,
+      "cv": 0.052986
+    },
+    "debt_to_capital_ratio": {
+      "values": [
+        0.0324,
+        0.0324,
+        0.0324,
+        0.0324,
+        0.0324,
+        0.0324,
+        0.0324,
+        0.03,
+        0.0324,
+        0.0324
+      ],
+      "null_count": 0,
+      "consistent": true,
+      "mean": 0.0322,
+      "std": 0.0007,
+      "min": 0.03,
+      "max": 0.0324,
+      "cv": 0.022388
+    },
+    "debt_to_ebitda_ratio": {
+      "values": [],
+      "null_count": 10,
+      "consistent": false,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "max": null,
+      "cv": null
+    },
+    "interest_coverage_ratio": {
+      "values": [],
+      "null_count": 10,
+      "consistent": false,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "max": null,
+      "cv": null
+    }
+  }
+}
